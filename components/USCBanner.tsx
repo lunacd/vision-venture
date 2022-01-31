@@ -5,7 +5,7 @@ const USCBanner: NextPage = () => {
     <div id='usc-banner' className='bg-black overflow-auto'>
       <a className='float-right'>
         <img
-          src={require('../images/usc-shield-name-white.png')}
+          src={require('../images/usc-shield-name-white.png?original')}
           className='h-[38px] w-[176px] m-[11px]'
           alt='USC Logo'
         />

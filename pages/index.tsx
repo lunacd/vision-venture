@@ -3,6 +3,14 @@ import type { NextPage } from 'next';
 const Home: NextPage = () => {
   return (
     <>
+      <div className='h-[38rem] bg-cardinal flex flex-col items-center relative'>
+        <div className='absolute left-1/2 transform -translate-x-1/2 text-white top-32 text-2xl'>Welcome to</div>
+        <picture className="h-full relative top-20">
+          <source srcSet={require('../images/vv_logo.png?webp')} type='image/webp' />
+          <source srcSet={require('../images/vv_logo.png')} type='image/png' />
+          <img src={require('../images/vv_logo.png')} alt="Vision Venture logo" />
+        </picture>
+      </div>
       <div className='text-xl mt-20 ml-10'>The workflow text and the icon is one wide icon. We can imitate since we are
         using Glacial Indifference as the logo font.
       </div>
@@ -15,7 +23,6 @@ const Home: NextPage = () => {
         just change the purple accent color to be cardinal.
       </div>
     </>
-
   );
 };
 
