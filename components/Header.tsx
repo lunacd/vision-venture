@@ -256,7 +256,7 @@ export default function Example() {
             </a>
             <a
               href='#'
-              className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-cardinal hover:bg-indigo-700'
+              className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-cardinal hover:bg-cardinal-strong'
             >
               Sign up
             </a>
@@ -278,11 +278,12 @@ export default function Example() {
             <div className='pt-5 pb-6 px-5'>
               <div className='flex items-center justify-between'>
                 <div>
-                  <img
-                    className='h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-                    alt='Workflow'
-                  />
+                  <picture className='h-8 w-auto'>
+                    <source srcSet={require('../images/vv_left_dark_cardinal.png?webp&resize=128')} type='image/webp' />
+                    <source srcSet={require('../images/vv_left_dark_cardinal.png?resize=128')} type='image/png' />
+                    <img src={require('../images/vv_left_dark_cardinal.png?resize=128')} alt='Vision Venture logo'
+                         className='h-8 w-auto' />
+                  </picture>
                 </div>
                 <div className='-mr-2'>
                   <Popover.Button
@@ -329,7 +330,7 @@ export default function Example() {
               <div>
                 <a
                   href='#'
-                  className='w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-cardinal hover:bg-indigo-700'
+                  className='w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-cardinal hover:bg-cardinal-strong'
                 >
                   Sign up
                 </a>

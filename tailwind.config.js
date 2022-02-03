@@ -3,7 +3,8 @@ module.exports = {
     extend: {
       colors: {
         cardinal: '#990000',
-        'cardinal-faint': '#9A2626'
+        'cardinal-faint': '#9A2626',
+        'cardinal-strong': '#800000'
       }
     }, fontFamily: {
       sans: ['National', 'sans-serif']
