@@ -24,7 +24,7 @@
 </script>
 
 <div id="usc-banner">
-    <a href="https://www.usc.edu/" referrerpolicy="no-referrer">
+    <a rel="external" href="https://www.usc.edu/" referrerpolicy="no-referrer">
         <img src={Logo} alt="USC Logo"/>
     </a>
 </div>
