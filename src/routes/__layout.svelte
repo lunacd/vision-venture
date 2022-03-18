@@ -5,6 +5,10 @@
 
 <!-- This file defines the required USC banner that shows on the top of all pages -->
 
+<script lang="ts">
+    import Logo from '../images/usc-shield-name-white.png?webp';
+</script>
+
 <style lang="scss">
   #usc-banner {
     height: 60px;
@@ -18,10 +22,6 @@
     padding: 11px;
   }
 </style>
-
-<script>
-    import Logo from '../images/usc-shield-name-white.png?webp';
-</script>
 
 <div id="usc-banner">
     <a rel="external" href="https://www.usc.edu/" referrerpolicy="no-referrer">

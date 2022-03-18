@@ -1,4 +1,5 @@
 // This file defines global SCSS variables, imported through Svelte preprocess directive in svelte.config.js.
+// It also defines common classes and font faces used throughout the codebase
 
 // USC colors
 $cardinal: #990000;
@@ -7,3 +8,20 @@ $black: #000;
 $dark-gray: #777;
 $light-gray: #CCC;
 $white: #FFF;
+$serif: National, sans-serif;
+
+// USC font
+@font-face {
+  font-family: National;
+  font-weight: 400;
+  src: url("/NationalWeb-Regular.ttf");
+}
+
+// CSS Utils
+.container {
+  // This derives from Bootstrap convention
+  max-width: 1320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
