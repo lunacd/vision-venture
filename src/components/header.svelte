@@ -6,8 +6,8 @@
 
 <style lang="scss">
   #header {
-    flex-direction: row;
-    background-color: $cardinal;
+    position: relative;
+    z-index: $z-content;
   }
 
   #vv-logo {
@@ -16,15 +16,21 @@
     padding: 12px;
   }
 
+  #vv-logo img {
+    height: 100%;
+    width: 100%;
+  }
+
   .container {
     display: flex;
     align-items: center;
+    flex-direction: row;
   }
 
   .link {
     color: $white;
     text-decoration: none;
-    font-family: $serif;
+    font-family: $sans;
     font-size: 1.2rem;
     margin-left: 12px;
     margin-right: 12px;
@@ -43,8 +49,8 @@
 
 <div id="header">
     <div class="container">
-        <a href="/">
-            <img src={Logo} alt="Vision Venture logo" id="vv-logo">
+        <a href="/" id="vv-logo">
+            <img src={Logo} alt="Vision Venture logo">
         </a>
         <a href="/about" class="link link-first" class:link-active={page === "about"}>About the Project</a>
         <a href="/roadmap" class="link" class:link-active={page === "roadmap"}>Roadmap</a>
