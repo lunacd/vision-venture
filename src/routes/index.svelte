@@ -21,8 +21,9 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 15%;
-    right: 15%;
+    top: 25%;
+    right: 25%;
+    transform: translateX(50%) translateY(-50%);
   }
 
   .heading {
@@ -41,7 +42,7 @@
   }
 
   .large-heading {
-    font-size: 4rem;
+    font-size: 6rem;
     line-height: 1.3;
   }
 </style>
