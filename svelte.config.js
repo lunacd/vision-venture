@@ -13,7 +13,7 @@ const config = {
             markup: 'html',
         },
         scss: {
-            prependData: `@import './src/styles/global.scss';`,
+            prependData: `@import './src/styles/preamble.scss';`,
         },
     }),
 

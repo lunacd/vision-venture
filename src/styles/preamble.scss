@@ -1,0 +1,15 @@
+// This file defines global SCSS variables, imported through Svelte preprocess directive in svelte.config.js.
+// It also defines common classes and font faces used throughout the codebase
+
+// USC colors
+$cardinal: #990000;
+$gold: #FFCC00;
+$black: #000;
+$dark-gray: #777;
+$light-gray: #CCC;
+$white: #FFF;
+$sans: National, sans-serif;
+$serif: adobe-caslon-pro, serif;
+$z-background: 1;
+$z-content: 2;
+$z-overlay: 3;

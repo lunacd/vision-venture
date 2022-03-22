@@ -30,7 +30,7 @@
     color: $white;
     position: relative;
     z-index: $z-content;
-    font-family: $sans;
+    font-family: $serif;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -51,7 +51,7 @@
 <div id="landing-display">
     <img src={Vanishing} alt="Vanishing point illustration">
     <div class="heading-container">
-        <h3 class="heading small-heading">VITERBI</h3>
+        <h3 class="heading small-heading">Viterbi</h3>
         <h1 class="heading large-heading">Vision<br/>Venture</h1>
     </div>
 </div>
