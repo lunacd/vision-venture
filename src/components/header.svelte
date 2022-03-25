@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Logo from '../images/vision-venture.png?webp';
+    import Logo from '../images/vision-venture-full.png?webp';
 
     export let page;
 </script>
