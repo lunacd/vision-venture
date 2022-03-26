@@ -1,6 +1,7 @@
 <script lang="ts">
     import Header from '../components/header.svelte';
-    import Vanishing from '../images/vanishing.svg'
+    import Logo from '../images/vision-venture-full.png?webp'
+    import Vanishing from '../images/vanishing.svg';
 </script>
 
 <style lang="scss">
@@ -21,9 +22,14 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 25%;
+    top: 30%;
     right: 25%;
+    width: 35%;
     transform: translateX(50%) translateY(-50%);
+  }
+
+  .heading-container img {
+    width: 100%;
   }
 
   .heading {
@@ -51,8 +57,6 @@
 <div id="landing-display">
     <img src={Vanishing} alt="Vanishing point illustration">
     <div class="heading-container">
-        <h3 class="heading small-heading">Viterbi</h3>
-        <h1 class="heading large-heading">Vision<br/>Venture</h1>
+        <img src={Logo} alt="Vision Venture"/>
     </div>
 </div>
-

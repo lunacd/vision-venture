@@ -1,6 +1,4 @@
 <script lang="ts">
-    import Logo from '../images/vision-venture-full.png?webp';
-
     export let page;
 </script>
 
@@ -10,21 +8,11 @@
     z-index: $z-content;
   }
 
-  #vv-logo {
-    height: 64px;
-    width: 64px;
-    padding: 12px;
-  }
-
-  #vv-logo img {
-    height: 100%;
-    width: 100%;
-  }
-
   .container {
     display: flex;
     align-items: center;
     flex-direction: row;
+    height: 88px;
   }
 
   .link {
@@ -49,9 +37,6 @@
 
 <div id="header">
     <div class="container">
-        <a href="/" id="vv-logo">
-            <img src={Logo} alt="Vision Venture logo">
-        </a>
         <a href="/about" class="link link-first" class:link-active={page === "about"}>About the Project</a>
         <a href="/roadmap" class="link" class:link-active={page === "roadmap"}>Roadmap</a>
         <a href="/voices" class="link" class:link-active={page === "voices"}>Student Voices</a>
