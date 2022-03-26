@@ -48,11 +48,6 @@
     font-size: 2rem;
   }
 
-  .large-heading {
-    font-size: 6rem;
-    line-height: 1.3;
-  }
-
   .card {
     background-color: $cardinal;
     border-radius: 16px;
@@ -88,6 +83,7 @@
 <div id="landing-display">
     <img src={Vanishing} alt="Vanishing point illustration">
     <div class="heading-container">
+        <div class="heading small-heading">Viterbi</div>
         <img src={Logo} alt="Vision Venture"/>
     </div>
 </div>
