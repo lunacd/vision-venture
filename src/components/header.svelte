@@ -4,7 +4,10 @@
 
 <style lang="scss">
   #header {
-    position: relative;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
     z-index: $z-content;
   }
 
