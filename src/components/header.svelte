@@ -25,8 +25,7 @@
     text-decoration: none;
     font-family: $sans;
     font-size: 1.2rem;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 24px;
     padding-bottom: 8px;
     padding-top: 8px;
   }
@@ -50,7 +49,7 @@
   #vv-logo {
     height: 64px;
     width: 64px;
-    padding: 12px;
+    padding: 12px 0 12px 0;
   }
 
   .hide {

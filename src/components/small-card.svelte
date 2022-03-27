@@ -2,20 +2,19 @@
     export let header: string,
         title: string,
         paragraphs: string[],
-        image: string;
+        image: string,
+        shadow: boolean;
 </script>
 
 <style lang="scss">
-  .card {
-    background-color: $cardinal;
-    border-radius: 16px;
-    color: $white;
-    width: 100%;
-    margin-top: 16px;
-    padding: 5%;
+  .small-card {
+    border-radius: 12px;
+    margin: 24px 10% 24px 10%;
+    padding: 4%;
     font-family: $sans;
     display: flex;
     flex-direction: row;
+    box-shadow: 0 10px 50px 0 #503C2D40;
   }
 
   .card-header {
@@ -23,7 +22,8 @@
   }
 
   .card-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    color: $cardinal;
   }
 
   .card-image {
@@ -31,12 +31,15 @@
   }
 
   .card-text {
-    margin-top: 32px;
+    margin-top: 16px;
     font-size: 1.25rem;
+  }
+
+  .shadow {
   }
 </style>
 
-<div class="card">
+<div class="small-card" class:shadow={shadow}>
     <div>
         {#if header !== undefined}
             <div class="card-header">{header}</div>
