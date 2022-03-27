@@ -5,6 +5,10 @@
     import CardImage from '../images/sample.png?webp'
 </script>
 
+<svelte:head>
+    <title>Viterbi Vision Venture</title>
+</svelte:head>
+
 <style lang="scss">
   #landing-display {
     position: relative;
