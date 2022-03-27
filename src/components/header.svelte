@@ -1,7 +1,7 @@
 <script lang="ts">
     import Logo from '../images/vision-venture.png?webp'
 
-    export let page;
+    export let page: string;
 </script>
 
 <style lang="scss">

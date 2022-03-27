@@ -1,0 +1,52 @@
+<script lang="ts">
+    export let header: string,
+        title: string,
+        paragraphs: string[],
+        image: string;
+</script>
+
+<style lang="scss">
+
+  .card {
+    background-color: $cardinal;
+    border-radius: 16px;
+    color: $white;
+    width: 100%;
+    margin-top: 16px;
+    padding: 5%;
+    font-family: $sans;
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .card-header {
+    font-size: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 2.5rem;
+  }
+
+  .card-image {
+    margin-left: auto;
+  }
+
+  .card-text {
+    margin-top: 32px;
+    font-size: 1.25rem;
+  }
+</style>
+
+<div class="container">
+    <div class="card">
+        <div>
+            <div class="card-header">{header}</div>
+            <div class="card-title">{title}</div>
+            {#each paragraphs as paragraph}
+                <div class="card-text">{paragraph}</div>
+            {/each}
+        </div>
+        <img src={image} alt="People studying" class="card-image"/>
+    </div>
+</div>

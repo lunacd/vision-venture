@@ -1,5 +1,7 @@
 <script lang="ts">
     import Header from '../components/header.svelte';
+    import Card from '../components/card.svelte'
+
     import Logo from '../images/vision-venture-full.png?webp'
     import Vanishing from '../images/vanishing.svg';
     import CardImage from '../images/sample.png?webp'
@@ -51,36 +53,6 @@
     font-weight: 300;
     font-size: 2rem;
   }
-
-  .card {
-    background-color: $cardinal;
-    border-radius: 16px;
-    color: $white;
-    width: 100%;
-    margin-top: 16px;
-    padding: 5%;
-    font-family: $sans;
-    display: flex;
-    flex-direction: row;
-
-  }
-
-  .card-header {
-    font-size: 1.25rem;
-  }
-
-  .card-title {
-    font-size: 2.5rem;
-  }
-
-  .card-image {
-    margin-left: auto;
-  }
-
-  .card-text {
-    margin-top: 32px;
-    font-size: 1.25rem;
-  }
 </style>
 
 <Header page="about"/>
@@ -91,22 +63,15 @@
         <img src={Logo} alt="Vision Venture"/>
     </div>
 </div>
-<div class="container">
-    <div class="card">
-        <div>
-            <div class="card-header">WHO WE ARE</div>
-            <div class="card-title">About the Project</div>
-            <div class="card-text">Basic information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-                velit ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.
-            </div>
-            <div class="card-text">More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-                velit ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.
-            </div>
-            <div class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit ut convallis amet. Et purus purus
-                eros, hendrerit mi dictum ut.
-            </div>
-        </div>
-        <img src={CardImage} alt="People studying" class="card-image"/>
-    </div>
-</div>
+<Card header="WHO WE ARE"
+      title="About the Project"
+      paragraphs={[
+        "Basic information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit" +
+        "ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.",
+        "More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit" +
+        "ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.",
+        "More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit" +
+        "ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.",
+      ]}
+      image={CardImage}
+/>
