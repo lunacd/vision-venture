@@ -59,7 +59,6 @@
 <div id="landing-display">
     <img src={Vanishing} alt="Vanishing point illustration">
     <div class="heading-container">
-        <div class="heading small-heading">Viterbi</div>
         <img src={Logo} alt="Vision Venture"/>
     </div>
 </div>
