@@ -29,10 +29,10 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 30%;
-    right: 25%;
+    top: 25%;
+    left: 20%;
     width: 35%;
-    transform: translateX(50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
   }
 
   .heading-container img {
