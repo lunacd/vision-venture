@@ -31,7 +31,7 @@
     position: absolute;
     top: 25%;
     left: 20%;
-    width: 35%;
+    width: 38%;
     transform: translateX(-50%) translateY(-50%);
   }
 
