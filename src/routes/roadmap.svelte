@@ -1,7 +1,7 @@
 <script lang="ts">
     import Header from '../components/header.svelte';
     import RoadmapSection from '../components/roadmap_section.svelte';
-    import Card from '../components/small-card.svelte'
+    import Card from '../components/small-card.svelte';
 
     import GraduatingImage from '../images/graduating.svg';
     import WelcomeToWork from '../images/welcome-to-work.svg';

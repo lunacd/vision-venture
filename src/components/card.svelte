@@ -7,15 +7,16 @@
 
 <style lang="scss">
   .card {
-    background-color: $cardinal;
+    background-color: $dark-cardinal;
     border-radius: 16px;
     color: $white;
-    width: 100%;
-    margin-top: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     padding: 5%;
     font-family: $sans;
     display: flex;
     flex-direction: row;
+    max-width: 100%;
   }
 
   .card-header {

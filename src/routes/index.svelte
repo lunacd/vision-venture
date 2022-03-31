@@ -1,10 +1,12 @@
 <script lang="ts">
     import Header from '../components/header.svelte';
-    import Card from '../components/card.svelte'
+    import Card from '../components/card.svelte';
+    import Container from '../components/container.svelte';
 
-    import Logo from '../images/vision-venture-full.png?webp'
+    import Logo from '../images/vision-venture-full.svg';
     import Vanishing from '../images/vanishing.svg';
-    import CardImage from '../images/sample.png?webp'
+    import CardImage from '../images/sample.png?webp';
+    import Roadmap from '../images/roadmap.svg';
 </script>
 
 <svelte:head>
@@ -35,36 +37,35 @@
     transform: translateX(-50%) translateY(-50%);
   }
 
-  .heading-container img {
+  .image {
     width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
-  .heading {
-    color: $white;
-    position: relative;
-    z-index: $z-content;
-    font-family: $serif;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .small-heading {
-    font-weight: 300;
-    font-size: 2rem;
+  .title {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: $cardinal;
+    font-family: $sans;
+    font-size: 2.5rem;
   }
 </style>
 
 <Header page="about"/>
-<div id="landing-display">
-    <img src={Vanishing} alt="Vanishing point illustration">
-    <div class="heading-container">
-        <img src={Logo} alt="Vision Venture"/>
+<Container color="cardinal">
+    <div id="landing-display">
+        <img src={Vanishing} alt="Vanishing point illustration">
+        <div class="heading-container">
+            <img src={Logo} alt="Vision Venture" class="image"/>
+        </div>
     </div>
-</div>
-<Card header="WHO WE ARE"
-      title="About the Project"
-      paragraphs={[
+</Container>
+
+<Container>
+    <Card header="WHO WE ARE"
+          title="About the Project"
+          paragraphs={[
         "Basic information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit" +
         "ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.",
         "More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit" +
@@ -72,5 +73,16 @@
         "More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit" +
         "ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.",
       ]}
-      image={CardImage}
-/>
+          image={CardImage}
+    />
+</Container>
+
+<Container color="gold">
+    <img src={Roadmap} alt="Vision Venture roadmap" class="image" id="roadmap"/>
+</Container>
+
+<Container>
+    <div class="title">Hear from our Students</div>
+</Container>
+
+
