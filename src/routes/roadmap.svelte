@@ -1,7 +1,8 @@
 <script lang="ts">
     import Header from '../components/header.svelte';
     import RoadmapSection from '../components/roadmap_section.svelte';
-    import Card from '../components/small-card.svelte';
+    import SmallCard from '../components/small_card.svelte';
+    import Container from '../components/container.svelte';
 
     import GraduatingImage from '../images/graduating.svg';
     import WelcomeToWork from '../images/welcome-to-work.svg';
@@ -14,7 +15,7 @@
 </svelte:head>
 
 <style lang="scss">
-  .container {
+  #padding {
     // 88px to skip absolutely positioned header, and 16px actual margin
     margin-top: calc(88px + 16px);
   }
@@ -27,10 +28,11 @@
 </style>
 
 <Header page="roadmap"/>
-<div class="container">
+<div id="padding"></div>
+<Container>
     <div class="title">Vision Roadmap</div>
-    <Card title="Start your journey" shadow={true}
-          paragraphs={["Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit."]}/>
+    <SmallCard title="Start your journey" shadow={true}
+               paragraphs={["Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit."]}/>
     <RoadmapSection image={GraduatingImage} title="You're graduating! ...Now what?" description="Graduating"
                     subtitle="Leaving the educational nest." index={0}/>
     <RoadmapSection image={WelcomeToWork} title="Welcome to the working world!" description="Welcome to working world"
@@ -38,5 +40,5 @@
     <RoadmapSection image={BeyondCubicle} title="Working beyond the cubicle" description="Beyond the cubicle"
                     subtitle="There is more to work than just tasks and deadlines." index={2}/>
     <RoadmapSection image={BiggerPicture} title="The bigger picture" description="The bigger picture"
-                    subtitle="How not to forget that you have a life outside of work." index={3} last={true}/>
-</div>
+                    subtitle="Remembering that you have a life outside of work." index={3} last={true}/>
+</Container>

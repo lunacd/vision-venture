@@ -2,8 +2,7 @@
     export let header: string,
         title: string,
         paragraphs: string[],
-        image: string,
-        shadow: boolean;
+        image: string;
 </script>
 
 <style lang="scss">
@@ -34,12 +33,9 @@
     margin-top: 16px;
     font-size: 1.25rem;
   }
-
-  .shadow {
-  }
 </style>
 
-<div class="small-card" class:shadow={shadow}>
+<div class="small-card">
     <div>
         {#if header !== undefined}
             <div class="card-header">{header}</div>

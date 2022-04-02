@@ -9,3 +9,7 @@
   font-weight: 300;
   src: url("/NationalWeb-Light.ttf");
 }
+
+* {
+  box-sizing: border-box;
+}

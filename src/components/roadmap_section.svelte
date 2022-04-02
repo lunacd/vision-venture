@@ -1,4 +1,8 @@
 <script lang="ts">
+    import ScrollingGallery from '../components/scrolling_gallery.svelte';
+
+    import one from '../images/thumbnails/s01e01.png?webp';
+
     export let image: string,
         description: string,
         title: string,
@@ -16,10 +20,10 @@
   .image-and-line {
     width: 96px;
     position: relative;
+    flex-shrink: 0;
   }
 
   .image {
-    grid-area: image;
     position: absolute;
     width: 100%;
     z-index: $z-content;
@@ -28,11 +32,10 @@
   }
 
   .vertical-line {
-    grid-area: vertical;
     position: relative;
     left: 50%;
     width: 50%;
-    height: calc(100% - 3px);
+    height: 100%;
     border-left: 3px solid $dark-gray;
     border-bottom: 3px solid $dark-gray;
     z-index: $z-background;
@@ -40,10 +43,10 @@
 
   .content {
     flex-grow: 1;
+    min-width: 0;
   }
 
   .titles {
-    grid-area: title;
     padding: 0 24px 0 24px;
   }
 
@@ -60,10 +63,9 @@
   }
 
   .videos {
-    grid-area: videos;
     height: 320px;
     border-bottom: 3px solid $dark-gray;
-    margin-right: 45px;
+    margin-right: 48px;
   }
 
   // First section
@@ -126,7 +128,8 @@
             <div class="subtitle">{subtitle}</div>
         </div>
         <div class="videos">
-
+            <ScrollingGallery images={[one, one, one, one]} descriptions={["test", "test", "test", "test"]}
+                              links={["https://youtube.com", "https://youtube.com", "https://youtube.com", "https://youtube.com"]}/>
         </div>
     </div>
 </div>
