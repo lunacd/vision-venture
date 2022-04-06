@@ -14,7 +14,8 @@
 
     $: if (innerContainer && outerContainer) threshold = innerContainer.scrollWidth - outerContainer.clientWidth;
 
-    export let episodes: Episode[];
+    export let episodes: Episode[],
+        play: (string) => void;
 </script>
 
 <style lang="scss">
@@ -55,15 +56,12 @@
     transform: scaleX(-1);
   }
 
-  .image-link {
-    height: calc(100% - 48px);
-    margin: 12px 24px 36px 24px;
-  }
-
   .image {
-    height: 100%;
     border-radius: 16px;
     box-shadow: 0 .5rem 1rem rgba($black, .15);
+    margin: 12px 24px 36px 24px;
+    height: calc(100% - 48px);
+    cursor: pointer;
   }
 
   .hide {
@@ -74,9 +72,8 @@
 <div class="outer" bind:this={outerContainer}>
     <div class="inner" style={`transform: translateX(-${$translate}px)`} bind:this={innerContainer}>
         {#each episodes as episode}
-            <a href={episode.youtubeLink} class="image-link">
-                <img src={episode.image} alt={episode.description} class="image"/>
-            </a>
+            <img src={episode.image} alt={episode.description} class="image"
+                 on:click={() => {play(episode.youtubeLink)}}/>
         {/each}
     </div>
     <div class="caret backward-caret">
@@ -95,5 +92,4 @@
              }}
              class:hide={translateFinal >= threshold}/>
     </div>
-
 </div>

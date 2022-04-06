@@ -17,8 +17,8 @@
 
   #usc-banner a {
     float: right;
-    height: 38px;
-    width: 176px;
+    height: 60px;
+    width: 198px;
     padding: 11px;
   }
 </style>

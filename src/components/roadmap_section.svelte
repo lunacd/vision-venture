@@ -8,6 +8,7 @@
         title: string,
         subtitle: string,
         episodes: Episode[],
+        play: (string) => void,
         index: number,
         last = false;
 </script>
@@ -129,7 +130,7 @@
             <div class="subtitle">{subtitle}</div>
         </div>
         <div class="videos">
-            <ScrollingGallery episodes={episodes}/>
+            <ScrollingGallery episodes={episodes} play={play}/>
         </div>
     </div>
 </div>

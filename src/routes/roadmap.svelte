@@ -3,6 +3,7 @@
     import RoadmapSection from '../components/roadmap_section.svelte';
     import SmallCard from '../components/small_card.svelte';
     import Container from '../components/container.svelte';
+    import YoutubePlayer from '../components/youtube-player.svelte';
     import {Episode} from '../utils/episode';
 
     import GraduatingImage from '../images/graduating.svg';
@@ -18,7 +19,7 @@
         // Season 1
         [
             // Section 1
-            [new Episode('Trying out different things', S1E1, 'https://youtu.be/wrAO3b1J2PA')],
+            [new Episode('Trying out different things', S1E1, 'https://www.youtube.com/embed/wrAO3b1J2PA')],
             // Section 2
             [],
             // Section 3
@@ -28,6 +29,12 @@
         ],
     ];
     let currentSeason = seasons[seasons.length - 1];
+    let link: string = undefined;
+
+    function setLink(newLink: string) {
+        link = undefined;
+        link = newLink;
+    }
 </script>
 
 <svelte:head>
@@ -53,14 +60,38 @@
     <div class="title">Vision Roadmap</div>
     <SmallCard title="Start your journey" shadow={true}
                paragraphs={["Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit."]}/>
-    <RoadmapSection image={GraduatingImage} title="You're graduating! ...Now what?" description="Graduating"
-                    subtitle="Leaving the educational nest." episodes={currentSeason[0]} index={0}/>
-    <RoadmapSection image={WelcomeToWork} title="Welcome to the working world!" description="Welcome to working world"
-                    subtitle="-and adulthood." episodes={currentSeason[1]} index={1}/>
-    <RoadmapSection image={BeyondCubicle} title="Working beyond the cubicle" description="Beyond the cubicle"
-                    subtitle="There is more to work than just tasks and deadlines." episodes={currentSeason[2]}
-                    index={2}/>
-    <RoadmapSection image={BiggerPicture} title="The bigger picture" description="The bigger picture"
-                    subtitle="Remembering that you have a life outside of work." episodes={currentSeason[3]} index={3}
-                    last={true}/>
+    <RoadmapSection
+            image={GraduatingImage}
+            title="You're graduating! ...Now what?"
+            description="Graduating"
+            subtitle="Leaving the educational nest."
+            episodes={currentSeason[0]}
+            play={setLink}
+            index={0}/>
+    <RoadmapSection
+            image={WelcomeToWork}
+            title="Welcome to the working world!"
+            description="Welcome to working world"
+            subtitle="-and adulthood."
+            episodes={currentSeason[1]}
+            play={setLink}
+            index={1}/>
+    <RoadmapSection
+            image={BeyondCubicle}
+            title="Working beyond the cubicle"
+            description="Beyond the cubicle"
+            subtitle="There is more to work than just tasks and deadlines."
+            episodes={currentSeason[2]}
+            play={setLink}
+            index={2}/>
+    <RoadmapSection
+            image={BiggerPicture}
+            title="The bigger picture"
+            description="The bigger picture"
+            subtitle="Remembering that you have a life outside of work."
+            episodes={currentSeason[3]}
+            play={setLink}
+            index={3}
+            last={true}/>
 </Container>
+<YoutubePlayer link={link}/>
