@@ -27,8 +27,8 @@
   .close {
     color: $white;
     position: absolute;
-    left: 80%;
-    top: 20%;
+    left: 90%;
+    top: 10%;
     transform: translateX(-50%) translateY(-50%);
     cursor: pointer;
   }
