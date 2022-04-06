@@ -1,19 +1,19 @@
-<script lang="ts">
-    import ScrollingGallery from '../components/scrolling_gallery.svelte';
+<script lang='ts'>
+	import ScrollingGallery from '../components/scrolling_gallery.svelte';
 
-    import {Episode} from '../utils/episode';
+	import { Episode } from '../utils/episode';
 
-    export let image: string,
-        description: string,
-        title: string,
-        subtitle: string,
-        episodes: Episode[],
-        play: (string) => void,
-        index: number,
-        last = false;
+	export let image: string,
+		description: string,
+		title: string,
+		subtitle: string,
+		episodes: Episode[],
+		play: (string) => void,
+		index: number,
+		last = false;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   .roadmap-section {
     display: flex;
     flex-direction: row;
@@ -119,18 +119,18 @@
   }
 </style>
 
-<div class="roadmap-section" class:first={index === 0} class:reversed={index % 2 !== 0} class:last={last}>
-    <div class="image-and-line">
-        <img src={image} alt={description} class="image"/>
-        <div class="vertical-line"></div>
-    </div>
-    <div class="content">
-        <div class="titles">
-            <div class="title">{title}</div>
-            <div class="subtitle">{subtitle}</div>
-        </div>
-        <div class="videos">
-            <ScrollingGallery episodes={episodes} play={play}/>
-        </div>
-    </div>
+<div class='roadmap-section' class:first={index === 0} class:reversed={index % 2 !== 0} class:last={last}>
+	<div class='image-and-line'>
+		<img src={image} alt={description} class='image' />
+		<div class='vertical-line'></div>
+	</div>
+	<div class='content'>
+		<div class='titles'>
+			<div class='title'>{title}</div>
+			<div class='subtitle'>{subtitle}</div>
+		</div>
+		<div class='videos'>
+			<ScrollingGallery episodes={episodes} play={play} />
+		</div>
+	</div>
 </div>

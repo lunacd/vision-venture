@@ -1,24 +1,24 @@
-<script lang="ts">
-    import {spring} from 'svelte/motion';
+<script lang='ts'>
+	import { spring } from 'svelte/motion';
 
-    import ForwardCaret from '../images/forward-caret.svg';
-    import {Episode} from '../utils/episode';
+	import ForwardCaret from '../images/forward-caret.svg';
+	import { Episode } from '../utils/episode';
 
-    const increment = 480;
+	const increment = 480;
 
-    let innerContainer: HTMLDivElement;
-    let outerContainer: HTMLDivElement;
-    let translate = spring(0);
-    let translateFinal = 0;
-    let threshold = 0;
+	let innerContainer: HTMLDivElement;
+	let outerContainer: HTMLDivElement;
+	let translate = spring(0);
+	let translateFinal = 0;
+	let threshold = 0;
 
-    $: if (innerContainer && outerContainer) threshold = innerContainer.scrollWidth - outerContainer.clientWidth;
+	$: if (innerContainer && outerContainer) threshold = innerContainer.scrollWidth - outerContainer.clientWidth;
 
-    export let episodes: Episode[],
-        play: (string) => void;
+	export let episodes: Episode[],
+		play: (string) => void;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   .outer {
     position: relative;
     width: 100%;
@@ -69,27 +69,27 @@
   }
 </style>
 
-<div class="outer" bind:this={outerContainer}>
-    <div class="inner" style={`transform: translateX(-${$translate}px)`} bind:this={innerContainer}>
-        {#each episodes as episode}
-            <img src={episode.image} alt={episode.description} class="image"
-                 on:click={() => {play(episode.youtubeLink)}}/>
-        {/each}
-    </div>
-    <div class="caret backward-caret">
-        <img src={ForwardCaret} alt="Forward caret"
-             on:click={() => {
+<div class='outer' bind:this={outerContainer}>
+	<div class='inner' style={`transform: translateX(-${$translate}px)`} bind:this={innerContainer}>
+		{#each episodes as episode}
+			<img src={episode.image} alt={episode.description} class='image'
+					 on:click={() => {play(episode.youtubeLink)}} />
+		{/each}
+	</div>
+	<div class='caret backward-caret'>
+		<img src={ForwardCaret} alt='Forward caret'
+				 on:click={() => {
                  translateFinal = Math.max(translateFinal - increment, 0);
                  translate.set(translateFinal);
              }}
-             class:hide={translateFinal === 0}/>
-    </div>
-    <div class="caret">
-        <img src={ForwardCaret} alt="Forward caret"
-             on:click={() => {
+				 class:hide={translateFinal === 0} />
+	</div>
+	<div class='caret'>
+		<img src={ForwardCaret} alt='Forward caret'
+				 on:click={() => {
                  translateFinal = Math.min(translateFinal + increment, threshold);
                  translate.set(translateFinal);
              }}
-             class:hide={translateFinal >= threshold}/>
-    </div>
+				 class:hide={translateFinal >= threshold} />
+	</div>
 </div>

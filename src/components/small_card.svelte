@@ -1,11 +1,11 @@
-<script lang="ts">
-    export let header: string,
-        title: string,
-        paragraphs: string[],
-        image: string;
+<script lang='ts'>
+	export let header: string,
+		title: string,
+		paragraphs: string[],
+		image: string;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   .small-card {
     border-radius: 12px;
     margin: 24px 10% 24px 10%;
@@ -35,17 +35,17 @@
   }
 </style>
 
-<div class="small-card">
-    <div>
-        {#if header !== undefined}
-            <div class="card-header">{header}</div>
-        {/if}
-        <div class="card-title">{title}</div>
-        {#each paragraphs as paragraph}
-            <div class="card-text">{paragraph}</div>
-        {/each}
-    </div>
-    {#if image !== undefined}
-        <img src={image} alt="People studying" class="card-image"/>
-    {/if}
+<div class='small-card'>
+	<div>
+		{#if header !== undefined}
+			<div class='card-header'>{header}</div>
+		{/if}
+		<div class='card-title'>{title}</div>
+		{#each paragraphs as paragraph}
+			<div class='card-text'>{paragraph}</div>
+		{/each}
+	</div>
+	{#if image !== undefined}
+		<img src={image} alt='People studying' class='card-image' />
+	{/if}
 </div>

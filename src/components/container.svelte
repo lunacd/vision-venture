@@ -1,8 +1,8 @@
-<script lang="ts">
-    export let color: string;
+<script lang='ts'>
+	export let color: string;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   .cardinal {
     background-color: $dark-cardinal;
   }
@@ -25,8 +25,8 @@
   }
 </style>
 
-<div class="outer" class:cardinal={color === "cardinal"} class:gold={color === "gold"}>
-    <div class="inner">
-        <slot/>
-    </div>
+<div class='outer' class:cardinal={color === "cardinal"} class:gold={color === "gold"}>
+	<div class='inner'>
+		<slot />
+	</div>
 </div>

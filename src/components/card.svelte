@@ -1,11 +1,11 @@
-<script lang="ts">
-    export let header: string,
-        title: string,
-        paragraphs: string[],
-        image: string;
+<script lang='ts'>
+	export let header: string,
+		title: string,
+		paragraphs: string[],
+		image: string;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   .card {
     background-color: $dark-cardinal;
     border-radius: 16px;
@@ -37,17 +37,17 @@
   }
 </style>
 
-<div class="card">
-    <div>
-        {#if header !== undefined}
-            <div class="card-header">{header}</div>
-        {/if}
-        <div class="card-title">{title}</div>
-        {#each paragraphs as paragraph}
-            <div class="card-text">{paragraph}</div>
-        {/each}
-    </div>
-    {#if image !== undefined}
-        <img src={image} alt="People studying" class="card-image"/>
-    {/if}
+<div class='card'>
+	<div>
+		{#if header !== undefined}
+			<div class='card-header'>{header}</div>
+		{/if}
+		<div class='card-title'>{title}</div>
+		{#each paragraphs as paragraph}
+			<div class='card-text'>{paragraph}</div>
+		{/each}
+	</div>
+	{#if image !== undefined}
+		<img src={image} alt='People studying' class='card-image' />
+	{/if}
 </div>

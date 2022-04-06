@@ -1,12 +1,12 @@
-<script lang="ts">
-    import Container from '../components/container.svelte';
+<script lang='ts'>
+	import Container from '../components/container.svelte';
 
-    import Logo from '../images/vision-venture.png?webp';
+	import Logo from '../images/vision-venture.png?webp';
 
-    export let page: string;
+	export let page: string;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   #header {
     position: absolute;
     top: 60px;
@@ -59,29 +59,29 @@
   }
 </style>
 
-<div id="header">
-    <Container>
-        <div class="header-container">
-            <a href="/">
-                <img src={Logo} alt="Vision Venture logo" class:hide={page === "about"} id="vv-logo"/>
-            </a>
-            <a href="/" class="link link-first" class:link-active={page === "about"}
-               class:link-black={page !== "about"}>
-                About the Project
-            </a>
-            <a href="/roadmap" class="link" class:link-active={page === "roadmap"} class:link-black={page !== "about"}>
-                Roadmap
-            </a>
-            <a href="/voices" class="link" class:link-active={page === "voices"} class:link-black={page !== "about"}>
-                Student Voices
-            </a>
-            <a href="/resources" class="link" class:link-active={page === "resources"}
-               class:link-black={page !== "about"}>
-                Resources
-            </a>
-            <a href="/contact" class="link" class:link-active={page === "contact"} class:link-black={page !== "about"}>
-                Contact Us
-            </a>
-        </div>
-    </Container>
+<div id='header'>
+	<Container>
+		<div class='header-container'>
+			<a href='/'>
+				<img src={Logo} alt='Vision Venture logo' class:hide={page === "about"} id='vv-logo' />
+			</a>
+			<a href='/' class='link link-first' class:link-active={page === "about"}
+				 class:link-black={page !== "about"}>
+				About the Project
+			</a>
+			<a href='/roadmap' class='link' class:link-active={page === "roadmap"} class:link-black={page !== "about"}>
+				Roadmap
+			</a>
+			<a href='/voices' class='link' class:link-active={page === "voices"} class:link-black={page !== "about"}>
+				Student Voices
+			</a>
+			<a href='/resources' class='link' class:link-active={page === "resources"}
+				 class:link-black={page !== "about"}>
+				Resources
+			</a>
+			<a href='/contact' class='link' class:link-active={page === "contact"} class:link-black={page !== "about"}>
+				Contact Us
+			</a>
+		</div>
+	</Container>
 </div>

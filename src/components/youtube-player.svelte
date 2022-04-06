@@ -1,8 +1,8 @@
-<script lang="ts">
-    export let link: string;
+<script lang='ts'>
+	export let link: string;
 </script>
 
-<style lang="scss">
+<style lang='scss'>
   .youtube-container {
     position: fixed;
     width: 100%;
@@ -34,10 +34,10 @@
   }
 </style>
 
-<div class="youtube-container" class:hide={link === undefined}>
-    <!--suppress HtmlDeprecatedAttribute -->
-    <iframe class="player" width="560" height="315" src={link} title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    <div class="close" on:click={() => {link = undefined;}}>CLOSE</div>
+<div class='youtube-container' class:hide={link === undefined}>
+	<!--suppress HtmlDeprecatedAttribute -->
+	<iframe class='player' width='560' height='315' src={link} title='YouTube video player' frameborder='0'
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+					allowfullscreen></iframe>
+	<div class='close' on:click={() => {link = undefined;}}>CLOSE</div>
 </div>
