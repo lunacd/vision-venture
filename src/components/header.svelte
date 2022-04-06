@@ -51,7 +51,7 @@
   #vv-logo {
     height: 64px;
     width: 64px;
-    padding: 12px 0 12px 0;
+    margin: 12px 0 12px 0;
   }
 
   .hide {

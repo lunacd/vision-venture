@@ -1,12 +1,13 @@
 <script lang="ts">
     import ScrollingGallery from '../components/scrolling_gallery.svelte';
 
-    import one from '../images/thumbnails/s01e01.png?webp';
+    import {Episode} from '../utils/episode';
 
     export let image: string,
         description: string,
         title: string,
         subtitle: string,
+        episodes: Episode[],
         index: number,
         last = false;
 </script>
@@ -128,8 +129,7 @@
             <div class="subtitle">{subtitle}</div>
         </div>
         <div class="videos">
-            <ScrollingGallery images={[one, one, one, one]} descriptions={["test", "test", "test", "test"]}
-                              links={["https://youtube.com", "https://youtube.com", "https://youtube.com", "https://youtube.com"]}/>
+            <ScrollingGallery episodes={episodes}/>
         </div>
     </div>
 </div>

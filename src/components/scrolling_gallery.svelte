@@ -2,6 +2,7 @@
     import {spring} from 'svelte/motion';
 
     import ForwardCaret from '../images/forward-caret.svg';
+    import {Episode} from '../utils/episode';
 
     const increment = 480;
 
@@ -13,9 +14,7 @@
 
     $: if (innerContainer && outerContainer) threshold = innerContainer.scrollWidth - outerContainer.clientWidth;
 
-    export let images: string[],
-        descriptions: string[],
-        links: string[];
+    export let episodes: Episode[];
 </script>
 
 <style lang="scss">
@@ -74,9 +73,9 @@
 
 <div class="outer" bind:this={outerContainer}>
     <div class="inner" style={`transform: translateX(-${$translate}px)`} bind:this={innerContainer}>
-        {#each images as image, i}
-            <a href={links[i]} class="image-link">
-                <img src={image} alt={descriptions[i]} class="image"/>
+        {#each episodes as episode}
+            <a href={episode.youtubeLink} class="image-link">
+                <img src={episode.image} alt={episode.description} class="image"/>
             </a>
         {/each}
     </div>
