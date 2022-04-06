@@ -64,7 +64,7 @@
   .image {
     height: 100%;
     border-radius: 16px;
-    box-shadow: 0 .5rem 1rem rgba($black, .15);;
+    box-shadow: 0 .5rem 1rem rgba($black, .15);
   }
 
   .hide {

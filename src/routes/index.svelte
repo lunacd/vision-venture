@@ -50,6 +50,25 @@
     font-family: $sans;
     font-size: 2.5rem;
   }
+
+  .student-container {
+    display: flex;
+  }
+
+  .student-section {
+    width: 50%;
+    padding: 16px;
+    display: flex;
+  }
+
+  .button {
+    background-color: $cardinal;
+    padding: 16px;
+    border-radius: 8px;
+    color: $white;
+    text-decoration: none;
+    margin: 0 auto 0 auto;
+  }
 </style>
 
 <Header page="about"/>
@@ -82,7 +101,16 @@
 </Container>
 
 <Container>
-    <div class="title">Hear from our Students</div>
+    <div class="title">Hear from our Students!</div>
+    <div class="student-container">
+        <div class="student-section">
+            <a class="button" href="/roadmap">Check out Vision Roadmap</a>
+        </div>
+        <div class="student-section">
+            <a class="button" href="/voices">More Student Voices</a>
+        </div>
+    </div>
+    <div class="title">Meet the Team!</div>
 </Container>
 
 
