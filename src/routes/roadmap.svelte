@@ -14,18 +14,37 @@
 	// Episode thumbnails
 	// Season 1
 	import S1E1 from '../images/thumbnails/s01e01.png?webp';
+	import S1E4 from '../images/thumbnails/s01e04.png?webp';
+	import S1E5 from '../images/thumbnails/s01e05.png?webp';
+	import S1E6 from '../images/thumbnails/s01e06.png?webp';
+	import S1E7 from '../images/thumbnails/s01e07.png?webp';
+	import S1E8 from '../images/thumbnails/s01e08.png?webp';
+	import S1E10 from '../images/thumbnails/s01e10.png?webp';
+	import S1E11 from '../images/thumbnails/s01e11.png?webp';
 
 	let seasons = [
 		// Season 1
 		[
 			// Section 1
-			[new Episode('Trying out different things', S1E1, 'https://www.youtube.com/embed/wrAO3b1J2PA')],
+			[
+				new Episode('Trying out different things', S1E1, 'https://www.youtube.com/embed/wrAO3b1J2PA')
+			],
 			// Section 2
-			[],
+			[
+				new Episode('Applying skill from education to real life', S1E4, 'https://www.youtube.com/embed/upcVW_qGBSQ'),
+				new Episode('Classroom setting vs. workspace', S1E5, 'https://www.youtube.com/embed/7bty-sSdN3I'),
+				new Episode('Tackling problems at work', S1E6, 'https://www.youtube.com/embed/jODLxTrr4ko')
+			],
 			// Section 3
-			[],
+			[
+				new Episode('Diverse company values', S1E7, 'https://www.youtube.com/embed/YEy70wI5ec4'),
+				new Episode('Women in engineering', S1E8, 'https://www.youtube.com/embed/IwbwcEITuLs'),
+				new Episode('Work-life balance', S1E10, 'https://www.youtube.com/embed/pt-8cqt3_4w')
+			],
 			// Section 4
-			[]
+			[
+				new Episode('Having multiple interests and passions', S1E11, 'https://www.youtube.com/embed/OK5iE-Ss2eo')
+			]
 		]
 	];
 	let currentSeason = seasons[seasons.length - 1];
