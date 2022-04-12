@@ -1,4 +1,6 @@
 <script lang="ts">
+	import X from '../images/x.svg';
+
 	export let link: string;
 </script>
 
@@ -20,14 +22,14 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen
 	/>
-	<div
+	<img
 		class="close"
 		on:click={() => {
 			link = undefined;
 		}}
+		src={X}
+		alt="Close button"
 	>
-		CLOSE
-	</div>
 </div>
 
 <style lang="scss">
@@ -59,5 +61,6 @@
 		top: 10%;
 		transform: translateX(-50%) translateY(-50%);
 		cursor: pointer;
+		width: 32px;
 	}
 </style>
