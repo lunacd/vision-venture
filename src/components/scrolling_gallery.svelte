@@ -4,24 +4,20 @@
 	import ForwardCaret from '../images/forward-caret.svg';
 	import type { Episode } from '../utils/episode';
 
-	const increment = 480;
+	const margin = 48;
 
-	let innerContainer: HTMLDivElement;
-	let outerContainer: HTMLDivElement;
+	let image: HTMLImageElement;
+
+	let scrollPosition = 0;
 	let translate = spring(0);
 	let translateFinal = 0;
-	let threshold = 0;
 
-	$: if (innerContainer && outerContainer)
-		threshold = innerContainer.scrollWidth - outerContainer.clientWidth;
-	$: console.log(threshold);
-
-	export let episodes: Episode[], play: (string) => void;
+	export let episodes: Episode[], play: (link: string) => void;
 </script>
 
-<div class="outer" bind:this={outerContainer}>
-	<div class="inner" style={`transform: translateX(-${$translate}px)`} bind:this={innerContainer}>
-		{#each episodes as episode}
+<div class="outer">
+	<div class="inner" style={`transform: translateX(-${$translate}px)`}>
+		{#each episodes as episode, i}
 			<img
 				src={episode.image}
 				alt={episode.description}
@@ -29,6 +25,7 @@
 				on:click={() => {
 					play(episode.youtubeLink);
 				}}
+				bind:this={image}
 			/>
 		{/each}
 	</div>
@@ -37,10 +34,12 @@
 			src={ForwardCaret}
 			alt="Forward caret"
 			on:click={() => {
-				translateFinal = Math.max(translateFinal - increment, 0);
+				if (scrollPosition <= 0) return;
+				translateFinal -= margin + image.clientWidth;
 				translate.set(translateFinal);
+				scrollPosition -= 1;
 			}}
-			class:hide={translateFinal === 0}
+			class:hide={scrollPosition === 0}
 		/>
 	</div>
 	<div class="caret">
@@ -48,18 +47,12 @@
 			src={ForwardCaret}
 			alt="Forward caret"
 			on:click={() => {
-				translateFinal =
-					innerContainer && outerContainer
-						? Math.min(
-								translateFinal + increment,
-								innerContainer.scrollWidth - outerContainer.clientWidth
-						  )
-						: translateFinal + increment;
+				if (scrollPosition >= episodes.length - 1) return;
+				translateFinal += margin + image.clientWidth;
 				translate.set(translateFinal);
+				scrollPosition += 1;
 			}}
-			class:hide={innerContainer &&
-				outerContainer &&
-				translateFinal >= innerContainer.scrollWidth - outerContainer.clientWidth}
+			class:hide={scrollPosition === episodes.length - 1}
 		/>
 	</div>
 </div>
