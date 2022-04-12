@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Container from '../components/container.svelte';
 
-	import Logo from '../images/vision-venture.png';
+	import Logo from '../images/vision-venture.png?webp';
 
 	export let page: string;
 </script>

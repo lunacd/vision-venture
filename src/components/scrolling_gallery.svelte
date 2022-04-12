@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret.svg';
@@ -6,16 +7,31 @@
 
 	const margin = 48;
 
-	let image: HTMLImageElement;
-
 	let scrollPosition = 0;
+	let maxScroll = 0;
 	let translate = spring(0);
 	let translateFinal = 0;
 
 	export let episodes: Episode[], play: (link: string) => void;
+
+	let images = new Array<HTMLImageElement>(episodes.length);
+	let outerContainer: HTMLDivElement;
+
+	onMount(() => {
+		maxScroll =
+			episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
+	});
 </script>
 
-<div class="outer">
+<svelte:window
+	on:resize={() => {
+		console.log('changing');
+		maxScroll =
+			episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
+	}}
+/>
+
+<div class="outer" bind:this={outerContainer}>
 	<div class="inner" style={`transform: translateX(-${$translate}px)`}>
 		{#each episodes as episode, i}
 			<img
@@ -25,7 +41,7 @@
 				on:click={() => {
 					play(episode.youtubeLink);
 				}}
-				bind:this={image}
+				bind:this={images[i]}
 			/>
 		{/each}
 	</div>
@@ -35,7 +51,7 @@
 			alt="Forward caret"
 			on:click={() => {
 				if (scrollPosition <= 0) return;
-				translateFinal -= margin + image.clientWidth;
+				translateFinal -= margin + images[0].width;
 				translate.set(translateFinal);
 				scrollPosition -= 1;
 			}}
@@ -47,12 +63,12 @@
 			src={ForwardCaret}
 			alt="Forward caret"
 			on:click={() => {
-				if (scrollPosition >= episodes.length - 1) return;
-				translateFinal += margin + image.clientWidth;
+				if (scrollPosition >= maxScroll) return;
+				translateFinal += margin + images[0].width;
 				translate.set(translateFinal);
 				scrollPosition += 1;
 			}}
-			class:hide={scrollPosition === episodes.length - 1}
+			class:hide={scrollPosition >= maxScroll}
 		/>
 	</div>
 </div>
@@ -104,7 +120,7 @@
 		border-radius: 16px;
 		box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
 		margin: 12px 24px 36px 24px;
-		height: calc(100% - 48px);
+		width: 480px;
 		cursor: pointer;
 	}
 

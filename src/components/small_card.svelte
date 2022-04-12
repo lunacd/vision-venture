@@ -47,5 +47,6 @@
 	.card-text {
 		margin-top: 16px;
 		font-size: 1.25rem;
+		line-height: 1.25;
 	}
 </style>

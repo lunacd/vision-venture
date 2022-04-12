@@ -1,6 +1,6 @@
 <!-- This file defines the required USC banner that shows on the top of all pages -->
 <script lang="ts">
-	import Logo from '../images/usc-shield-name-white.png';
+	import Logo from '../images/usc-shield-name-white.png?webp';
 </script>
 
 <div id="usc-banner">

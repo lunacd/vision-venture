@@ -5,7 +5,7 @@
 
 	import Logo from '../images/vision-venture-full.svg';
 	import Vanishing from '../images/vanishing.svg';
-	import CardImage from '../images/sample.png';
+	import CardImage from '../images/sample.png?webp';
 	import Roadmap from '../images/roadmap.svg';
 </script>
 
