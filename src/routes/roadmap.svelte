@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
 	import Header from '../components/header.svelte';
 	import RoadmapSection from '../components/roadmap_section.svelte';
 	import SmallCard from '../components/small_card.svelte';
@@ -27,12 +27,24 @@
 		[
 			// Section 1
 			[
-				new Episode('Trying out different things', S1E1, 'https://www.youtube.com/embed/wrAO3b1J2PA')
+				new Episode(
+					'Trying out different things',
+					S1E1,
+					'https://www.youtube.com/embed/wrAO3b1J2PA'
+				)
 			],
 			// Section 2
 			[
-				new Episode('Applying skill from education to real life', S1E4, 'https://www.youtube.com/embed/upcVW_qGBSQ'),
-				new Episode('Classroom setting vs. workspace', S1E5, 'https://www.youtube.com/embed/7bty-sSdN3I'),
+				new Episode(
+					'Applying skill from education to real life',
+					S1E4,
+					'https://www.youtube.com/embed/upcVW_qGBSQ'
+				),
+				new Episode(
+					'Classroom setting vs. workspace',
+					S1E5,
+					'https://www.youtube.com/embed/7bty-sSdN3I'
+				),
 				new Episode('Tackling problems at work', S1E6, 'https://www.youtube.com/embed/jODLxTrr4ko')
 			],
 			// Section 3
@@ -43,7 +55,11 @@
 			],
 			// Section 4
 			[
-				new Episode('Having multiple interests and passions', S1E11, 'https://www.youtube.com/embed/OK5iE-Ss2eo')
+				new Episode(
+					'Having multiple interests and passions',
+					S1E11,
+					'https://www.youtube.com/embed/OK5iE-Ss2eo'
+				)
 			]
 		]
 	];
@@ -60,57 +76,65 @@
 	<title>Roadmap | Viterbi Vision Venture</title>
 </svelte:head>
 
-<style lang='scss'>
-  #padding {
-    // 88px to skip absolutely positioned header, and 16px actual margin
-    margin-top: calc(88px + 16px);
-  }
-
-  .title {
-    font-family: $sans;
-    font-size: 3.5rem;
-    text-align: center;
-  }
-</style>
-
-<Header page='roadmap' />
-<div id='padding'></div>
+<Header page="roadmap" />
+<div id="padding" />
 <Container>
-	<div class='title'>Vision Roadmap</div>
-	<SmallCard title='Start your journey' shadow={true}
-						 paragraphs={["Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit."]} />
+	<div class="title">Vision Roadmap</div>
+	<SmallCard
+		title="Start your journey"
+		paragraphs={[
+			'Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+		]}
+	/>
 	<RoadmapSection
 		image={GraduatingImage}
 		title="You're graduating! ...Now what?"
-		description='Graduating'
-		subtitle='Leaving the educational nest.'
+		description="Graduating"
+		subtitle="Leaving the educational nest."
 		episodes={currentSeason[0]}
 		play={setLink}
-		index={0} />
+		index={0}
+	/>
 	<RoadmapSection
 		image={WelcomeToWork}
-		title='Welcome to the working world!'
-		description='Welcome to working world'
-		subtitle='-and adulthood.'
+		title="Welcome to the working world!"
+		description="Welcome to working world"
+		subtitle="-and adulthood."
 		episodes={currentSeason[1]}
 		play={setLink}
-		index={1} />
+		index={1}
+	/>
 	<RoadmapSection
 		image={BeyondCubicle}
-		title='Working beyond the cubicle'
-		description='Beyond the cubicle'
-		subtitle='There is more to work than just tasks and deadlines.'
+		title="Working beyond the cubicle"
+		description="Beyond the cubicle"
+		subtitle="There is more to work than just tasks and deadlines."
 		episodes={currentSeason[2]}
 		play={setLink}
-		index={2} />
+		index={2}
+	/>
 	<RoadmapSection
 		image={BiggerPicture}
-		title='The bigger picture'
-		description='The bigger picture'
-		subtitle='Remembering that you have a life outside of work.'
+		title="The bigger picture"
+		description="The bigger picture"
+		subtitle="Remembering that you have a life outside of work."
 		episodes={currentSeason[3]}
 		play={setLink}
 		index={3}
-		last={true} />
+		last={true}
+	/>
 </Container>
-<YoutubePlayer link={link} />
+<YoutubePlayer {link} />
+
+<style lang="scss">
+	#padding {
+		// 88px to skip absolutely positioned header, and 16px actual margin
+		margin-top: calc(88px + 16px);
+	}
+
+	.title {
+		font-family: $sans;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+</style>
