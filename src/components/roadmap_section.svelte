@@ -8,7 +8,7 @@
 		title: string,
 		subtitle: string,
 		episodes: Episode[],
-		play: (string) => void,
+		play: (link: string) => void,
 		index: number,
 		last = false;
 </script>
@@ -81,7 +81,6 @@
 	}
 
 	.videos {
-		height: 320px;
 		border-bottom: 3px solid $dark-gray;
 		margin-right: 48px;
 	}

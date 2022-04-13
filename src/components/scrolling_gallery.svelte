@@ -5,14 +5,15 @@
 	import ForwardCaret from '../images/forward-caret.svg';
 	import type { Episode } from '../utils/episode';
 
+	export let episodes: Episode[], play: (link: string) => void;
+
 	const margin = 48;
 
+	// Scroll
 	let scrollPosition = 0;
 	let maxScroll = 0;
 	let translate = spring(0);
 	let translateFinal = 0;
-
-	export let episodes: Episode[], play: (link: string) => void;
 
 	let images = new Array<HTMLImageElement>(episodes.length);
 	let outerContainer: HTMLDivElement;
@@ -25,7 +26,6 @@
 
 <svelte:window
 	on:resize={() => {
-		console.log('changing');
 		maxScroll =
 			episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
 	}}

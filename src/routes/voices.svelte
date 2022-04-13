@@ -2,6 +2,30 @@
 	import Header from '../components/header.svelte';
 	import SmallCard from '../components/small_card.svelte';
 	import Container from '../components/container.svelte';
+	import FlipGallery from '../components/flip_gallery.svelte';
+	import { Participant } from '../utils/participant';
+
+	import Roopal_Kondepudi from '../images/profiles/Roopal_Kondepudi.svg';
+	import Isabel_Anderson from '../images/profiles/Isabel_Anderson.svg';
+	import Chris_Tronolone from '../images/profiles/Chris_Tronolone.svg';
+
+	let participants = [
+		new Participant(
+			'Chris Tronolone',
+			Chris_Tronolone,
+			'Chris is a Mechanical Engineering major, graduating in 2023. He is part of the Sidney Harman Academy for Polymathic Study at USC. His main hobbies are bread-making and drumming.'
+		),
+		new Participant(
+			'Isabel Anderson',
+			Isabel_Anderson,
+			'Isabel is an Industrial and Systems Engineering major and will be graduating in 2023. She is passionate about philanthropy, enjoys spending time with family and friends, and loves traveling to new places and trying new foods.'
+		),
+		new Participant(
+			'Roopal Kondepudi',
+			Roopal_Kondepudi,
+			"Roopal graduated in 2021 with a BS in Computer Engineering and Computer Science. She continued her studies through USC's Progressive Degree Program, and will graduate with an MS in Computer Science in 2022. She enjoys bouldering and embroidery."
+		)
+	];
 </script>
 
 <svelte:head>
@@ -20,6 +44,7 @@
 				' consectetur adipiscing elit.'
 		]}
 	/>
+	<FlipGallery {participants} />
 </Container>
 
 <style lang="scss">
