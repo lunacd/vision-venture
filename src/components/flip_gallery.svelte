@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
-	import ForwardCaret from '../images/forward-caret.svg';
+	import ForwardCaret from '../images/forward-caret-cardinal.svg';
 	import type { Participant } from 'src/utils/participant';
 
 	export let participants: Participant[];

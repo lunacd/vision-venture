@@ -5,9 +5,9 @@
 	import FlipGallery from '../components/flip_gallery.svelte';
 	import { Participant } from '../utils/participant';
 
-	import Roopal_Kondepudi from '../images/profiles/Roopal_Kondepudi.svg';
-	import Isabel_Anderson from '../images/profiles/Isabel_Anderson.svg';
-	import Chris_Tronolone from '../images/profiles/Chris_Tronolone.svg';
+	import Roopal_Kondepudi from '../images/profiles/Roopal_Kondepudi.png?webp';
+	import Isabel_Anderson from '../images/profiles/Isabel_Anderson.png?webp';
+	import Chris_Tronolone from '../images/profiles/Chris_Tronolone.png?webp';
 
 	let participants = [
 		new Participant(
