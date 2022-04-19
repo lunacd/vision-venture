@@ -39,10 +39,10 @@
 		new Takaway(
 			'https://www.youtube.com/embed/JbMMFFj1-cM',
 			'Time management and work-life balance',
-			false
+			true
 		),
-		new Takaway('https://www.youtube.com/embed/FdTk-g3_hYU', 'Fluid mindset', true),
-		new Takaway('https://www.youtube.com/embed/v2uJH6_4BFo', 'Confirming beliefs', true)
+		new Takaway('https://www.youtube.com/embed/FdTk-g3_hYU', 'Fluid mindset', false),
+		new Takaway('https://www.youtube.com/embed/v2uJH6_4BFo', 'Confirming beliefs', false)
 	];
 
 	let currentVideo = takeaways[0].link;
