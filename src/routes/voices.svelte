@@ -124,7 +124,7 @@
 		margin-left: 16px;
 		display: flex;
 		flex-direction: column;
-		padding-top: 30px;
+		padding: 30px 12px 60px 12px;
 		position: relative;
 	}
 
@@ -133,6 +133,7 @@
 		position: absolute;
 		z-index: $z-background;
 		top: 0;
+		left: 0;
 	}
 
 	.chat {
