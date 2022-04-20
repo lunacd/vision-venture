@@ -1,13 +1,13 @@
 <script lang="ts">
-	export let header: string, title: string, paragraphs: string[], image: string;
+	export let title: string, excerpt: string, paragraphs: string[], image: string;
 </script>
 
 <div class="card">
 	<div>
-		{#if header !== undefined}
-			<div class="card-header">{header}</div>
-		{/if}
 		<div class="card-title">{title}</div>
+		{#if excerpt}
+			<div class="card-excerpt">{excerpt}</div>
+		{/if}
 		{#each paragraphs as paragraph}
 			<div class="card-text">{paragraph}</div>
 		{/each}
@@ -31,10 +31,6 @@
 		max-width: 100%;
 	}
 
-	.card-header {
-		font-size: 1.25rem;
-	}
-
 	.card-title {
 		font-size: 2.5rem;
 	}
@@ -46,5 +42,13 @@
 	.card-text {
 		margin-top: 32px;
 		font-size: 1.25rem;
+	}
+
+	.card-excerpt {
+		text-align: center;
+		font-size: 1.25rem;
+		color: $gold;
+		margin-top: 32px;
+		padding: 0 15% 0 15%;
 	}
 </style>
