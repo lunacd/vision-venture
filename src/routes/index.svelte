@@ -5,7 +5,6 @@
 
 	import Logo from '../images/vision-venture-full.svg';
 	import Vanishing from '../images/vanishing.svg';
-	import CardImage from '../images/sample.png?webp';
 	import Roadmap from '../images/roadmap.svg';
 </script>
 
@@ -28,14 +27,16 @@
 		header="WHO WE ARE"
 		title="About the Project"
 		paragraphs={[
-			'Basic information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit' +
-				'ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.',
-			'More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit' +
-				'ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.',
-			'More information about Vision Venture. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae velit' +
-				'ut convallis amet. Et purus purus eros, hendrerit mi dictum ut.'
+			'The premise of Vision Venture is simple: current students interview recent alumni about their educational and professional experiences.' +
+				' Vision Venture aims to help you see beyond the immediate horizon of course work and to reconnect with the “why” that led you to the engineering path in the first place.',
+			'The vanishing point can have two effects.' +
+				'  First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!' +
+				' Vision Venture includes short, thematic video clips of recent alumni sharing their experiences and answering common student questions, from the practical to the philosophical.' +
+				' And second, in the midst of your hard work as an engineering major, you may lose sight of your initial motivation for being an engineer.' +
+				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from a desire to improve the world to having job security.',
+			'At its heart, Vision Venture hopes to promote your sense of agency, reignite your professional purpose, and help you forge your identity as you travel your own unique path into the future.'
 		]}
-		image={CardImage}
+		image={undefined}
 	/>
 </Container>
 
