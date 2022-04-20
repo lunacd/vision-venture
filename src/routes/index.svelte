@@ -25,7 +25,7 @@
 <Container>
 	<Card
 		title="About the Project"
-		excerpt="In art, the convergence of lines where a road, for instance, disappears into the horizon is known as a vanishing point.  In education, it is known as graduation."
+		excerpt="In art, the convergence of lines where a road disappears into the horizon is known as a vanishing point. In education, it is known as graduation."
 		paragraphs={[
 			"The premise of Vision Venture is simple: current students interview recent alumni about their educational and professional experiences." +
 				" Vision Venture aims to help you see beyond the immediate horizon of course work and to reconnect with the “why” that led you to the engineering path in the first place.",
