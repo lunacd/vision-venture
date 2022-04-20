@@ -33,7 +33,7 @@
 				'  First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!' +
 				' Vision Venture includes short, thematic video clips of recent alumni sharing their experiences and answering common student questions, from the practical to the philosophical.' +
 				' And second, in the midst of your hard work as an engineering major, you may lose sight of your initial motivation for being an engineer.' +
-				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from a desire to improve the world to having job security.',
+				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from having job security to a desire to improve the world or even to tackle engineering problems from a different perspective.',
 			'At its heart, Vision Venture hopes to promote your sense of agency, reignite your professional purpose, and help you forge your identity as you travel your own unique path into the future.'
 		]}
 		image={undefined}
