@@ -6,7 +6,11 @@
 	<div>
 		<div class="card-title">{title}</div>
 		{#if excerpt}
-			<div class="card-excerpt">{excerpt}</div>
+			<div class="card-excerpt">
+				{#each excerpt.split('  ') as p}
+					<p>{p}</p>
+				{/each}
+			</div>
 		{/if}
 		{#each paragraphs as paragraph}
 			<div class="card-text">{paragraph}</div>
@@ -49,5 +53,9 @@
 		color: $gold;
 		margin-top: 32px;
 		padding: 0 15% 0 15%;
+	}
+
+	p {
+		margin: 0;
 	}
 </style>
