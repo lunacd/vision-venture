@@ -8,6 +8,10 @@
 	import The_Infinite_Game from '../images/books/The_Infinite_Game.jpg?webp';
 </script>
 
+<svelte:head>
+	<title>Resources | Viterbi Vision Venture</title>
+</svelte:head>
+
 <TitleSection
 	name="resources"
 	title="Resources"

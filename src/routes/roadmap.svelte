@@ -88,7 +88,7 @@
 </script>
 
 <svelte:head>
-	<title>Roadmap | Viterbi Vision Venture</title>
+	<title>Vision Roadmap | Viterbi Vision Venture</title>
 </svelte:head>
 
 <TitleSection
