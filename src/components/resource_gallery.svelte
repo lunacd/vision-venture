@@ -3,9 +3,9 @@
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret-cardinal.svg';
-	import type { Person } from 'src/utils/person';
+	import type { Book } from 'src/utils/book';
 
-	export let people: Person[];
+	export let books: Book[];
 
 	const margin = 48;
 
@@ -15,37 +15,29 @@
 	let translate = spring(0);
 	let translateFinal = 0;
 
-	let images = new Array<HTMLImageElement>(people.length);
+	let images = new Array<HTMLImageElement>(books.length);
 	let outerContainer: HTMLDivElement;
 
 	onMount(() => {
-		maxScroll = people.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
+		maxScroll = books.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
 	});
-
-	let currentBio = people[0].bio;
-	let currentIndex = 0;
 </script>
 
 <svelte:window
 	on:resize={() => {
-		maxScroll = people.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
+		maxScroll = books.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
 	}}
 />
 
 <div class="outer" bind:this={outerContainer} class:center={maxScroll <= 0}>
 	<div class="inner" style={`transform: translateX(-${$translate}px)`}>
-		{#each people as person, i}
-			<img
-				src={person.image}
-				alt={person.name}
-				class="photo"
-				class:gray={i !== currentIndex}
-				bind:this={images[i]}
-				on:mouseenter={() => {
-					currentIndex = i;
-					currentBio = person.bio;
-				}}
-			/>
+		{#each books as book, i}
+			<div class="book-container">
+				<a href={book.link} class="book-link" target="_blank">
+					<img src={book.image} alt={book.title} class="book" bind:this={images[i]} />
+				</a>
+				<a class="book-title" href={book.link} target="_blank">{book.title}</a>
+			</div>
 		{/each}
 	</div>
 	<div class="caret backward-caret" class:hide={scrollPosition === 0}>
@@ -72,9 +64,6 @@
 			}}
 		/>
 	</div>
-</div>
-<div class="bio">
-	{currentBio}
 </div>
 
 <style lang="scss">
@@ -125,21 +114,39 @@
 		transform: scaleX(-1);
 	}
 
-	.photo {
-		border-radius: 9999px;
-		width: 240px;
+	.book-link {
 		margin: 12px;
 	}
 
-	.bio {
-		border-radius: 24px;
-		box-shadow: 0px 10px 50px 0px #503c2d40;
-		padding: 36px;
-		margin: 12px 54px 54px 54px;
+	.book {
+		border-radius: 12px;
+		width: 240px;
+		height: 360px;
+		object-fit: cover;
+		object-position: center;
 	}
 
-	.gray {
-		filter: grayscale(75%);
+	.book-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.book-title {
+		border: $cardinal solid 2px;
+		color: $cardinal;
+		font-family: $sans;
+		text-transform: uppercase;
+		margin: 0 12px 0 12px;
+		padding: 4px;
+		text-align: center;
+		border-radius: 6px;
+		cursor: pointer;
+		text-decoration: none;
+
+		&:hover {
+			color: $white;
+			background-color: $cardinal;
+		}
 	}
 
 	.hide {

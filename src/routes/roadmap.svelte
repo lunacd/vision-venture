@@ -1,10 +1,9 @@
 <script lang="ts">
-	import Header from '../components/header.svelte';
 	import RoadmapSection from '../components/roadmap_section.svelte';
-	import SmallCard from '../components/small_card.svelte';
 	import Container from '../components/container.svelte';
 	import YoutubePlayer from '../components/youtube_player.svelte';
 	import { Episode } from '../utils/episode';
+	import TitleSection from '../components/title_section.svelte';
 
 	import GraduatingImage from '../images/graduating.svg';
 	import WelcomeToWork from '../images/welcome-to-work.svg';
@@ -92,16 +91,15 @@
 	<title>Roadmap | Viterbi Vision Venture</title>
 </svelte:head>
 
-<Header page="roadmap" />
-<div id="padding" />
+<TitleSection
+	name="roadmap"
+	title="Vision Roadmap"
+	tagline="Start your journey"
+	description={[
+		'Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+	]}
+/>
 <Container>
-	<div class="title">Vision Roadmap</div>
-	<SmallCard
-		title="Start your journey"
-		paragraphs={[
-			'Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-		]}
-	/>
 	<RoadmapSection
 		image={GraduatingImage}
 		title="You're graduating! ...Now what?"
@@ -141,16 +139,3 @@
 	/>
 </Container>
 <YoutubePlayer {link} />
-
-<style lang="scss">
-	#padding {
-		// 88px to skip absolutely positioned header, and 16px actual margin
-		margin-top: calc(88px + 16px);
-	}
-
-	.title {
-		font-family: $sans;
-		font-size: 3.5rem;
-		text-align: center;
-	}
-</style>

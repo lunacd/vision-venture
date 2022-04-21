@@ -87,8 +87,6 @@
 
 	// First section
 	.roadmap-section.first {
-		margin-top: 48px;
-
 		.image {
 			top: 0;
 			transform: none;

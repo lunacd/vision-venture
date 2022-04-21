@@ -1,12 +1,11 @@
 <script lang="ts">
-	import Header from '../components/header.svelte';
-	import SmallCard from '../components/small_card.svelte';
 	import Container from '../components/container.svelte';
 	import FlipGallery from '../components/flip_gallery.svelte';
 	import ChatLeft from '../components/chat_left.svelte';
 	import ChatRight from '../components/chat_right.svelte';
 	import { Person } from '../utils/person';
 	import { Takaway } from '../utils/takeaway';
+	import TitleSection from '../components/title_section.svelte';
 
 	import Roopal_Kondepudi from '../images/profiles/Roopal_Kondepudi.png?webp';
 	import Isabel_Anderson from '../images/profiles/Isabel_Anderson.png?webp';
@@ -52,18 +51,18 @@
 	<title>Student Voices | Viterbi Vision Venture</title>
 </svelte:head>
 
-<Header page="voices" />
-<div id="padding" />
+<TitleSection
+	name="voices"
+	title="Student Voices"
+	tagline="Start your journey"
+	description={[
+		"Maybe a small explanation of how they're picked? or how they all have different visions?" +
+			' Maybe some background on how the seasons are seperated? Short summary. Lorem ipsum dolor sit amet,' +
+			' consectetur adipiscing elit.'
+	]}
+/>
+
 <Container>
-	<div class="title">Student Voices</div>
-	<SmallCard
-		title="Start your journey"
-		paragraphs={[
-			"Maybe a small explanation of how they're picked? or how they all have different visions?" +
-				' Maybe some background on how the seasons are seperated? Short summary. Lorem ipsum dolor sit amet,' +
-				' consectetur adipiscing elit.'
-		]}
-	/>
 	<FlipGallery {participants} />
 	<div class="video-container">
 		<div class="phone">
@@ -96,17 +95,6 @@
 </Container>
 
 <style lang="scss">
-	#padding {
-		// 88px to skip absolutely positioned header, and 16px actual margin
-		margin-top: calc(88px + 16px);
-	}
-
-	.title {
-		font-family: $sans;
-		font-size: 3.5rem;
-		text-align: center;
-	}
-
 	.video-container {
 		display: flex;
 		margin-top: 16px;
