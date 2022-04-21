@@ -3,7 +3,7 @@
 	import RoadmapSection from '../components/roadmap_section.svelte';
 	import SmallCard from '../components/small_card.svelte';
 	import Container from '../components/container.svelte';
-	import YoutubePlayer from '../components/youtube-player.svelte';
+	import YoutubePlayer from '../components/youtube_player.svelte';
 	import { Episode } from '../utils/episode';
 
 	import GraduatingImage from '../images/graduating.svg';

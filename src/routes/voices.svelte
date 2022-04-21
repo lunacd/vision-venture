@@ -3,8 +3,8 @@
 	import SmallCard from '../components/small_card.svelte';
 	import Container from '../components/container.svelte';
 	import FlipGallery from '../components/flip_gallery.svelte';
-	import ChatLeft from '../components/chat-left.svelte';
-	import ChatRight from '../components/chat-right.svelte';
+	import ChatLeft from '../components/chat_left.svelte';
+	import ChatRight from '../components/chat_right.svelte';
 	import { Participant } from '../utils/participant';
 	import { Takaway } from '../utils/takeaway';
 
