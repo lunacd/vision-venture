@@ -11,21 +11,21 @@
 
 <style lang="scss">
 	.bubble {
-        color: $white;
+		color: $white;
 		border-radius: 12px;
 		background-color: $dark-gold;
 		position: relative;
 		padding: 12px;
-        align-self: flex-start;
-        margin: 12px;
-        cursor: pointer;
+		align-self: flex-start;
+		margin: 12px;
+		cursor: pointer;
 	}
 
-    .pointer {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        transform: translateY(80%);
-        display: flex;
-    }
+	.pointer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		transform: translateY(80%);
+		display: flex;
+	}
 </style>

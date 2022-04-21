@@ -24,6 +24,7 @@
 	import S1E9 from '../images/thumbnails/s01e09.png?webp';
 	import S1E10 from '../images/thumbnails/s01e10.png?webp';
 	import S1E11 from '../images/thumbnails/s01e11.png?webp';
+	import S1E12 from '../images/thumbnails/s01e12.png?webp';
 
 	let seasons = [
 		// Season 1
@@ -69,6 +70,11 @@
 					'Having multiple interests and passions',
 					S1E11,
 					'https://www.youtube.com/embed/OK5iE-Ss2eo'
+				),
+				new Episode(
+					'You decision is not forever',
+					S1E12,
+					'https://www.youtube.com/embed/7TY5vwa67JQ'
 				)
 			]
 		]
