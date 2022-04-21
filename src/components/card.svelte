@@ -22,7 +22,6 @@
 		background-color: $dark-cardinal;
 		border-radius: 16px;
 		color: $white;
-		margin-top: 32px;
 		margin-bottom: 32px;
 		padding: 5%;
 		font-family: $sans;

@@ -4,7 +4,8 @@
 	import Container from '../components/container.svelte';
 
 	import Logo from '../images/vision-venture-full.svg';
-	import Vanishing from '../images/vanishing.svg';
+	import VanishingWide from '../images/vanishing-wide.png?webp';
+	import Vanishing from '../images/vanishing.png?webp';
 	import Roadmap from '../images/roadmap.svg';
 </script>
 
@@ -13,28 +14,27 @@
 </svelte:head>
 
 <Header page="about" />
-<Container color="cardinal">
-	<div id="landing-display">
-		<img src={Vanishing} alt="Vanishing point illustration" />
-		<div class="heading-container">
-			<img src={Logo} alt="Vision Venture" class="image" />
-		</div>
+<div id="landing-display">
+	<img src={VanishingWide} alt="Vanishing point illustration" class="large-only" />
+	<img src={Vanishing} alt="Vanishing point illustration" class="mid-only" />
+	<div class="heading-container">
+		<img src={Logo} alt="Vision Venture" class="image" />
 	</div>
-</Container>
+</div>
 
 <Container>
 	<Card
 		title="About the Project"
 		excerpt="In art, the convergence of lines where a road disappears into the horizon is known as a vanishing point. In education, it is known as graduation."
 		paragraphs={[
-			"The premise of Vision Venture is simple: current students interview recent alumni about their educational and professional experiences." +
-				" Vision Venture aims to help you see beyond the immediate horizon of course work and to reconnect with the “why” that led you to the engineering path in the first place.",
-			"The vanishing point can have two effects." +
-				"  First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!" +
-				" Vision Venture includes short, thematic video clips of recent alumni sharing their experiences and answering common student questions, from the practical to the philosophical." +
-				" And second, in the midst of your hard work as an engineering major, you may lose sight of your initial motivation for being an engineer." +
-				" Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from having job security to a desire to improve the world or even to tackle engineering problems from a different perspective.",
-			"At its heart, Vision Venture hopes to promote your sense of agency, reignite your professional purpose, and help you forge your identity as you travel your own unique path into the future."
+			'The premise of Vision Venture is simple: current students interview recent alumni about their educational and professional experiences.' +
+				' Vision Venture aims to help you see beyond the immediate horizon of course work and to reconnect with the “why” that led you to the engineering path in the first place.',
+			'The vanishing point can have two effects.' +
+				'  First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!' +
+				' Vision Venture includes short, thematic video clips of recent alumni sharing their experiences and answering common student questions, from the practical to the philosophical.' +
+				' And second, in the midst of your hard work as an engineering major, you may lose sight of your initial motivation for being an engineer.' +
+				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from having job security to a desire to improve the world or even to tackle engineering problems from a different perspective.',
+			'At its heart, Vision Venture hopes to promote your sense of agency, reignite your professional purpose, and help you forge your identity as you travel your own unique path into the future.'
 		]}
 		image={undefined}
 	/>
@@ -75,9 +75,7 @@
 		flex-direction: column;
 		align-items: center;
 		position: absolute;
-		top: 25%;
 		left: 20%;
-		width: 38%;
 		transform: translateX(-50%) translateY(-50%);
 	}
 
@@ -112,5 +110,31 @@
 		color: $white;
 		text-decoration: none;
 		margin: 0 auto 0 auto;
+	}
+
+	@media (max-width: 1280px) {
+		.mid-only {
+			display: block;
+		}
+		.large-only {
+			display: none;
+		}
+		.heading-container {
+			width: 35%;
+			top: 28%;
+		}
+	}
+
+	@media (min-width: 1281px) {
+		.mid-only {
+			display: none;
+		}
+		.large-only {
+			display: block;
+		}
+		.heading-container {
+			width: 30%;
+			top: 25%;
+		}
 	}
 </style>
