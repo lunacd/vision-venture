@@ -2,11 +2,16 @@
 	import Header from '../components/header.svelte';
 	import Card from '../components/card.svelte';
 	import Container from '../components/container.svelte';
+	import { Person } from '../utils/person';
+	import TeamGallery from '../components/team_gallery.svelte';
 
 	import Logo from '../images/vision-venture-full.svg';
 	import VanishingWide from '../images/vanishing-wide.png?webp';
 	import Vanishing from '../images/vanishing.png?webp';
 	import Roadmap from '../images/roadmap.svg';
+	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
+	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
+	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp';
 </script>
 
 <svelte:head>
@@ -55,6 +60,25 @@
 		</div>
 	</div>
 	<div class="title">Meet the Team!</div>
+	<TeamGallery
+		people={[
+			new Person(
+				'Harly Ramsey',
+				Harly_Ramsey,
+				'Harly Ramsey is an Associate Professional of Technical Communication Practice in the Engineering in Society Program. She has a PhD in English, and her training in narrative theory, cultural studies, and rhetoric informs her teaching. As the founder of Vision Venture, she hopes to encourage students\' exploration of their engineering identities and to empower them with a sense of personal agency and professional purpose. She enjoys playing tennis and tackling the New York Times daily spelling bee puzzle, but not at the same time.'
+			),
+			new Person(
+				'Elaine Wong',
+				Elaine_Wong,
+				'Yee Lan Elaine Wong is a Master of Visual Anthropology student at the University of Southern California and is investigating emotions in the modern workplace through her thesis film. In her free time, she enjoys playing traditional mahjong, watching dystopian anime and religiously drinks a concerning amount of coffee to fuel her existence.'
+			),
+			new Person(
+				'Haowen Liu',
+				Haowen_Liu,
+				'Haowen Liu is pursuing a Master of Science in Computer Science at University of Southern California. He wants to specialize in cybersecurity and high-performance computing. He is excited about Chinese opera, fountain pens, ping pong, and unfortunately, coding. He also plays League of Legends and watch a lot of Pokemon.'
+			)
+		]}
+	/>
 </Container>
 
 <style lang="scss">

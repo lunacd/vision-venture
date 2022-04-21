@@ -3,9 +3,9 @@
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret-cardinal.svg';
-	import type { Participant } from 'src/utils/participant';
+	import type { Person } from 'src/utils/person';
 
-	export let participants: Participant[];
+	export let participants: Person[];
 
 	const margin = 48;
 

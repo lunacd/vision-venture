@@ -14,3 +14,8 @@ declare module '*.png?webp' {
 	const src: string;
 	export default src;
 }
+
+declare module '*.jpg?webp' {
+	const src: string;
+	export default src;
+}

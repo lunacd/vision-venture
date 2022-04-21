@@ -5,7 +5,7 @@
 	import FlipGallery from '../components/flip_gallery.svelte';
 	import ChatLeft from '../components/chat_left.svelte';
 	import ChatRight from '../components/chat_right.svelte';
-	import { Participant } from '../utils/participant';
+	import { Person } from '../utils/person';
 	import { Takaway } from '../utils/takeaway';
 
 	import Roopal_Kondepudi from '../images/profiles/Roopal_Kondepudi.png?webp';
@@ -14,17 +14,17 @@
 	import Phone from '../images/phone.svg';
 
 	let participants = [
-		new Participant(
+		new Person(
 			'Chris Tronolone',
 			Chris_Tronolone,
 			'Chris is a Mechanical Engineering major, graduating in 2023. He is part of the Sidney Harman Academy for Polymathic Study at USC. His main hobbies are bread-making and drumming.'
 		),
-		new Participant(
+		new Person(
 			'Isabel Anderson',
 			Isabel_Anderson,
 			'Isabel is an Industrial and Systems Engineering major and will be graduating in 2023. She is passionate about philanthropy, enjoys spending time with family and friends, and loves traveling to new places and trying new foods.'
 		),
-		new Participant(
+		new Person(
 			'Roopal Kondepudi',
 			Roopal_Kondepudi,
 			"Roopal graduated in 2021 with a BS in Computer Engineering and Computer Science. She continued her studies through USC's Progressive Degree Program, and will graduate with an MS in Computer Science in 2022. She enjoys bouldering and embroidery."
