@@ -27,11 +27,11 @@
 		new Book('The Infinite Game', The_Infinite_Game, 'https://www.google.com')
 	]}
 />
-<div class="link-container">
+<!-- <div class="link-container">
 	<a href="https://viterbicareers.usc.edu/" class="link" target="_blank"
 		>Check out the Viterbi Career Center!</a
 	>
-</div>
+</div> 
 
 <style lang="scss">
 	.link-container {
@@ -51,4 +51,4 @@
 		border-radius: 12px;
 		text-decoration: none;
 	}
-</style>
+</style> -->
