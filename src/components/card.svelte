@@ -52,7 +52,6 @@
 		font-size: 1.25rem;
 		color: $gold;
 		margin-top: 32px;
-		padding: 0 15% 0 15%;
 	}
 
 	p {
