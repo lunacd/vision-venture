@@ -12,6 +12,7 @@
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
 	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
 	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp';
+	import Selin_Oner from '../images/team/Selin_Oner.png?webp';
 </script>
 
 <svelte:head>
@@ -76,6 +77,11 @@
 				'Haowen Liu',
 				Haowen_Liu,
 				'Haowen Liu is pursuing a Master of Science in Computer Science at University of Southern California. He wants to specialize in cybersecurity and high-performance computing. He is excited about Chinese opera, fountain pens, ping pong, and unfortunately, coding. He also plays League of Legends and watch a lot of Pokemon.'
+			),
+			new Person(
+				'Selin Oner',
+				Selin_Oner,
+				'Selin Oner is majoring in Cognitive Science and minoring in Business Administration at the University of Southern California with a passion for UI/UX design. She enjoys playing volleyball, reading mystery novels, and cooking Turkish dishes that remind her of home.'
 			)
 		]}
 	/>
