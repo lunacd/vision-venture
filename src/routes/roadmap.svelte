@@ -96,7 +96,7 @@
 	title="Vision Roadmap"
 	tagline="Start your journey"
 	description={[
-		'Browse our videos below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+		'Let recent alumni answer your questions about life after graduation and help you envision potential paths for your future.'
 	]}
 />
 <Container>
