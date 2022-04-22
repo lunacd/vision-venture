@@ -17,7 +17,7 @@
 	title="Resources"
 	tagline="Discover more."
 	description={[
-		'Browse our resources below! Short summary. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+		"Below are some of the books that enriched the student interviewers' perspectives on life after graduation and helped them formulate their questions for the alumni. Check them out!"
 	]}
 />
 <ResourceGallery
