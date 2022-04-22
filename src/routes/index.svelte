@@ -9,6 +9,7 @@
 	import VanishingWide from '../images/vanishing-wide.png?webp';
 	import Vanishing from '../images/vanishing.png?webp';
 	import Roadmap from '../images/roadmap.svg';
+	import HearFromStudents from '../images/hear_from_students.svg';
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
 	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
 	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp';
@@ -36,7 +37,7 @@
 			'The premise of Vision Venture is simple: current students interview recent alumni about their educational and professional experiences.' +
 				' Vision Venture aims to help you see beyond the immediate horizon of course work and to reconnect with the “why” that led you to the engineering path in the first place.',
 			'The vanishing point can have two effects.' +
-				'  First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!' +
+				' First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!' +
 				' Vision Venture includes short, thematic video clips of recent alumni sharing their experiences and answering common student questions, from the practical to the philosophical.' +
 				' And second, in the midst of your hard work as an engineering major, you may lose sight of your initial motivation for being an engineer.' +
 				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from having job security to a desire to improve the world or even to tackle engineering problems from a different perspective.',
@@ -47,18 +48,19 @@
 </Container>
 
 <Container color="gold">
-	<img src={Roadmap} alt="Vision Venture roadmap" class="image" id="roadmap" />
+	<div class="section-container">
+		<a class="button" href="/roadmap" id="roadmap-button">Check out Vision Roadmap</a>
+		<img src={Roadmap} alt="Vision Venture roadmap" class="image" />
+	</div>
 </Container>
 
 <Container>
-	<div class="title">Hear from our Students!</div>
-	<div class="student-container">
-		<div class="student-section">
-			<a class="button" href="/roadmap">Check out Vision Roadmap</a>
+	<div class="section-container">
+		<div class="voices-container">
+			<div class="title">Hear from our Students!</div>
+			<a class="button" href="/voices" id="voices-button">More Student Voices</a>
 		</div>
-		<div class="student-section">
-			<a class="button" href="/voices">More Student Voices</a>
-		</div>
+		<img src={HearFromStudents} alt="Hear from students" class="image" />
 	</div>
 	<div class="title">Meet the Team!</div>
 	<TeamGallery
@@ -123,16 +125,6 @@
 		font-size: 2.5rem;
 	}
 
-	.student-container {
-		display: flex;
-	}
-
-	.student-section {
-		width: 50%;
-		padding: 16px;
-		display: flex;
-	}
-
 	.button {
 		background-color: $cardinal;
 		padding: 16px;
@@ -140,6 +132,31 @@
 		color: $white;
 		text-decoration: none;
 		margin: 0 auto 0 auto;
+		box-shadow: 0px 0px 10px 0px #00000040;
+
+		&#roadmap-button {
+			position: absolute;
+			left: 15%;
+			top: 90%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		&#voices-button {
+			margin-top: 16px;
+		}
+	}
+
+	.section-container {
+		position: relative;
+	}
+
+	.voices-container {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		top: 50%;
+		left: 25%;
+		transform: translateX(-50%) translateY(-50%);
 	}
 
 	@media (max-width: 1280px) {
