@@ -22,9 +22,9 @@
 />
 <ResourceGallery
 	books={[
-		new Book('Big Magic', Big_Magic, 'https://www.google.com'),
-		new Book('Designing Your Life', Designing_Your_Life, 'https://www.google.com'),
-		new Book('The Infinite Game', The_Infinite_Game, 'https://www.google.com')
+		new Book('Big Magic', Big_Magic, 'https://www.elizabethgilbert.com/books/big-magic/'),
+		new Book('Designing Your Life', Designing_Your_Life, 'https://designingyour.life/the-book/'),
+		new Book('The Infinite Game', The_Infinite_Game, 'https://simonsinek.com/the-infinite-game')
 	]}
 />
 <!-- <div class="link-container">
