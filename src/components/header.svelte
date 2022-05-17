@@ -68,8 +68,9 @@
 	.header-container {
 		display: flex;
 		align-items: center;
-		flex-direction: row;
+		flex-direction: column;
 		height: 88px;
+		margin-right: 4px;
 	}
 
 	.link {
@@ -92,6 +93,7 @@
 
 	.link-active {
 		border-bottom: 3px solid $white;
+		margin-top: 3px;
 	}
 
 	.link-active.link-black {
@@ -106,5 +108,11 @@
 
 	.hide {
 		display: none;
+	}
+
+	@media (min-width: 768px) {
+		.header-container {
+			flex-direction: row;
+		}
 	}
 </style>
