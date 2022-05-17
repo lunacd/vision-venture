@@ -2,8 +2,13 @@
 	import Container from '../components/container.svelte';
 
 	import Logo from '../images/vision-venture.png?webp';
+	import Hamburger from '../images/hamburger.svg';
+	import X from '../images/x.svg';
 
 	export let page: string;
+
+	let show = false;
+	let hide = true;
 </script>
 
 <div id="header">
@@ -12,46 +17,65 @@
 			<a href="/">
 				<img src={Logo} alt="Vision Venture logo" class:hide={page === 'about'} id="vv-logo" />
 			</a>
-			<a
-				href="/"
-				class="link link-first"
-				class:link-active={page === 'about'}
-				class:link-black={page !== 'about'}
-			>
-				About the Project
-			</a>
-			<a
-				href="/roadmap"
-				class="link"
-				class:link-active={page === 'roadmap'}
-				class:link-black={page !== 'about'}
-			>
-				Roadmap
-			</a>
-			<a
-				href="/voices"
-				class="link"
-				class:link-active={page === 'voices'}
-				class:link-black={page !== 'about'}
-			>
-				Student Voices
-			</a>
-			<a
-				href="/resources"
-				class="link"
-				class:link-active={page === 'resources'}
-				class:link-black={page !== 'about'}
-			>
-				Resources
-			</a>
-			<a
-				href="/contact"
-				class="link"
-				class:link-active={page === 'contact'}
-				class:link-black={page !== 'about'}
-			>
-				Contact Us
-			</a>
+			<div class="links-container" class:links-show={show}>
+				<img
+					src={Hamburger}
+					alt="Hamburger menu"
+					id="hamburger"
+					on:click={() => {
+						show = !show;
+						if (hide) {
+							hide = false;
+						} else {
+							setTimeout(() => {
+								hide = true;
+							}, 600);
+						}
+					}}
+				/>
+				<div class="links-inner" class:links-hide={hide}>
+					<a
+						href="/"
+						class="link"
+						class:link-active={page === 'about'}
+						class:link-black={page !== 'about'}
+					>
+						About the Project
+					</a>
+					<a
+						href="/roadmap"
+						class="link"
+						class:link-active={page === 'roadmap'}
+						class:link-black={page !== 'about'}
+					>
+						Roadmap
+					</a>
+					<a
+						href="/voices"
+						class="link"
+						class:link-active={page === 'voices'}
+						class:link-black={page !== 'about'}
+					>
+						Student Voices
+					</a>
+					<a
+						href="/resources"
+						class="link"
+						class:link-active={page === 'resources'}
+						class:link-black={page !== 'about'}
+					>
+						Resources
+					</a>
+					<a
+						href="/contact"
+						class="link"
+						class:link-active={page === 'contact'}
+						class:link-black={page !== 'about'}
+					>
+						Contact Us
+					</a>
+				</div>
+			</div>
 		</div>
 	</Container>
 </div>
@@ -66,9 +90,10 @@
 	}
 
 	.header-container {
+		position: relative;
 		display: flex;
 		align-items: center;
-		flex-direction: column;
+		flex-direction: row;
 		height: 88px;
 		margin-right: 4px;
 	}
@@ -87,13 +112,34 @@
 		color: $black;
 	}
 
-	.link-first {
-		margin-left: auto;
+	.links-container {
+		position: fixed;
+		right: 0;
+		top: 60px;
+		height: 100vh;
+		display: flex;
+		transform: translateX(calc(100% - 22px - 30px));
+		transition: transform 0.6s;
+	}
+
+	.links-inner {
+		display: flex;
+		flex-direction: column;
+		background-color: $black;
+		padding: 24px 24px 0 0;
+	}
+
+	.links-show {
+		display: flex;
+		transform: translateX(0);
+	}
+
+	.links-hide {
+		opacity: 0;
 	}
 
 	.link-active {
 		border-bottom: 3px solid $white;
-		margin-top: 3px;
 	}
 
 	.link-active.link-black {
@@ -110,9 +156,37 @@
 		display: none;
 	}
 
+	#hamburger {
+		height: 18px;
+		width: 30px;
+		top: unset;
+		margin-top: 35px;
+		margin-right: 22px;
+		cursor: pointer;
+	}
+
 	@media (min-width: 768px) {
-		.header-container {
+		#hamburger {
+			display: none;
+		}
+
+		.links-container {
+			position: absolute;
+			transform: unset;
+			display: block;
+			height: unset;
+			top: unset;
+			transition: unset;
+		}
+
+		.links-inner {
 			flex-direction: row;
+			background-color: transparent;
+			padding: unset;
+		}
+
+		.links-hide {
+			opacity: unset;
 		}
 	}
 </style>

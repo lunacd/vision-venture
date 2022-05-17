@@ -26,7 +26,7 @@
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		padding-right: 12px;
-		padding-left: 12px;
+		padding-right: 18px;
+		padding-left: 18px;
 	}
 </style>
