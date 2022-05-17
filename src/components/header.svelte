@@ -113,12 +113,12 @@
 	}
 
 	.links-container {
-		position: fixed;
+		position: absolute;
 		right: 0;
-		top: 60px;
+		top: 0;
 		height: 100vh;
 		display: flex;
-		transform: translateX(calc(100% - 22px - 30px));
+		transform: translateX(calc(100% - 30px));
 		transition: transform 0.6s;
 	}
 
@@ -131,7 +131,7 @@
 
 	.links-show {
 		display: flex;
-		transform: translateX(0);
+		transform: translateX(22px);
 	}
 
 	.links-hide {
