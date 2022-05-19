@@ -6,8 +6,9 @@
 	import TeamGallery from '../components/team_gallery.svelte';
 
 	import Logo from '../images/vision-venture-full.svg';
-	import VanishingWide from '../images/vanishing-wide.png?webp';
-	import Vanishing from '../images/vanishing.png?webp';
+	import Vanishing from '../images/vanishing.svg';
+	import VanishingWide from '../images/vanishing-wide.svg';
+	import VanishingTall from '../images/vanishing-tall.svg';
 	import Roadmap from '../images/roadmap.svg';
 	import HearFromStudents from '../images/hear_from_students.svg';
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
@@ -22,8 +23,11 @@
 
 <Header page="about" />
 <div id="landing-display">
-	<img src={VanishingWide} alt="Vanishing point illustration" class="large-only" />
-	<img src={Vanishing} alt="Vanishing point illustration" class="mid-only" />
+	<div
+		alt="Vanishing point illustration"
+		style="--standard: url({Vanishing}); --wide: url({VanishingWide}); --tall: url({VanishingTall})"
+		class="vanishing-point"
+	/>
 	<div class="heading-container">
 		<img src={Logo} alt="Vision Venture" class="image" />
 	</div>
@@ -98,19 +102,6 @@
 		width: 100%;
 	}
 
-	#landing-display img {
-		width: 100%;
-	}
-
-	.heading-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		position: absolute;
-		left: 20%;
-		transform: translateX(-50%) translateY(-50%);
-	}
-
 	.image {
 		width: 100%;
 		margin-bottom: 0;
@@ -159,26 +150,44 @@
 		transform: translateX(-50%) translateY(-50%);
 	}
 
-	@media (max-width: 1280px) {
-		.mid-only {
-			display: block;
+	.vanishing-point {
+		background-size: contain;
+		width: 100%;
+		height: 0;
+		background-image: var(--tall);
+		padding-top: 135.75%;
+	}
+
+	.heading-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		transform: translateX(-50%) translateY(-50%);
+		left: 25%;
+		width: 55%;
+		top: 28%;
+	}
+
+	@media (min-width: 768px) {
+		.vanishing-point {
+			background-image: var(--standard);
+			padding-top: 81.53%;
 		}
-		.large-only {
-			display: none;
-		}
+
 		.heading-container {
 			width: 35%;
 			top: 28%;
+			left: 20%;
 		}
 	}
 
-	@media (min-width: 1281px) {
-		.mid-only {
-			display: none;
+	@media (min-width: 1280px) {
+		.vanishing-point {
+			background-image: var(--wide);
+			padding-top: 67.86%;
 		}
-		.large-only {
-			display: block;
-		}
+
 		.heading-container {
 			width: 30%;
 			top: 25%;
