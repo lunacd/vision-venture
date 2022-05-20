@@ -1,9 +1,9 @@
 <script lang="ts">
-	export let color = 'none';
+	export let color = 'none', additionalStyles: string = undefined;
 </script>
 
 <div class="outer" class:cardinal={color === 'cardinal'} class:gold={color === 'gold'}>
-	<div class="inner">
+	<div class="inner" style={additionalStyles}>
 		<slot />
 	</div>
 </div>

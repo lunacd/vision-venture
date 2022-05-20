@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let title: string, excerpt: string, paragraphs: string[], image: string;
+	export let title: string, excerpt: string, paragraphs: string[];
 </script>
 
 <div class="card">
@@ -16,9 +16,6 @@
 			<div class="card-text">{paragraph}</div>
 		{/each}
 	</div>
-	{#if image !== undefined}
-		<img src={image} alt="People studying" class="card-image" />
-	{/if}
 </div>
 
 <style lang="scss">
@@ -36,10 +33,6 @@
 
 	.card-title {
 		font-size: 2rem;
-	}
-
-	.card-image {
-		margin-left: auto;
 	}
 
 	.card-excerpt {

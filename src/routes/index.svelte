@@ -10,6 +10,7 @@
 	import VanishingWide from '../images/vanishing-wide.svg';
 	import VanishingTall from '../images/vanishing-tall.svg';
 	import Roadmap from '../images/roadmap.svg';
+	import RoadmapTall from '../images/roadmap-tall.svg';
 	import HearFromStudents from '../images/hear_from_students.svg';
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
 	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
@@ -47,16 +48,22 @@
 				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from having job security to a desire to improve the world or even to tackle engineering problems from a different perspective.',
 			'At its heart, Vision Venture hopes to promote your sense of agency, reignite your professional purpose, and help you forge your identity as you travel your own unique path into the future.'
 		]}
-		image={undefined}
 	/>
 </Container>
 
 <Container color="gold">
 	<div class="section-container">
-		<a class="button" href="/roadmap" id="roadmap-button">Check out Vision Roadmap</a>
-		<img src={Roadmap} alt="Vision Venture roadmap" class="image" />
+		<div
+			alt="Vision Venture roadmap"
+			class="roadmap-image"
+			style="--standard: url({Roadmap}); --tall: url({RoadmapTall});"
+		/>
+		<a class="button desktop-only" href="/roadmap" id="roadmap-button">Check out Vision Roadmap</a>
 	</div>
 </Container>
+<div class="button-center">
+	<a class="button mobile-only" href="/roadmap" id="roadmap-button">Check out Vision Roadmap</a>
+</div>
 
 <Container>
 	<div class="section-container">
@@ -118,19 +125,13 @@
 
 	.button {
 		background-color: $cardinal;
-		padding: 16px;
-		border-radius: 8px;
+		padding: 12px;
+		border-radius: 6px;
 		color: $white;
 		text-decoration: none;
 		margin: 0 auto 0 auto;
 		box-shadow: 0px 0px 10px 0px #00000040;
-
-		&#roadmap-button {
-			position: absolute;
-			left: 15%;
-			top: 90%;
-			transform: translateX(-50%) translateY(-50%);
-		}
+		font-size: 0.875rem;
 
 		&#voices-button {
 			margin-top: 16px;
@@ -169,6 +170,28 @@
 		top: 28%;
 	}
 
+	.roadmap-image {
+		background-image: var(--tall);
+		background-size: contain;
+		height: 0;
+		width: 100%;
+		padding-top: 109.35%;
+	}
+
+	.button-center {
+		display: flex;
+		justify-content: center;
+		margin: 16px 0 16px 0;
+	}
+
+	.desktop-only {
+		display: none;
+	}
+
+	.mobile-only {
+		display: block;
+	}
+
 	@media (min-width: 640px) {
 		.heading-container {
 			left: 25%;
@@ -187,6 +210,28 @@
 			width: 35%;
 			top: 28%;
 			left: 20%;
+		}
+
+		.roadmap-image {
+			background-image: var(--standard);
+			padding-top: 63.96%;
+		}
+
+		.button {
+			&#roadmap-button {
+				position: absolute;
+				left: 15%;
+				top: 90%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+		}
+
+		.desktop-only {
+			display: block;
+		}
+
+		.mobile-only {
+			display: none;
 		}
 	}
 
