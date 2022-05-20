@@ -35,26 +35,42 @@
 	}
 
 	.card-title {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 
 	.card-image {
 		margin-left: auto;
 	}
 
-	.card-text {
-		margin-top: 32px;
-		font-size: 1.25rem;
-	}
-
 	.card-excerpt {
 		text-align: center;
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 		color: $gold;
-		margin-top: 32px;
+		margin-top: 16px;
+	}
+
+	.card-text {
+		margin-top: 16px;
+		font-size: 1.125rem;
 	}
 
 	p {
 		margin: 0;
+	}
+
+	@media (min-width: 768px) {
+		.card-title {
+			font-size: 2.5rem;
+		}
+
+		.card-excerpt {
+			font-size: 1.25rem;
+			margin-top: 32px;
+		}
+
+		.card-text {
+		margin-top: 32px;
+		font-size: 1.25rem;
+		}
 	}
 </style>

@@ -164,9 +164,17 @@
 		align-items: center;
 		position: absolute;
 		transform: translateX(-50%) translateY(-50%);
-		left: 25%;
-		width: 55%;
+		left: 37%;
+		width: 75%;
 		top: 28%;
+	}
+
+	@media (min-width: 640px) {
+		.heading-container {
+			left: 25%;
+			width: 55%;
+			top: 28%;
+		}
 	}
 
 	@media (min-width: 768px) {
