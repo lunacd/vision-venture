@@ -16,12 +16,12 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			default: true
-		}
+		},
+		vite: () => ({
+			plugins: [imagetools({})]
+		})
 	},
 
-	vite: {
-		plugins: [imagetools({})]
-	}
 };
 
 export default config;
