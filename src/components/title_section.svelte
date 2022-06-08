@@ -1,3 +1,8 @@
+<!-- 
+	The title section on top of each page.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import Header from '../components/header.svelte';
 	import SmallCard from '../components/small_card.svelte';

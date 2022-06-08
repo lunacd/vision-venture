@@ -1,3 +1,8 @@
+<!-- 
+	Additional resource page.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import ResourceGallery from '../components/resource_gallery.svelte';
 	import TitleSection from '../components/title_section.svelte';

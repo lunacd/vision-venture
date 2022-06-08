@@ -1,8 +1,12 @@
+<!-- 
+	The small info card displayed on top of each page.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	export let header: string = undefined,
 		title: string,
-		paragraphs: string[],
-		image: string = undefined;
+		paragraphs: string[];
 </script>
 
 <div class="small-card">
@@ -15,9 +19,6 @@
 			<div class="card-text">{paragraph}</div>
 		{/each}
 	</div>
-	{#if image !== undefined}
-		<img src={image} alt="People studying" class="card-image" />
-	{/if}
 </div>
 
 <style lang="scss">
@@ -38,10 +39,6 @@
 	.card-title {
 		font-size: 2rem;
 		color: $cardinal;
-	}
-
-	.card-image {
-		margin-left: auto;
 	}
 
 	.card-text {

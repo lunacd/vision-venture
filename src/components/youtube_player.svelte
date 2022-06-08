@@ -1,3 +1,8 @@
+<!-- 
+	Overlay YouTube video player.
+	
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import X from '../images/x.svg';
 

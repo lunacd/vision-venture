@@ -1,3 +1,8 @@
+<!--
+	Page switcher at the top of the page.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import Container from '../components/container.svelte';
 

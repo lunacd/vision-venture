@@ -1,3 +1,8 @@
+<!-- 
+	Information card.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	export let title: string, excerpt: string, paragraphs: string[];
 </script>

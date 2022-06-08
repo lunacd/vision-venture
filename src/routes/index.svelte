@@ -1,3 +1,8 @@
+<!-- 
+	Landing page.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import Header from '../components/header.svelte';
 	import Card from '../components/card.svelte';

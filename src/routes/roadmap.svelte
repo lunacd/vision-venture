@@ -1,3 +1,8 @@
+<!-- 
+	Vision roadmap page.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import RoadmapSection from '../components/roadmap_section.svelte';
 	import Container from '../components/container.svelte';

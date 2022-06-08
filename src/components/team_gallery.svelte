@@ -1,3 +1,8 @@
+<!-- 
+	Scrolling gallery to display team members.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';

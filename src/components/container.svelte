@@ -1,3 +1,8 @@
+<!-- 
+	Container to limit element width to a maximum and adds appropriate margins.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	export let color = 'none', additionalStyles: string = undefined;
 </script>

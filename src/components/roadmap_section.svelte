@@ -1,5 +1,10 @@
+<!-- 
+	A horizontal section of the vision venture roadmap.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
-	import ScrollingGallery from '../components/scrolling_gallery.svelte';
+	import EpisodesGallery from './episodes_gallery.svelte';
 
 	import type { Episode } from '../utils/episode';
 
@@ -24,7 +29,7 @@
 			<div class="subtitle">{subtitle}</div>
 		</div>
 		<div class="videos">
-			<ScrollingGallery {episodes} {play} />
+			<EpisodesGallery {episodes} {play} />
 		</div>
 	</div>
 </div>
