@@ -8,7 +8,6 @@
 
 	import Logo from '../images/vision-venture.png?webp';
 	import Hamburger from '../images/hamburger.svg';
-	import X from '../images/x.svg';
 
 	export let page: string;
 

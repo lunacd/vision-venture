@@ -67,8 +67,8 @@
 		}
 
 		.card-text {
-		margin-top: 32px;
-		font-size: 1.25rem;
+			margin-top: 32px;
+			font-size: 1.25rem;
 		}
 	}
 </style>

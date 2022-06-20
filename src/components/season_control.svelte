@@ -5,7 +5,7 @@
 </script>
 
 <div class="season-container">
-	{#each Array(numberOfSeasons) as _, index}
+	{#each Array(numberOfSeasons) as _}
 		<button
 			class="season-button"
 			on:click={() => {

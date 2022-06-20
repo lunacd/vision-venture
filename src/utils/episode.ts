@@ -1,6 +1,6 @@
 /**
  * Represents an episode to be displayed in the vision roadmap.
- * 
+ *
  * Created by Haowen Liu in 2022.
  */
 export class Episode {

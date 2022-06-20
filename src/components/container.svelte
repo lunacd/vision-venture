@@ -4,7 +4,8 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	export let color = 'none', additionalStyles: string = undefined;
+	export let color = 'none',
+		additionalStyles: string = undefined;
 </script>
 
 <div class="outer" class:cardinal={color === 'cardinal'} class:gold={color === 'gold'}>

@@ -21,25 +21,23 @@
 	]}
 />
 
-<Container >
-    <div class="email-container">
-        <a class="email" href="mailto:VisionVenture@usc.edu">
-            VisionVenture@usc.edu
-        </a>
-    </div>
+<Container>
+	<div class="email-container">
+		<a class="email" href="mailto:VisionVenture@usc.edu"> VisionVenture@usc.edu </a>
+	</div>
 </Container>
 
 <style lang="scss">
-    .email-container {
-        display: flex;
-        justify-content: center;
-    }
+	.email-container {
+		display: flex;
+		justify-content: center;
+	}
 
-    .email {
-        text-align: center;
-        font-family: $sans;
-        font-size: 2rem;
-        text-decoration: none;
-        color: $cardinal;
-    }
+	.email {
+		text-align: center;
+		font-family: $sans;
+		font-size: 2rem;
+		text-decoration: none;
+		color: $cardinal;
+	}
 </style>

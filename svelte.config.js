@@ -20,8 +20,7 @@ const config = {
 		vite: () => ({
 			plugins: [imagetools({})]
 		})
-	},
-
+	}
 };
 
 export default config;

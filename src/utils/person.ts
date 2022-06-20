@@ -1,6 +1,6 @@
 /**
  * Represents a participant or a team member.
- * 
+ *
  * Created by Haowen Liu in 2022.
  */
 export class Person {
