@@ -77,7 +77,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.outer {
 		position: relative;
 		width: 100%;
@@ -111,7 +111,7 @@
 			rgba(255, 255, 255, 1) 100%
 		);
 
-		img {
+		& img {
 			position: absolute;
 			top: 50%;
 			right: 0;
@@ -140,7 +140,7 @@
 		transition: transform 0.6s;
 		transform-style: preserve-3d;
 		border-radius: 16px;
-		box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+		box-shadow: 0 0.5rem 1rem rgba(#000, 0.15);
 	}
 
 	.flip-box:hover .flip-box-inner {
@@ -158,7 +158,7 @@
 	}
 
 	.flip-box-front {
-		img {
+		& img {
 			border-radius: 16px;
 			width: 240px;
 			height: 240px;
@@ -166,13 +166,13 @@
 	}
 
 	.flip-box-back {
+		@apply font-serif;
 		transform: rotateY(180deg);
 		display: flex;
 		align-items: center;
-		font-family: $serif;
 		line-height: 1.25;
 
-		p {
+		& p {
 			padding: 16px;
 			margin: 0;
 		}

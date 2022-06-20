@@ -11,10 +11,10 @@
 
 <slot />
 
-<style lang="scss">
+<style lang="postcss">
 	#usc-banner {
+		@apply bg-black;
 		height: 60px;
-		background-color: $black;
 	}
 
 	#usc-banner a {

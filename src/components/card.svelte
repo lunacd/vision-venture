@@ -23,14 +23,12 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.card {
-		background-color: $dark-cardinal;
+		@apply bg-dark-cardinal font-sans text-white;
 		border-radius: 16px;
-		color: $white;
 		margin-bottom: 32px;
 		padding: 5%;
-		font-family: $sans;
 		display: flex;
 		flex-direction: row;
 		max-width: 100%;
@@ -41,9 +39,9 @@
 	}
 
 	.card-excerpt {
+		@apply text-gold;
 		text-align: center;
 		font-size: 1.125rem;
-		color: $gold;
 		margin-top: 16px;
 	}
 

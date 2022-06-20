@@ -14,13 +14,13 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.cardinal {
-		background-color: $dark-cardinal;
+		@apply bg-dark-cardinal;
 	}
 
 	.gold {
-		background-color: $dark-gold;
+		@apply bg-dark-gold;
 	}
 
 	.outer {

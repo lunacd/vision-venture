@@ -86,7 +86,7 @@
 	</div>
 </Container>
 
-<style lang="scss">
+<style lang="postcss">
 	.video-container {
 		display: flex;
 		margin-top: 16px;
@@ -96,14 +96,13 @@
 	}
 
 	.section-title {
-		color: $dark-cardinal;
+		@apply text-dark-cardinal font-sans;
 		font-size: 2rem;
-		font-family: $sans;
 	}
 
 	.section-subtitle {
+		@apply font-sans;
 		color: gray;
-		font-family: $sans;
 		font-size: 1.25rem;
 	}
 </style>

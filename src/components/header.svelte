@@ -84,13 +84,13 @@
 	</Container>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	#header {
+		@apply z-content;
 		position: absolute;
 		top: 60px;
 		left: 0;
 		right: 0;
-		z-index: $z-content;
 	}
 
 	.header-container {
@@ -103,9 +103,8 @@
 	}
 
 	.link {
-		color: $white;
+		@apply text-white font-sans;
 		text-decoration: none;
-		font-family: $sans;
 		font-size: 1.2rem;
 		margin-left: 24px;
 		padding-bottom: 8px;
@@ -113,7 +112,7 @@
 	}
 
 	.link-black {
-		color: $black;
+		@apply text-black;
 	}
 
 	.links-container {
@@ -127,9 +126,9 @@
 	}
 
 	.links-inner {
+		@apply bg-black;
 		display: flex;
 		flex-direction: column;
-		background-color: $black;
 		padding: 24px 24px 0 0;
 	}
 
@@ -143,11 +142,11 @@
 	}
 
 	.link-active {
-		border-bottom: 3px solid $white;
+		@apply border-0 border-b-3 border-solid border-b-white;
 	}
 
 	.link-active.link-black {
-		border-bottom: 3px solid $black;
+		@apply border-0 border-b-3 border-solid border-b-black;
 	}
 
 	#vv-logo {

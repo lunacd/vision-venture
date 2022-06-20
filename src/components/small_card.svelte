@@ -21,12 +21,12 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.small-card {
+		@apply font-sans;
 		border-radius: 12px;
 		margin: 24px 10% 24px 10%;
 		padding: 4%;
-		font-family: $sans;
 		display: flex;
 		flex-direction: row;
 		box-shadow: 0 10px 50px 0 #503c2d40;
@@ -37,8 +37,8 @@
 	}
 
 	.card-title {
+		@apply text-cardinal;
 		font-size: 2rem;
-		color: $cardinal;
 	}
 
 	.card-text {

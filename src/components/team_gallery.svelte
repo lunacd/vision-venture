@@ -82,7 +82,7 @@
 	{currentBio}
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.outer {
 		position: relative;
 		width: 100%;
@@ -116,7 +116,7 @@
 			rgba(255, 255, 255, 1) 100%
 		);
 
-		img {
+		& img {
 			position: absolute;
 			top: 50%;
 			right: 0;

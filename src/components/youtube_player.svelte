@@ -37,15 +37,15 @@
 	/>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.youtube-container {
+		@apply z-overlay;
 		position: fixed;
 		width: 100%;
 		overflow-x: hidden;
 		top: 0;
 		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.8);
-		z-index: $z-overlay;
 	}
 
 	.player {
@@ -60,7 +60,7 @@
 	}
 
 	.close {
-		color: $white;
+		@apply text-white;
 		position: absolute;
 		left: 90%;
 		top: 10%;

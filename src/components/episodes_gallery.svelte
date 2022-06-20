@@ -78,7 +78,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.outer {
 		position: relative;
 		width: 100%;
@@ -107,7 +107,7 @@
 			rgba(255, 255, 255, 1) 100%
 		);
 
-		img {
+		& img {
 			position: absolute;
 			top: 50%;
 			right: 0;
@@ -123,7 +123,7 @@
 
 	.image {
 		border-radius: 16px;
-		box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+		box-shadow: 0 0.5rem 1rem rgba(#000, 0.15);
 		margin: 12px 24px 36px 24px;
 		width: 480px;
 		cursor: pointer;

@@ -15,7 +15,7 @@
 	{/each}
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.season-container {
 		display: flex;
 	}

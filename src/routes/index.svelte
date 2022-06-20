@@ -105,12 +105,12 @@
 	/>
 </Container>
 
-<style lang="scss">
+<style lang="postcss">
 	#landing-display {
+		@apply z-background;
 		position: relative;
 		top: 0;
 		left: 0;
-		z-index: $z-background;
 		width: 100%;
 	}
 
@@ -121,18 +121,16 @@
 	}
 
 	.title {
+		@apply text-cardinal font-sans;
 		margin-top: 32px;
 		margin-bottom: 16px;
-		color: $cardinal;
-		font-family: $sans;
 		font-size: 2.5rem;
 	}
 
 	.button {
-		background-color: $cardinal;
+		@apply bg-cardinal text-white;
 		padding: 12px;
 		border-radius: 6px;
-		color: $white;
 		text-decoration: none;
 		margin: 0 auto 0 auto;
 		box-shadow: 0px 0px 10px 0px #00000040;

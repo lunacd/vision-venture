@@ -27,17 +27,16 @@
 	</div>
 </Container>
 
-<style lang="scss">
+<style lang="postcss">
 	.email-container {
 		display: flex;
 		justify-content: center;
 	}
 
 	.email {
+		@apply font-sans text-cardinal;
 		text-align: center;
-		font-family: $sans;
 		font-size: 2rem;
 		text-decoration: none;
-		color: $cardinal;
 	}
 </style>

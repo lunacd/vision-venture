@@ -34,7 +34,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.roadmap-section {
 		display: flex;
 		flex-direction: row;
@@ -47,21 +47,19 @@
 	}
 
 	.image {
+		@apply z-content;
 		position: absolute;
 		width: 100%;
-		z-index: $z-content;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
 	.vertical-line {
+		@apply z-background border-0 border-l-3 border-b-3 border-solid border-dark-gray;
 		position: relative;
 		left: 50%;
 		width: 50%;
 		height: 100%;
-		border-left: 3px solid $dark-gray;
-		border-bottom: 3px solid $dark-gray;
-		z-index: $z-background;
 	}
 
 	.content {
@@ -74,45 +72,44 @@
 	}
 
 	.title {
+		@apply font-sans;
 		font-size: 2rem;
-		font-family: $sans;
 		margin-top: 12px;
 	}
 
 	.subtitle {
+		@apply font-serif;
 		font-size: 1.25rem;
-		font-family: $serif;
 		margin-top: 10px;
 	}
 
 	.videos {
-		border-bottom: 3px solid $dark-gray;
+		@apply border-0 border-b-3 border-solid border-b-dark-gray;
 		margin-right: 48px;
 	}
 
-	// First section
+	/* First section */
 	.roadmap-section.first {
-		.image {
+		& .image {
 			top: 0;
 			transform: none;
 		}
 	}
 
-	// Odd sections are reversed
+	/* Odd sections are reversed */
 	.roadmap-section.reversed {
 		flex-direction: row-reverse;
 
-		.titles {
+		& .titles {
 			text-align: right;
 		}
 
-		.vertical-line {
+		& .vertical-line {
+			@apply border-l-0 border-r-3 border-solid border-r-dark-gray;
 			left: 0;
-			border-left: none;
-			border-right: 3px solid $dark-gray;
 		}
 
-		.videos {
+		& .videos {
 			margin-right: 0;
 			margin-left: 48px;
 		}
@@ -121,17 +118,17 @@
 	.roadmap-section.last {
 		margin-bottom: 48px;
 
-		.image {
+		& .image {
 			bottom: 0;
 			top: auto;
 			transform: none;
 		}
 
-		.vertical-line {
+		& .vertical-line {
 			border-bottom: none;
 		}
 
-		.videos {
+		& .videos {
 			border-bottom: none;
 		}
 	}

@@ -38,7 +38,7 @@
 	>
 </div> 
 
-<style lang="scss">
+<style lang="postcss">
 	.link-container {
 		display: flex;
 		margin: 48px 0 48px 0;

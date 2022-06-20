@@ -32,10 +32,10 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.takeaway-container {
+		@apply font-sans;
 		display: flex;
-		font-family: $sans;
 	}
 
 	.episodes-container {
@@ -50,54 +50,51 @@
 		margin: 16px 0 16px 8px;
 		cursor: pointer;
 
-		.episode {
+		& .episode {
+			@apply text-dark-cardinal border-[1.5px] border-solid border-dark-cardinal;
 			display: table-cell;
 			padding-left: 8px;
-			color: $dark-cardinal;
 			border-radius: 10px 0 0 10px;
-			border: 1.5px solid $dark-cardinal;
 			border-right: none;
 			height: 32px;
 			vertical-align: middle;
 			font-size: 20px;
 		}
 
-		.episode-arrow-outer {
+		& .episode-arrow-outer {
 			height: 32px;
 			width: 32px;
 			overflow: hidden;
 
-			.episode-arrow {
+			& .episode-arrow {
+				@apply border-[1.5px] border-solid border-dark-cardinal;
 				height: 32px;
 				width: 32px;
-				border: 1.5px solid $dark-cardinal;
 				border-radius: 50% 15% 50% 50%;
 				transform: rotate(45deg) translate(-11px, 11px);
 			}
 		}
 
 		&.active {
-			.episode {
-				background-color: $dark-cardinal;
-				color: $white;
+			& .episode {
+				@apply bg-dark-cardinal text-white;
 			}
 
-			.episode-arrow-outer {
-				.episode-arrow {
-					background-color: $dark-cardinal;
+			& .episode-arrow-outer {
+				& .episode-arrow {
+					@apply bg-dark-cardinal;
 				}
 			}
 		}
 
 		&:hover {
-			.episode {
-				color: $white;
-				background-color: $dark-cardinal;
+			& .episode {
+				@apply text-white bg-dark-cardinal;
 			}
 
-			.episode-arrow-outer {
-				.episode-arrow {
-					background-color: $dark-cardinal;
+			& .episode-arrow-outer {
+				& .episode-arrow {
+					@apply bg-dark-cardinal;
 				}
 			}
 		}
@@ -110,11 +107,10 @@
 	}
 
 	.circle {
+		@apply bg-dark-cardinal text-white;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: $dark-cardinal;
-		color: $white;
 		border-radius: 9999px;
 		width: 48px;
 		height: 48px;
@@ -122,8 +118,8 @@
 	}
 
 	.line {
+		@apply border-l-3 border-solid border-l-black;
 		width: 0;
 		flex-grow: 1;
-		border-left: 3px solid $black;
 	}
 </style>

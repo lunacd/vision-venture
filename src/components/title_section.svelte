@@ -19,9 +19,9 @@
 </Container>
 <div id="padding-bottom" />
 
-<style lang="scss">
+<style lang="postcss">
 	#padding-top {
-		// 88px to skip absolutely positioned header, and 16px actual margin
+		/* 88px to skip absolutely positioned header, and 16px actual margin */
 		margin-top: calc(88px + 16px);
 	}
 
@@ -30,7 +30,7 @@
 	}
 
 	.title {
-		font-family: $sans;
+		@apply font-sans;
 		font-size: 3.5rem;
 		text-align: center;
 	}

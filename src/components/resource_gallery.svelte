@@ -71,7 +71,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.outer {
 		position: relative;
 		width: 100%;
@@ -105,7 +105,7 @@
 			rgba(255, 255, 255, 1) 100%
 		);
 
-		img {
+		& img {
 			position: absolute;
 			top: 50%;
 			right: 0;
@@ -137,9 +137,7 @@
 	}
 
 	.book-title {
-		border: $cardinal solid 2px;
-		color: $cardinal;
-		font-family: $sans;
+		@apply text-cardinal font-sans border-cardinal border-2 border-solid;
 		text-transform: uppercase;
 		margin: 0 12px 0 12px;
 		padding: 4px;
@@ -149,8 +147,7 @@
 		text-decoration: none;
 
 		&:hover {
-			color: $white;
-			background-color: $cardinal;
+			@apply text-white bg-cardinal;
 		}
 	}
 
