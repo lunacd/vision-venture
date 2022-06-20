@@ -140,7 +140,7 @@
 		transition: transform 0.6s;
 		transform-style: preserve-3d;
 		border-radius: 16px;
-		box-shadow: 0 0.5rem 1rem rgba(#000, 0.15);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 	}
 
 	.flip-box:hover .flip-box-inner {

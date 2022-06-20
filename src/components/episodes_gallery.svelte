@@ -123,7 +123,7 @@
 
 	.image {
 		border-radius: 16px;
-		box-shadow: 0 0.5rem 1rem rgba(#000, 0.15);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 		margin: 12px 24px 36px 24px;
 		width: 480px;
 		cursor: pointer;
