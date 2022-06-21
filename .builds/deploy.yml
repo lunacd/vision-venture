@@ -1,0 +1,19 @@
+image: rockylinux/8
+packages:
+  - nodejs
+  - yarn
+secrets:
+  - 2a951cc8-a728-4dfc-947f-63fdb66e8fee
+triggers:
+  - action: email
+    condition: failure
+    to: Haowen Liu <lhw@lunacd.com>
+tasks:
+  - setup: |
+      yarn global add --silent vercel snyk
+  - deploy: |
+      cd vision-venture
+      set +x
+      source ~/.vercel_token
+      $(yarn global bin)/vercel -t $VERCEL_TOKEN -c -C --prod
+      set -x
