@@ -19,7 +19,7 @@
 	<Container>
 		<div class="header-container">
 			<a href="/">
-				<img src={Logo} alt="Vision Venture logo" class:hide={page === 'about'} id="vv-logo" />
+				<img src={Logo} alt="Vision Venture logo" class="h-[64px] w-[64px] ml-[12px] mr-[12px]" />
 			</a>
 			<div class="links-container" class:links-show={show}>
 				<img
@@ -147,16 +147,6 @@
 
 	.link-active.link-black {
 		@apply border-0 border-b-3 border-solid border-b-black;
-	}
-
-	#vv-logo {
-		height: 64px;
-		width: 64px;
-		margin: 12px 0 12px 0;
-	}
-
-	.hide {
-		display: none;
 	}
 
 	#hamburger {

@@ -5,15 +5,14 @@
  -->
 <script lang="ts">
 	import Header from '../components/header.svelte';
-	import Card from '../components/card.svelte';
 	import Container from '../components/container.svelte';
 	import { Person } from '../utils/person';
 	import TeamGallery from '../components/team_gallery.svelte';
 
-	import Logo from '../images/vision-venture-full.svg';
 	import Vanishing from '../images/vanishing.svg';
 	import VanishingWide from '../images/vanishing-wide.svg';
 	import VanishingTall from '../images/vanishing-tall.svg';
+	import Quote from '../images/quote.svg';
 	import Roadmap from '../images/roadmap.svg';
 	import RoadmapTall from '../images/roadmap-tall.svg';
 	import HearFromStudents from '../images/hear_from_students.svg';
@@ -34,29 +33,54 @@
 		style="--standard: url({Vanishing}); --wide: url({VanishingWide}); --tall: url({VanishingTall})"
 		class="vanishing-point"
 	/>
-	<div class="heading-container">
-		<img src={Logo} alt="Vision Venture" class="image" />
-	</div>
 </div>
 
 <Container>
-	<Card
-		title="About the Project"
-		excerpt="In art, the convergence of lines where a road disappears into the horizon is known as a vanishing point.  In education, it is known as graduation."
-		paragraphs={[
-			'The premise of Vision Venture is simple: current students interview recent alumni about their educational and professional experiences.' +
-				' Vision Venture aims to help you see beyond the immediate horizon of course work and to reconnect with the “why” that led you to the engineering path in the first place.',
-			'The vanishing point can have two effects.' +
-				' First, you may be uncertain or anxious about what life will be like after graduation—after all, you have been in school nearly your entire life!' +
-				' Vision Venture includes short, thematic video clips of recent alumni sharing their experiences and answering common student questions, from the practical to the philosophical.' +
-				' And second, in the midst of your hard work as an engineering major, you may lose sight of your initial motivation for being an engineer.' +
-				' Vision Venture can help you recover your “why”—or maybe a new “why”—which might range from having job security to a desire to improve the world or even to tackle engineering problems from a different perspective.',
-			'At its heart, Vision Venture hopes to promote your sense of agency, reignite your professional purpose, and help you forge your identity as you travel your own unique path into the future.'
-		]}
-	/>
+	<!-- Quote -->
+	<div class="flex justify-center mb-24">
+		<div class="flex flex-row max-w-3xl space-x-6 text-lg">
+			<img src={Quote} alt="quotation mark" class="self-start w-20 h-20" />
+			<div class="flex flex-col items-center text-xl text-center">
+				<div>
+					In art, the convergence of lines where a road disappears into the horizon is known as a
+					vanishing point.
+				</div>
+				<div class="font-bold mt-8">In education, it is known as graduation.</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Info -->
+	<div class="mb-24">
+		<div class="text-lg">WHO WE ARE</div>
+		<div class="font-bold text-3xl">About the Project</div>
+		<div class="font-serif text-lg space-y-4 mt-6">
+			<p>
+				The premise of Vision Venture is simple: current students interview recent alumni about
+				their educational and professional experiences. Vision Venture aims to help you see beyond
+				the immediate horizon of course work and to reconnect with the “why” that led you to the
+				engineering path in the first place.
+			</p>
+			<p>
+				The vanishing point can have two effects. First, you may be uncertain or anxious about what
+				life will be like after graduation—after all, you have been in school nearly your entire
+				life! Vision Venture includes short, thematic video clips of recent alumni sharing their
+				experiences and answering common student questions, from the practical to the philosophical.
+				And second, in the midst of your hard work as an engineering major, you may lose sight of
+				your initial motivation for being an engineer. Vision Venture can help you recover your
+				“why”—or maybe a new “why”—which might range from having job security to a desire to improve
+				the world or even to tackle engineering problems from a different perspective.
+			</p>
+			<p>
+				At its heart, Vision Venture hopes to promote your sense of agency, reignite your
+				professional purpose, and help you forge your identity as you travel your own unique path
+				into the future.
+			</p>
+		</div>
+	</div>
 </Container>
 
-<Container color="gold">
+<Container>
 	<div class="section-container">
 		<div
 			alt="Vision Venture roadmap"
@@ -128,13 +152,7 @@
 	}
 
 	.button {
-		@apply bg-cardinal text-white;
-		padding: 12px;
-		border-radius: 6px;
-		text-decoration: none;
-		margin: 0 auto 0 auto;
-		box-shadow: 0px 0px 10px 0px #00000040;
-		font-size: 0.875rem;
+		@apply bg-accent text-white font-bold rounded-lg shadow-lg px-4 py-3 text-sm mx-auto;
 
 		&#voices-button {
 			margin-top: 16px;
@@ -162,17 +180,6 @@
 		padding-top: 135.75%;
 	}
 
-	.heading-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		position: absolute;
-		transform: translateX(-50%) translateY(-50%);
-		left: 37%;
-		width: 75%;
-		top: 28%;
-	}
-
 	.roadmap-image {
 		background-image: var(--tall);
 		background-size: contain;
@@ -195,24 +202,10 @@
 		display: block;
 	}
 
-	@media (min-width: 640px) {
-		.heading-container {
-			left: 25%;
-			width: 55%;
-			top: 28%;
-		}
-	}
-
 	@media (min-width: 768px) {
 		.vanishing-point {
 			background-image: var(--standard);
 			padding-top: 81.53%;
-		}
-
-		.heading-container {
-			width: 35%;
-			top: 28%;
-			left: 20%;
 		}
 
 		.roadmap-image {
@@ -242,11 +235,6 @@
 		.vanishing-point {
 			background-image: var(--wide);
 			padding-top: 67.86%;
-		}
-
-		.heading-container {
-			width: 30%;
-			top: 25%;
 		}
 	}
 </style>

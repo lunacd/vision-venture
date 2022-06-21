@@ -10,7 +10,8 @@ module.exports = {
 			'dark-gray': '#777',
 			'light-gray': '#ccc',
 			'dark-gold': '#edb042',
-			'dark-cardinal': '#8d2824'
+			'dark-cardinal': '#8d2824',
+			accent: '#A4B83D'
 		},
 		zIndex: {
 			background: 1,
