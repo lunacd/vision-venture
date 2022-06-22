@@ -158,7 +158,7 @@
 	}
 
 	.button {
-		@apply bg-accent text-white font-bold rounded-lg shadow-lg px-4 mx-auto;
+		@apply bg-accent-green text-white font-bold rounded-lg shadow-lg px-4 mx-auto;
 		@apply w-48 h-14 text-base flex items-center;
 
 		& div {

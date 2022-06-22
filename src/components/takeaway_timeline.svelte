@@ -51,7 +51,7 @@
 		cursor: pointer;
 
 		& .episode {
-			@apply text-dark-cardinal border-[1.5px] border-solid border-dark-cardinal;
+			@apply text-cardinal border-[1.5px] border-solid border-cardinal;
 			display: table-cell;
 			padding-left: 8px;
 			border-radius: 10px 0 0 10px;
@@ -67,7 +67,7 @@
 			overflow: hidden;
 
 			& .episode-arrow {
-				@apply border-[1.5px] border-solid border-dark-cardinal;
+				@apply border-[1.5px] border-solid border-cardinal;
 				height: 32px;
 				width: 32px;
 				border-radius: 50% 15% 50% 50%;
@@ -77,24 +77,24 @@
 
 		&.active {
 			& .episode {
-				@apply bg-dark-cardinal text-white;
+				@apply bg-cardinal text-white;
 			}
 
 			& .episode-arrow-outer {
 				& .episode-arrow {
-					@apply bg-dark-cardinal;
+					@apply bg-cardinal;
 				}
 			}
 		}
 
 		&:hover {
 			& .episode {
-				@apply text-white bg-dark-cardinal;
+				@apply text-white bg-cardinal;
 			}
 
 			& .episode-arrow-outer {
 				& .episode-arrow {
-					@apply bg-dark-cardinal;
+					@apply bg-cardinal;
 				}
 			}
 		}
@@ -107,14 +107,8 @@
 	}
 
 	.circle {
-		@apply bg-dark-cardinal text-white;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 9999px;
-		width: 48px;
-		height: 48px;
-		font-size: 2rem;
+		@apply bg-accent-orange text-white flex justify-center items-center;
+		@apply rounded-full w-[48px] h-[48px] text-3xl;
 	}
 
 	.line {

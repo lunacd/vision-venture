@@ -64,8 +64,8 @@
 
 <Container>
 	<StudentsGallery {participants} />
-	<div class="section-title">Student Debriefs</div>
-	<div class="section-subtitle">Click on the pins to watch!</div>
+	<div class="text-cardinal text-3xl">Student Debriefs</div>
+	<div class="text-xl text-dark-gray">Click on the pins to watch!</div>
 	<div class="video-container">
 		<TakeawayTimeline
 			{takeaways}
@@ -93,16 +93,5 @@
 		margin-bottom: 48px;
 		justify-content: space-around;
 		align-items: center;
-	}
-
-	.section-title {
-		@apply text-dark-cardinal font-sans;
-		font-size: 2rem;
-	}
-
-	.section-subtitle {
-		@apply font-sans;
-		color: gray;
-		font-size: 1.25rem;
 	}
 </style>

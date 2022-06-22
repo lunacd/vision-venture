@@ -11,7 +11,8 @@ module.exports = {
 			'light-gray': '#ccc',
 			'dark-gold': '#edb042',
 			'dark-cardinal': '#8d2824',
-			accent: '#A4B83D'
+			'accent-green': '#A4B83D',
+			'accent-orange': '#D04C29'
 		},
 		zIndex: {
 			background: 1,

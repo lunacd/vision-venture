@@ -34,7 +34,7 @@
 	}}
 />
 
-<div class="outer" bind:this={outerContainer} class:center={maxScroll <= 0}>
+<div class="outer mb-24" bind:this={outerContainer} class:center={maxScroll <= 0}>
 	<div class="inner" style={`transform: translateX(-${$translate}px)`}>
 		{#each books as book, i}
 			<div class="book-container">
