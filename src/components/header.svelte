@@ -6,7 +6,8 @@
 <script lang="ts">
 	import Container from '../components/container.svelte';
 
-	import Logo from '../images/vision-venture.png?webp';
+	import Logo from '../images/vision-venture.svg';
+	import LogoWhite from '../images/vision-venture-white.svg';
 	import Hamburger from '../images/hamburger.svg';
 
 	export let page: string;
@@ -19,7 +20,13 @@
 	<Container>
 		<div class="header-container">
 			<a href="/">
-				<img src={Logo} alt="Vision Venture logo" class="h-[64px] w-[64px] ml-[12px] mr-[12px]" />
+				<img src={Logo} alt="Vision Venture logo" class="logo" class:hidden={page !== 'about'} />
+				<img
+					src={LogoWhite}
+					alt="Vision Venture logo"
+					class="logo"
+					class:hidden={page === 'about'}
+				/>
 			</a>
 			<div class="links-container" class:links-show={show}>
 				<img
@@ -91,6 +98,10 @@
 		top: 60px;
 		left: 0;
 		right: 0;
+	}
+
+	.logo {
+		@apply h-[64px] w-[64px] ml-[12px] mr-[12px];
 	}
 
 	.header-container {
