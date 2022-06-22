@@ -87,18 +87,24 @@
 			class="roadmap-image"
 			style="--standard: url({Roadmap}); --tall: url({RoadmapTall});"
 		/>
-		<a class="button desktop-only" href="/roadmap" id="roadmap-button">Check out Vision Roadmap</a>
+		<a class="button hidden md:block" href="/roadmap" id="roadmap-button">
+			<div>Check out Vision Roadmap</div>
+		</a>
 	</div>
 </Container>
 <div class="button-center">
-	<a class="button mobile-only" href="/roadmap" id="roadmap-button">Check out Vision Roadmap</a>
+	<a class="button md:hidden" href="/roadmap" id="roadmap-button">
+		<div>Check out Vision Roadmap</div>
+	</a>
 </div>
 
 <Container>
 	<div class="section-container">
 		<div class="voices-container">
 			<div class="title">Hear from our Students!</div>
-			<a class="button" href="/voices" id="voices-button">More Student Voices</a>
+			<a class="button" href="/voices" id="voices-button">
+				<div>More Student Voices</div>
+			</a>
 		</div>
 		<img src={HearFromStudents} alt="Hear from students" class="image" />
 	</div>
@@ -152,7 +158,12 @@
 	}
 
 	.button {
-		@apply bg-accent text-white font-bold rounded-lg shadow-lg px-4 py-3 text-sm mx-auto;
+		@apply bg-accent text-white font-bold rounded-lg shadow-lg px-4 mx-auto;
+		@apply w-48 h-14 text-base flex items-center;
+
+		& div {
+			@apply w-full text-center;
+		}
 
 		&#voices-button {
 			margin-top: 16px;
@@ -194,14 +205,6 @@
 		margin: 16px 0 16px 0;
 	}
 
-	.desktop-only {
-		display: none;
-	}
-
-	.mobile-only {
-		display: block;
-	}
-
 	@media (min-width: 768px) {
 		.vanishing-point {
 			background-image: var(--standard);
@@ -220,14 +223,6 @@
 				top: 90%;
 				transform: translateX(-50%) translateY(-50%);
 			}
-		}
-
-		.desktop-only {
-			display: block;
-		}
-
-		.mobile-only {
-			display: none;
 		}
 	}
 
