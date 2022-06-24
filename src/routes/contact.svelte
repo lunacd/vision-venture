@@ -6,6 +6,9 @@
 <script lang="ts">
 	import Container from '../components/container.svelte';
 	import TitleSection from '../components/title_section.svelte';
+
+	import At from '../images/at.svg';
+	import ContactUs from '../images/contact-us.svg';
 </script>
 
 <svelte:head>
@@ -22,21 +25,11 @@
 />
 
 <Container>
-	<div class="email-container">
-		<a class="email" href="mailto:VisionVenture@usc.edu"> VisionVenture@usc.edu </a>
+	<div class="relative h-96 mt-16">
+		<div class="flex items-center space-x-8 relative z-content ml-16">
+			<img src={At} alt="at sign" class="w-24 h-24" />
+			<a class="text-3xl" href="mailto:VisionVenture@usc.edu"> VisionVenture@usc.edu </a>
+		</div>
+		<img src={ContactUs} alt="Contact us illustration" class="absolute right-0 bottom-0 h-full z-background" />
 	</div>
 </Container>
-
-<style lang="postcss">
-	.email-container {
-		display: flex;
-		justify-content: center;
-	}
-
-	.email {
-		@apply font-sans text-cardinal;
-		text-align: center;
-		font-size: 2rem;
-		text-decoration: none;
-	}
-</style>
