@@ -27,7 +27,7 @@
 </svelte:head>
 
 <Header page="about" />
-<div id="landing-display">
+<div class="z-background relative left-0 top-0 w-full">
 	<div
 		alt="Vanishing point illustration"
 		style="--standard: url({Vanishing}); --wide: url({VanishingWide}); --tall: url({VanishingTall})"
@@ -81,32 +81,35 @@
 </Container>
 
 <Container>
-	<div class="section-container">
+	<div class="relative">
 		<div
 			alt="Vision Venture roadmap"
 			class="roadmap-image"
 			style="--standard: url({Roadmap}); --tall: url({RoadmapTall});"
 		/>
-		<a class="button hidden md:block" href="/roadmap" id="roadmap-button">
+		<a
+			class="button hidden md:block absolute left-[15%] top-[90%] -translate-x-1/2 -translate-y-1/2"
+			href="/roadmap"
+		>
 			<div>Check out Vision Roadmap</div>
 		</a>
 	</div>
 </Container>
-<div class="button-center">
-	<a class="button md:hidden" href="/roadmap" id="roadmap-button">
+<div class="flex justify-center mx-4">
+	<a class="button md:!hidden" href="/roadmap">
 		<div>Check out Vision Roadmap</div>
 	</a>
 </div>
 
 <Container>
-	<div class="section-container">
-		<div class="voices-container">
+	<div class="relative">
+		<div class="absolute flex flex-col top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2">
 			<div class="title">Hear from our Students!</div>
-			<a class="button" href="/voices" id="voices-button">
+			<a class="button mt-4" href="/voices" id="voices-button">
 				<div>More Student Voices</div>
 			</a>
 		</div>
-		<img src={HearFromStudents} alt="Hear from students" class="image" />
+		<img src={HearFromStudents} alt="Hear from students" class="w-full" />
 	</div>
 	<div class="title">Meet the Team!</div>
 	<TeamGallery
@@ -136,25 +139,8 @@
 </Container>
 
 <style lang="postcss">
-	#landing-display {
-		@apply z-background;
-		position: relative;
-		top: 0;
-		left: 0;
-		width: 100%;
-	}
-
-	.image {
-		width: 100%;
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
-
 	.title {
-		@apply text-cardinal font-sans;
-		margin-top: 32px;
-		margin-bottom: 16px;
-		font-size: 2.5rem;
+		@apply text-cardinal font-sans mt-8 mb-4 text-4xl;
 	}
 
 	.button {
@@ -164,45 +150,18 @@
 		& div {
 			@apply w-full text-center;
 		}
-
-		&#voices-button {
-			margin-top: 16px;
-		}
-	}
-
-	.section-container {
-		position: relative;
-	}
-
-	.voices-container {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		top: 50%;
-		left: 25%;
-		transform: translateX(-50%) translateY(-50%);
 	}
 
 	.vanishing-point {
-		background-size: contain;
-		width: 100%;
-		height: 0;
+		@apply w-full h-0 bg-contain;
 		background-image: var(--tall);
 		padding-top: 135.75%;
 	}
 
 	.roadmap-image {
+		@apply w-full h-0 bg-contain;
 		background-image: var(--tall);
-		background-size: contain;
-		height: 0;
-		width: 100%;
 		padding-top: 109.35%;
-	}
-
-	.button-center {
-		display: flex;
-		justify-content: center;
-		margin: 16px 0 16px 0;
 	}
 
 	@media (min-width: 768px) {
@@ -214,15 +173,6 @@
 		.roadmap-image {
 			background-image: var(--standard);
 			padding-top: 63.96%;
-		}
-
-		.button {
-			&#roadmap-button {
-				position: absolute;
-				left: 15%;
-				top: 90%;
-				transform: translateX(-50%) translateY(-50%);
-			}
 		}
 	}
 
