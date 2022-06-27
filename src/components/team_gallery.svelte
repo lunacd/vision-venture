@@ -37,13 +37,17 @@
 	}}
 />
 
-<div class="outer" bind:this={outerContainer} class:center={maxScroll <= 0}>
-	<div class="inner" style={`transform: translateX(-${$translate}px)`}>
+<div
+	class="relative hidden h-full w-full overflow-hidden md:flex"
+	bind:this={outerContainer}
+	class:justify-center={maxScroll <= 0}
+>
+	<div class="mx-4 flex h-full w-fit flex-row" style={`transform: translateX(-${$translate}px)`}>
 		{#each people as person, i}
 			<img
 				src={person.image}
 				alt={person.name}
-				class="photo"
+				class="m-3 h-60 w-60 rounded-full"
 				class:gray={i !== currentIndex}
 				bind:this={images[i]}
 				on:mouseenter={() => {
@@ -53,7 +57,7 @@
 			/>
 		{/each}
 	</div>
-	<div class="caret backward-caret" class:hide={scrollPosition === 0}>
+	<div class="caret left-0 -scale-100" class:hidden={scrollPosition === 0}>
 		<img
 			src={ForwardCaret}
 			alt="Forward caret"
@@ -65,7 +69,7 @@
 			}}
 		/>
 	</div>
-	<div class="caret" class:hide={scrollPosition >= maxScroll}>
+	<div class="caret" class:hidden={scrollPosition >= maxScroll}>
 		<img
 			src={ForwardCaret}
 			alt="Forward caret"
@@ -78,37 +82,30 @@
 		/>
 	</div>
 </div>
+<div class="grid grid-flow-row grid-cols-2 place-content-evenly sm:grid-cols-3 md:hidden">
+	{#each people as person, i}
+		<div class="relative h-0" style="padding-top: 100%;">
+			<img
+				src={person.image}
+				alt={person.name}
+				class="mobile-image"
+				class:gray={i !== currentIndex}
+				bind:this={images[i]}
+				on:mouseenter={() => {
+					currentIndex = i;
+					currentBio = person.bio;
+				}}
+			/>
+		</div>
+	{/each}
+</div>
 <div class="bio">
 	{currentBio}
 </div>
 
 <style lang="postcss">
-	.outer {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		display: flex;
-	}
-
-	.center {
-		justify-content: center;
-	}
-
-	.inner {
-		display: flex;
-		flex-direction: row;
-		height: 100%;
-		margin: 0 16px 0 16px;
-		width: fit-content;
-	}
-
 	.caret {
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 50px;
+		@apply absolute right-0 top-0 bottom-0 w-12;
 		background: linear-gradient(
 			90deg,
 			rgba(255, 255, 255, 0) 0%,
@@ -117,37 +114,22 @@
 		);
 
 		& img {
-			position: absolute;
-			top: 50%;
-			right: 0;
-			transform: translateY(-50%);
-			cursor: pointer;
+			@apply absolute top-1/2 right-0 -translate-y-1/2 cursor-pointer;
 		}
 	}
 
-	.backward-caret {
-		left: 0;
-		transform: scaleX(-1);
-	}
-
-	.photo {
-		border-radius: 9999px;
-		width: 240px;
-		margin: 12px;
-	}
-
 	.bio {
-		border-radius: 24px;
+		@apply m-4 mt-3 rounded-3xl p-9 md:mx-12;
 		box-shadow: 0px 10px 50px 0px #503c2d40;
-		padding: 36px;
-		margin: 12px 54px 54px 54px;
 	}
 
 	.gray {
 		filter: grayscale(75%);
 	}
 
-	.hide {
-		display: none;
+	.mobile-image {
+		@apply absolute left-2 top-2 rounded-full;
+		height: calc(100% - 1rem);
+		width: calc(100% - 1rem);
 	}
 </style>
