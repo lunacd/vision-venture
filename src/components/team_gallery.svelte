@@ -119,7 +119,7 @@
 	}
 
 	.bio {
-		@apply mx-4 mb-12 mt-3 rounded-3xl p-9 md:mx-12;
+		@apply mx-3 mb-12 mt-3 rounded-3xl p-6 md:mx-12 md:p-9;
 		box-shadow: 0px 10px 50px 0px #503c2d40;
 	}
 
