@@ -12,7 +12,7 @@
 </script>
 
 <Header page={name} />
-<div id="padding-top" />
+<div class="mt-26" />
 <Container>
 	<div class="title">{title}</div>
 	<SmallCard title={tagline} paragraphs={description} />
@@ -20,11 +20,6 @@
 <div id="padding-bottom" />
 
 <style lang="postcss">
-	#padding-top {
-		/* 88px to skip absolutely positioned header, and 16px actual margin */
-		margin-top: calc(88px + 16px);
-	}
-
 	#padding-bottom {
 		margin-top: 48px;
 	}

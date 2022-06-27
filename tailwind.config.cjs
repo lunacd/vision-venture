@@ -12,7 +12,8 @@ module.exports = {
 			'dark-gold': '#edb042',
 			'dark-cardinal': '#8d2824',
 			'accent-green': '#A4B83D',
-			'accent-orange': '#D04C29'
+			'accent-orange': '#D04C29',
+			transparent: 'transparent'
 		},
 		zIndex: {
 			background: 1,
@@ -26,6 +27,12 @@ module.exports = {
 		extend: {
 			borderWidth: {
 				3: '3px'
+			},
+			height: {
+				22: '5.5rem'
+			},
+			margin: {
+				26: '6.5rem'
 			}
 		}
 	},
