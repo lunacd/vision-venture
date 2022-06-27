@@ -64,7 +64,7 @@
 
 <Container>
 	<StudentsGallery {participants} />
-	<div class="text-cardinal text-3xl">Student Debriefs</div>
+	<div class="text-3xl text-cardinal">Student Debriefs</div>
 	<div class="text-xl text-dark-gray">Click on the pins to watch!</div>
 	<div class="video-container">
 		<TakeawayTimeline

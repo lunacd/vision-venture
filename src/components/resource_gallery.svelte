@@ -137,7 +137,7 @@
 	}
 
 	.book-title {
-		@apply text-cardinal font-sans border-cardinal border-2 border-solid;
+		@apply border-2 border-solid border-cardinal font-sans text-cardinal;
 		text-transform: uppercase;
 		margin: 0 12px 0 12px;
 		padding: 4px;
@@ -147,7 +147,7 @@
 		text-decoration: none;
 
 		&:hover {
-			@apply text-white bg-cardinal;
+			@apply bg-cardinal text-white;
 		}
 	}
 

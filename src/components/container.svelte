@@ -28,11 +28,10 @@
 	}
 
 	.inner {
+		@apply px-8;
 		max-width: 1320px;
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		padding-right: 18px;
-		padding-left: 18px;
 	}
 </style>

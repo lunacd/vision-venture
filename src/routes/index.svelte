@@ -27,7 +27,7 @@
 </svelte:head>
 
 <Header page="about" />
-<div class="z-background relative left-0 top-0 w-full">
+<div class="relative left-0 top-0 z-background w-full">
 	<div
 		alt="Vanishing point illustration"
 		style="--standard: url({Vanishing}); --wide: url({VanishingWide}); --tall: url({VanishingTall})"
@@ -37,15 +37,15 @@
 
 <Container>
 	<!-- Quote -->
-	<div class="flex justify-center mb-24">
-		<div class="flex flex-row max-w-3xl space-x-6 text-lg">
-			<img src={Quote} alt="quotation mark" class="self-start w-20 h-20" />
-			<div class="flex flex-col items-center text-xl text-center">
+	<div class="mb-24 flex justify-center">
+		<div class="flex max-w-3xl flex-col space-y-4 text-lg md:flex-row md:space-y-0 md:space-x-6">
+			<img src={Quote} alt="quotation mark" class="h-12 w-12 self-start md:h-20 md:w-20" />
+			<div class="flex flex-col items-center text-center text-xl">
 				<div>
 					In art, the convergence of lines where a road disappears into the horizon is known as a
 					vanishing point.
 				</div>
-				<div class="font-bold mt-8">In education, it is known as graduation.</div>
+				<div class="mt-8 font-bold">In education, it is known as graduation.</div>
 			</div>
 		</div>
 	</div>
@@ -53,8 +53,8 @@
 	<!-- Info -->
 	<div class="mb-24">
 		<div class="text-lg">WHO WE ARE</div>
-		<div class="font-bold text-3xl">About the Project</div>
-		<div class="font-serif text-lg space-y-4 mt-6">
+		<div class="text-3xl font-bold">About the Project</div>
+		<div class="mt-6 space-y-4 font-serif text-lg">
 			<p>
 				The premise of Vision Venture is simple: current students interview recent alumni about
 				their educational and professional experiences. Vision Venture aims to help you see beyond
@@ -88,14 +88,14 @@
 			style="--standard: url({Roadmap}); --tall: url({RoadmapTall});"
 		/>
 		<a
-			class="button hidden md:block absolute left-[15%] top-[90%] -translate-x-1/2 -translate-y-1/2"
+			class="button absolute left-[15%] top-[90%] !hidden -translate-x-1/2 -translate-y-1/2 md:!flex"
 			href="/roadmap"
 		>
 			<div>Check out Vision Roadmap</div>
 		</a>
 	</div>
 </Container>
-<div class="flex justify-center mx-4">
+<div class="mx-4 flex justify-center">
 	<a class="button md:!hidden" href="/roadmap">
 		<div>Check out Vision Roadmap</div>
 	</a>
@@ -103,7 +103,7 @@
 
 <Container>
 	<div class="relative">
-		<div class="absolute flex flex-col top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2">
+		<div class="absolute top-1/2 left-1/4 flex -translate-x-1/2 -translate-y-1/2 flex-col">
 			<div class="title">Hear from our Students!</div>
 			<a class="button mt-4" href="/voices" id="voices-button">
 				<div>More Student Voices</div>
@@ -140,12 +140,12 @@
 
 <style lang="postcss">
 	.title {
-		@apply text-cardinal font-sans mt-8 mb-4 text-4xl;
+		@apply mt-8 mb-4 text-4xl;
 	}
 
 	.button {
-		@apply bg-accent-green text-white font-bold rounded-lg shadow-lg px-4 mx-auto;
-		@apply w-48 h-14 text-base flex items-center;
+		@apply mx-auto rounded-lg bg-accent-green px-4 font-bold text-white shadow-lg;
+		@apply flex h-14 w-48 items-center text-base;
 
 		& div {
 			@apply w-full text-center;
@@ -153,13 +153,13 @@
 	}
 
 	.vanishing-point {
-		@apply w-full h-0 bg-contain;
+		@apply h-0 w-full bg-contain;
 		background-image: var(--tall);
 		padding-top: 135.75%;
 	}
 
 	.roadmap-image {
-		@apply w-full h-0 bg-contain;
+		@apply h-0 w-full bg-contain;
 		background-image: var(--tall);
 		padding-top: 109.35%;
 	}

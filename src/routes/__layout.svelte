@@ -4,7 +4,7 @@
 	import Logo from '../images/usc-shield-name-white.png?webp';
 </script>
 
-<div class="bg-black h-[60px]">
+<div class="h-[60px] bg-black">
 	<a
 		rel="external"
 		href="https://www.usc.edu/"

@@ -101,7 +101,7 @@
 	}
 
 	.logo {
-		@apply h-[64px] w-[64px] ml-[12px] mr-[12px];
+		@apply ml-[12px] mr-[12px] h-[64px] w-[64px];
 	}
 
 	.header-container {
@@ -114,7 +114,7 @@
 	}
 
 	.link {
-		@apply text-white font-sans;
+		@apply font-sans text-white;
 		text-decoration: none;
 		font-size: 1.2rem;
 		margin-left: 24px;

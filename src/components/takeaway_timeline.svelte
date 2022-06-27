@@ -51,7 +51,7 @@
 		cursor: pointer;
 
 		& .episode {
-			@apply text-cardinal border-[1.5px] border-solid border-cardinal;
+			@apply border-[1.5px] border-solid border-cardinal text-cardinal;
 			display: table-cell;
 			padding-left: 8px;
 			border-radius: 10px 0 0 10px;
@@ -89,7 +89,7 @@
 
 		&:hover {
 			& .episode {
-				@apply text-white bg-cardinal;
+				@apply bg-cardinal text-white;
 			}
 
 			& .episode-arrow-outer {
@@ -107,8 +107,8 @@
 	}
 
 	.circle {
-		@apply bg-accent-orange text-white flex justify-center items-center;
-		@apply rounded-full w-[48px] h-[48px] text-3xl;
+		@apply flex items-center justify-center bg-accent-orange text-white;
+		@apply h-[48px] w-[48px] rounded-full text-3xl;
 	}
 
 	.line {
