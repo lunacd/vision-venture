@@ -30,6 +30,10 @@
 			<img src={At} alt="at sign" class="w-24 h-24" />
 			<a class="text-3xl" href="mailto:VisionVenture@usc.edu"> VisionVenture@usc.edu </a>
 		</div>
-		<img src={ContactUs} alt="Contact us illustration" class="absolute right-0 bottom-0 h-full z-background" />
+		<img
+			src={ContactUs}
+			alt="Contact us illustration"
+			class="absolute right-0 bottom-0 h-full z-background"
+		/>
 	</div>
 </Container>
