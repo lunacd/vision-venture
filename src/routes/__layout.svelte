@@ -1,4 +1,8 @@
-<!-- This file defines the required USC banner that shows on the top of all pages -->
+<!--
+	This file defines the required USC banner that shows on the top of all pages
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	import '../app.css';
 	import Logo from '../images/usc-shield-name-white.png?webp';

@@ -14,8 +14,8 @@
 	import VanishingTall from '../images/vanishing-tall.svg';
 	import Quote from '../images/quote.svg';
 	import Roadmap from '../images/roadmap.svg';
-	import RoadmapTall from '../images/roadmap-tall.svg';
-	import HearFromStudents from '../images/hear_from_students.svg';
+	import RoadmapTall from '../images/roadmap-mobile.svg';
+	import HearFromStudents from '../images/hear-from-students.svg';
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
 	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
 	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp';
@@ -80,7 +80,7 @@
 	</div>
 </Container>
 
-<Container>
+<Container paddingClass="px-4">
 	<div class="relative">
 		<div
 			alt="Vision Venture roadmap"
@@ -101,7 +101,7 @@
 	</a>
 </div>
 
-<Container>
+<Container paddingClass="px-0">
 	<div class="relative">
 		<div class="absolute top-1/2 left-1/4 flex -translate-x-1/2 -translate-y-1/2 flex-col">
 			<div class="title">Hear from our Students!</div>

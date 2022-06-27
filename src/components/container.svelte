@@ -4,34 +4,18 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	export let color = 'none',
-		additionalStyles: string = undefined;
+	export let paddingClass: string = 'px-8';
 </script>
 
-<div class="outer" class:cardinal={color === 'cardinal'} class:gold={color === 'gold'}>
-	<div class="inner" style={additionalStyles}>
+<div class="w-full">
+	<div class={`inner ${paddingClass}`}>
 		<slot />
 	</div>
 </div>
 
 <style lang="postcss">
-	.cardinal {
-		@apply bg-dark-cardinal;
-	}
-
-	.gold {
-		@apply bg-dark-gold;
-	}
-
-	.outer {
-		width: 100%;
-	}
-
 	.inner {
-		@apply px-8;
+		@apply mx-auto w-full;
 		max-width: 1320px;
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
 	}
 </style>
