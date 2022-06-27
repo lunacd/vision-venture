@@ -14,7 +14,7 @@
 	import VanishingTall from '../images/vanishing-tall.svg';
 	import Quote from '../images/quote.svg';
 	import Roadmap from '../images/roadmap.svg';
-	import RoadmapTall from '../images/roadmap-mobile.svg';
+	import RoadmapMobile from '../images/roadmap-mobile.svg';
 	import HearFromStudents from '../images/hear-from-students.svg';
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
 	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
@@ -80,12 +80,13 @@
 	</div>
 </Container>
 
+<!-- Roadmap -->
 <Container paddingClass="px-4">
 	<div class="relative">
 		<div
 			alt="Vision Venture roadmap"
 			class="roadmap-image"
-			style="--standard: url({Roadmap}); --tall: url({RoadmapTall});"
+			style="--standard: url({Roadmap}); --tall: url({RoadmapMobile});"
 		/>
 		<a
 			class="button absolute left-[15%] top-[90%] !hidden -translate-x-1/2 -translate-y-1/2 md:!flex"
@@ -94,23 +95,29 @@
 			<div>Check out Vision Roadmap</div>
 		</a>
 	</div>
+	<div class="flex justify-center">
+		<a class="button mt-6 mb-12 md:!hidden" href="/roadmap">
+			<div>Check out Vision Roadmap</div>
+		</a>
+	</div>
 </Container>
-<div class="mx-4 flex justify-center">
-	<a class="button md:!hidden" href="/roadmap">
-		<div>Check out Vision Roadmap</div>
-	</a>
-</div>
 
+<!-- Student Voices -->
+<div class="title mx-8 md:hidden">Hear from our Students!</div>
 <Container paddingClass="px-0">
 	<div class="relative">
 		<div class="absolute top-1/2 left-1/4 flex -translate-x-1/2 -translate-y-1/2 flex-col">
-			<div class="title">Hear from our Students!</div>
+			<div class="title hidden md:block">Hear from our Students!</div>
 			<a class="button mt-4" href="/voices" id="voices-button">
 				<div>More Student Voices</div>
 			</a>
 		</div>
 		<img src={HearFromStudents} alt="Hear from students" class="w-full" />
 	</div>
+</Container>
+
+<!-- Team -->
+<Container>
 	<div class="title">Meet the Team!</div>
 	<TeamGallery
 		people={[
@@ -140,12 +147,12 @@
 
 <style lang="postcss">
 	.title {
-		@apply mt-8 mb-4 text-4xl;
+		@apply mt-8 mb-4 text-2xl md:text-4xl;
 	}
 
 	.button {
 		@apply mx-auto rounded-lg bg-accent-green px-4 font-bold text-white shadow-lg;
-		@apply flex h-14 w-48 items-center text-base;
+		@apply flex h-11 w-36 items-center text-sm md:h-14 md:w-48 md:text-base;
 
 		& div {
 			@apply w-full text-center;
@@ -161,7 +168,7 @@
 	.roadmap-image {
 		@apply h-0 w-full bg-contain;
 		background-image: var(--tall);
-		padding-top: 109.35%;
+		padding-top: 98.04%;
 	}
 
 	@media (min-width: 768px) {
