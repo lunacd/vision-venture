@@ -147,12 +147,12 @@
 
 <style lang="postcss">
 	.title {
-		@apply mt-8 mb-4 text-2xl md:text-4xl;
+		@apply mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl;
 	}
 
 	.button {
 		@apply mx-auto rounded-lg bg-accent-green px-4 font-bold text-white shadow-lg;
-		@apply flex h-11 w-36 items-center text-sm md:h-14 md:w-48 md:text-base;
+		@apply flex h-11 w-36 items-center text-sm sm:h-14 sm:w-48 sm:text-base;
 
 		& div {
 			@apply w-full text-center;
