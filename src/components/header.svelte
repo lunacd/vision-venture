@@ -16,7 +16,7 @@
 	let hide = true;
 </script>
 
-<div class="absolute top-[60px] left-0 right-0 z-content">
+<div class="absolute top-0 left-0 right-0 z-content">
 	<Container>
 		<div class="relative mr-1 flex h-22 flex-row items-center">
 			<a href="/">

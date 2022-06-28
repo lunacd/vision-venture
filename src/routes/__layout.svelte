@@ -19,4 +19,6 @@
 	</a>
 </div>
 
-<slot />
+<div class="relative w-screen overflow-x-hidden">
+	<slot />
+</div>
