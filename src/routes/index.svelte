@@ -17,9 +17,9 @@
 	import RoadmapMobile from '../images/roadmap-mobile.svg';
 	import HearFromStudents from '../images/hear-from-students.svg';
 	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
-	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp';
-	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp';
-	import Selin_Oner from '../images/team/Selin_Oner.png?webp';
+	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp&w=200';
+	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp&w=200';
+	import Selin_Oner from '../images/team/Selin_Oner.png?webp&w=200';
 </script>
 
 <svelte:head>
