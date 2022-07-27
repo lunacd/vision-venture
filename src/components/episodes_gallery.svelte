@@ -4,7 +4,7 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { beforeUpdate, onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret.svg';
@@ -20,33 +20,24 @@
 	let translate = spring(0);
 	let translateFinal = 0;
 
-	let images = new Array<HTMLImageElement>(episodes.length);
-	let outerContainer: HTMLDivElement;
+	let imageWidths = new Array<number>(episodes.length);
+	let containerWidth = 0;
 
-	$: maxScroll = outerContainer
-		? episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin))
-		: 0;
+	$: maxScroll = episodes.length - Math.floor(containerWidth / (imageWidths[0] + margin));
 </script>
 
-<svelte:window
-	on:resize={() => {
-		maxScroll =
-			episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
-	}}
-/>
-
-<div class="outer" bind:this={outerContainer}>
+<div class="outer" bind:clientWidth={containerWidth}>
 	<div class="inner" style={`transform: translateX(-${$translate}px)`}>
 		{#each episodes as episode, i}
-			<img
-				src={episode.image}
-				alt={episode.description}
-				class="image"
-				on:click={() => {
-					play(episode.youtubeLink);
-				}}
-				bind:this={images[i]}
-			/>
+			<div bind:clientWidth={imageWidths[i]} class="image">
+				<img
+					src={episode.image}
+					alt={episode.description}
+					on:click={() => {
+						play(episode.youtubeLink);
+					}}
+				/>
+			</div>
 		{/each}
 	</div>
 	<div class="caret backward-caret">
@@ -55,7 +46,7 @@
 			alt="Forward caret"
 			on:click={() => {
 				if (scrollPosition <= 0) return;
-				translateFinal -= margin + images[0].width;
+				translateFinal -= margin + imageWidths[0];
 				translate.set(translateFinal);
 				scrollPosition -= 1;
 			}}
@@ -68,7 +59,7 @@
 			alt="Forward caret"
 			on:click={() => {
 				if (scrollPosition >= maxScroll) return;
-				translateFinal += margin + images[0].width;
+				translateFinal += margin + imageWidths[0];
 				translate.set(translateFinal);
 				scrollPosition += 1;
 			}}
@@ -121,11 +112,13 @@
 	}
 
 	.image {
-		border-radius: 16px;
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 		margin: 12px 24px 36px 24px;
 		width: 480px;
 		cursor: pointer;
+		& img {
+			border-radius: 16px;
+			box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+		}
 	}
 
 	.hide {
