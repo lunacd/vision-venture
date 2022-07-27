@@ -14,5 +14,5 @@ tasks:
       cd vision-venture
       set +x
       source ~/.vercel_token
-      yarn dlx -q vercel -t $VERCEL_TOKEN -c -C --prod
+      yarn dlx -q vercel -t $VERCEL_TOKEN -c --prod
       set -x
