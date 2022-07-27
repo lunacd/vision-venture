@@ -23,10 +23,9 @@
 	let images = new Array<HTMLImageElement>(episodes.length);
 	let outerContainer: HTMLDivElement;
 
-	onMount(() => {
-		maxScroll =
-			episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin));
-	});
+	$: maxScroll = outerContainer
+		? episodes.length - Math.floor(outerContainer.clientWidth / (images[0].width + margin))
+		: 0;
 </script>
 
 <svelte:window

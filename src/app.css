@@ -4,4 +4,5 @@
 
 :root {
 	@apply font-sans;
+	@apply bg-white;
 }
