@@ -15,5 +15,5 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 
-!.yarn/cache
+.yarn/cache
 .vercel
