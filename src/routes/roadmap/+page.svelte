@@ -4,17 +4,15 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import RoadmapSection from '../../components/roadmap_section.svelte';
 	import Container from '../../components/container.svelte';
+	import RoadmapSection from '../../components/roadmap_section.svelte';
+	import TitleSection from '../../components/title_section.svelte';
 	import YoutubePlayer from '../../components/youtube_player.svelte';
 	import { Episode } from '../../utils/episode';
-	import TitleSection from '../../components/title_section.svelte';
 
-	import GraduatingImage from '../../images/graduating.svg';
-	import WelcomeToWork from '../../images/welcome-to-work.svg';
 	import BeyondCubicle from '../../images/beyond-cubicle.svg';
 	import BiggerPicture from '../../images/bigger-picture.svg';
-
+	import GraduatingImage from '../../images/graduating.svg';
 	// Episode thumbnails
 	// Season 1
 	import S1E1 from '../../images/thumbnails/s01e01.png?webp';
@@ -29,6 +27,7 @@
 	import S1E10 from '../../images/thumbnails/s01e10.png?webp';
 	import S1E11 from '../../images/thumbnails/s01e11.png?webp';
 	import S1E12 from '../../images/thumbnails/s01e12.png?webp';
+	import WelcomeToWork from '../../images/welcome-to-work.svg';
 
 	let seasons = [
 		// Season 1

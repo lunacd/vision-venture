@@ -8,9 +8,9 @@
 	import TitleSection from '../../components/title_section.svelte';
 	import { Book } from '../../utils/book';
 
-	import Big_Magic from '../../images/books/Big_Magic.jpg?webp';
-	import Designing_Your_Life from '../../images/books/Designing_Your_Life.jpg?webp';
-	import The_Infinite_Game from '../../images/books/The_Infinite_Game.jpg?webp';
+	import BigMagic from '../../images/books/Big_Magic.jpg?webp';
+	import DesigningYourLife from '../../images/books/Designing_Your_Life.jpg?webp';
+	import TheInfiniteGame from '../../images/books/The_Infinite_Game.jpg?webp';
 </script>
 
 <svelte:head>
@@ -27,9 +27,9 @@
 />
 <ResourceGallery
 	books={[
-		new Book('Big Magic', Big_Magic, 'https://www.elizabethgilbert.com/books/big-magic/'),
-		new Book('Designing Your Life', Designing_Your_Life, 'https://designingyour.life/the-book/'),
-		new Book('The Infinite Game', The_Infinite_Game, 'https://simonsinek.com/the-infinite-game')
+		new Book('Big Magic', BigMagic, 'https://www.elizabethgilbert.com/books/big-magic/'),
+		new Book('Designing Your Life', DesigningYourLife, 'https://designingyour.life/the-book/'),
+		new Book('The Infinite Game', TheInfiniteGame, 'https://simonsinek.com/the-infinite-game')
 	]}
 />
 <!-- <div class="link-container">

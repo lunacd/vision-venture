@@ -4,11 +4,11 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
+	import type { Person } from 'src/utils/person';
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret-cardinal.svg';
-	import type { Person } from 'src/utils/person';
 
 	export let participants: Person[];
 

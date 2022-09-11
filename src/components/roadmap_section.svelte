@@ -4,9 +4,8 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import EpisodesGallery from './episodes_gallery.svelte';
-
 	import type { Episode } from '../utils/episode';
+	import EpisodesGallery from './episodes_gallery.svelte';
 
 	export let image: string,
 		description: string,

@@ -6,9 +6,9 @@
 <script lang="ts">
 	import Container from '../components/container.svelte';
 
-	import Logo from '../images/vision-venture.svg';
-	import LogoWhite from '../images/vision-venture-white.svg';
 	import Hamburger from '../images/hamburger.svg';
+	import LogoWhite from '../images/vision-venture-white.svg';
+	import Logo from '../images/vision-venture.svg';
 
 	export let page: string;
 

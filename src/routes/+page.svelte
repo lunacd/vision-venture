@@ -4,22 +4,22 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import Header from '../components/header.svelte';
 	import Container from '../components/container.svelte';
-	import { Person } from '../utils/person';
+	import Header from '../components/header.svelte';
 	import TeamGallery from '../components/team_gallery.svelte';
+	import { Person } from '../utils/person';
 
-	import Vanishing from '../images/vanishing.svg';
-	import VanishingWide from '../images/vanishing-wide.svg';
-	import VanishingTall from '../images/vanishing-tall.svg';
-	import Quote from '../images/quote.svg';
-	import Roadmap from '../images/roadmap.svg';
-	import RoadmapMobile from '../images/roadmap-mobile.svg';
 	import HearFromStudents from '../images/hear-from-students.svg';
-	import HarlyRamsey from '../images/team/Harly_Ramsey.png?webp';
+	import Quote from '../images/quote.svg';
+	import RoadmapMobile from '../images/roadmap-mobile.svg';
+	import Roadmap from '../images/roadmap.svg';
 	import ElaineWong from '../images/team/Elaine_Wong.png?webp&w=200';
 	import HaowenLiu from '../images/team/Haowen_Liu.jpg?webp&w=200';
+	import HarlyRamsey from '../images/team/Harly_Ramsey.png?webp';
 	import SelinOner from '../images/team/Selin_Oner.png?webp&w=200';
+	import VanishingTall from '../images/vanishing-tall.svg';
+	import VanishingWide from '../images/vanishing-wide.svg';
+	import Vanishing from '../images/vanishing.svg';
 </script>
 
 <svelte:head>

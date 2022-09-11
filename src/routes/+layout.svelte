@@ -5,6 +5,7 @@
  -->
 <script lang="ts">
 	import '../app.css';
+
 	import Logo from '../images/usc-shield-name-white.png?webp';
 
 	export const prerender = true;

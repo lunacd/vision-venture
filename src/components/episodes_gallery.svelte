@@ -6,8 +6,9 @@
 <script lang="ts">
 	import { spring } from 'svelte/motion';
 
-	import ForwardCaret from '../images/forward-caret.svg';
 	import type { Episode } from '../utils/episode';
+
+	import ForwardCaret from '../images/forward-caret.svg';
 
 	export let episodes: Episode[], play: (link: string) => void;
 
@@ -15,7 +16,7 @@
 
 	// Scroll
 	let scrollPosition = 0;
-	let maxScroll;
+	let maxScroll: number;
 	let translate = spring(0);
 	let translateFinal = 0;
 

@@ -6,14 +6,14 @@
 <script lang="ts">
 	import Container from '../../components/container.svelte';
 	import StudentsGallery from '../../components/students_gallery.svelte';
+	import TakeawayTimeline from '../../components/takeaway_timeline.svelte';
+	import TitleSection from '../../components/title_section.svelte';
 	import { Person } from '../../utils/person';
 	import { Takeaway } from '../../utils/takeaway';
-	import TitleSection from '../../components/title_section.svelte';
 
-	import RoopalKondepudi from '../../images/profiles/Roopal_Kondepudi.png?webp';
-	import IsabelAnderson from '../../images/profiles/Isabel_Anderson.png?webp';
 	import ChrisTronolone from '../../images/profiles/Chris_Tronolone.png?webp';
-	import TakeawayTimeline from '../../components/takeaway_timeline.svelte';
+	import IsabelAnderson from '../../images/profiles/Isabel_Anderson.png?webp';
+	import RoopalKondepudi from '../../images/profiles/Roopal_Kondepudi.png?webp';
 
 	let participants = [
 		new Person(

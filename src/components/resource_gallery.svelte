@@ -4,11 +4,11 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
+	import type { Book } from 'src/utils/book';
 	import { onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret-cardinal.svg';
-	import type { Book } from 'src/utils/book';
 
 	export let books: Book[];
 

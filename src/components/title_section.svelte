@@ -4,9 +4,9 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
+	import Container from '../components/container.svelte';
 	import Header from '../components/header.svelte';
 	import SmallCard from '../components/small_card.svelte';
-	import Container from '../components/container.svelte';
 
 	export let name: string, title: string, tagline: string, description: string[];
 </script>
