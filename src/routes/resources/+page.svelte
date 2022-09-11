@@ -4,13 +4,13 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import ResourceGallery from '../components/resource_gallery.svelte';
-	import TitleSection from '../components/title_section.svelte';
-	import { Book } from '../utils/book';
+	import ResourceGallery from '../../components/resource_gallery.svelte';
+	import TitleSection from '../../components/title_section.svelte';
+	import { Book } from '../../utils/book';
 
-	import Big_Magic from '../images/books/Big_Magic.jpg?webp';
-	import Designing_Your_Life from '../images/books/Designing_Your_Life.jpg?webp';
-	import The_Infinite_Game from '../images/books/The_Infinite_Game.jpg?webp';
+	import Big_Magic from '../../images/books/Big_Magic.jpg?webp';
+	import Designing_Your_Life from '../../images/books/Designing_Your_Life.jpg?webp';
+	import The_Infinite_Game from '../../images/books/The_Infinite_Game.jpg?webp';
 </script>
 
 <svelte:head>

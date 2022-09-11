@@ -4,11 +4,11 @@
     Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import Container from '../components/container.svelte';
-	import TitleSection from '../components/title_section.svelte';
+	import Container from '../../components/container.svelte';
+	import TitleSection from '../../components/title_section.svelte';
 
-	import At from '../images/at.svg';
-	import ContactUs from '../images/contact-us.svg';
+	import At from '../../images/at.svg';
+	import ContactUs from '../../images/contact-us.svg';
 </script>
 
 <svelte:head>

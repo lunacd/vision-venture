@@ -4,7 +4,7 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	export let paddingClass: string = 'px-8';
+	export let paddingClass = 'px-8';
 </script>
 
 <div class="w-full">

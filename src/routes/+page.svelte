@@ -16,10 +16,10 @@
 	import Roadmap from '../images/roadmap.svg';
 	import RoadmapMobile from '../images/roadmap-mobile.svg';
 	import HearFromStudents from '../images/hear-from-students.svg';
-	import Harly_Ramsey from '../images/team/Harly_Ramsey.png?webp';
-	import Elaine_Wong from '../images/team/Elaine_Wong.png?webp&w=200';
-	import Haowen_Liu from '../images/team/Haowen_Liu.jpg?webp&w=200';
-	import Selin_Oner from '../images/team/Selin_Oner.png?webp&w=200';
+	import HarlyRamsey from '../images/team/Harly_Ramsey.png?webp';
+	import ElaineWong from '../images/team/Elaine_Wong.png?webp&w=200';
+	import HaowenLiu from '../images/team/Haowen_Liu.jpg?webp&w=200';
+	import SelinOner from '../images/team/Selin_Oner.png?webp&w=200';
 </script>
 
 <svelte:head>
@@ -28,11 +28,15 @@
 
 <Header page="about" />
 <div class="relative left-0 top-0 z-background w-full">
-	<div
-		alt="Vanishing point illustration"
-		style="--standard: url({Vanishing}); --wide: url({VanishingWide}); --tall: url({VanishingTall})"
-		class="vanishing-point"
-	/>
+	<div>
+		<img class="w-full md:hidden" src={VanishingTall} alt="Vanishing point illustration" />
+		<img
+			class="hidden w-full md:block xl:hidden"
+			src={Vanishing}
+			alt="Vanishing point illustration"
+		/>
+		<img class="hidden w-full xl:block" src={VanishingWide} alt="Vanishing point illustration" />
+	</div>
 </div>
 
 <Container>
@@ -83,11 +87,10 @@
 <!-- Roadmap -->
 <Container paddingClass="px-4">
 	<div class="relative">
-		<div
-			alt="Vision Venture roadmap"
-			class="roadmap-image"
-			style="--standard: url({Roadmap}); --tall: url({RoadmapMobile});"
-		/>
+		<div>
+			<img class="w-full md:hidden" src={RoadmapMobile} alt="Vision Venture roadmap" />
+			<img class="hidden w-full md:block" src={Roadmap} alt="Vision Venture roadmap" />
+		</div>
 		<a
 			class="button absolute left-[15%] top-[90%] !hidden -translate-x-1/2 -translate-y-1/2 md:!flex"
 			href="/roadmap"
@@ -123,22 +126,22 @@
 		people={[
 			new Person(
 				'Harly Ramsey',
-				Harly_Ramsey,
+				HarlyRamsey,
 				"Harly Ramsey is an Associate Professional of Technical Communication Practice in the Engineering in Society Program. She has a PhD in English, and her training in narrative theory, cultural studies, and rhetoric informs her teaching. As the founder of Vision Venture, she hopes to encourage students' exploration of their engineering identities and to empower them with a sense of personal agency and professional purpose. She enjoys playing tennis and tackling the New York Times daily spelling bee puzzle, but not at the same time."
 			),
 			new Person(
 				'Elaine Wong',
-				Elaine_Wong,
+				ElaineWong,
 				'Yee Lan Elaine Wong is a Master of Visual Anthropology student at the University of Southern California and is investigating emotions in the modern workplace through her thesis film. In her free time, she enjoys playing traditional mahjong, watching dystopian anime and religiously drinks a concerning amount of coffee to fuel her existence.'
 			),
 			new Person(
 				'Haowen Liu',
-				Haowen_Liu,
+				HaowenLiu,
 				'Haowen Liu is pursuing a Master of Science in Computer Science at University of Southern California. He wants to specialize in cybersecurity and high-performance computing. He is excited about Chinese opera, fountain pens, ping pong, and unfortunately, coding. He also plays League of Legends and watch a lot of Pokemon.'
 			),
 			new Person(
 				'Selin Oner',
-				Selin_Oner,
+				SelinOner,
 				'Selin Oner is majoring in Cognitive Science and minoring in Business Administration at the University of Southern California with a passion for UI/UX design. She enjoys playing volleyball, reading mystery novels, and cooking Turkish dishes that remind her of home.'
 			)
 		]}
@@ -156,37 +159,6 @@
 
 		& div {
 			@apply w-full text-center;
-		}
-	}
-
-	.vanishing-point {
-		@apply h-0 w-full bg-contain;
-		background-image: var(--tall);
-		padding-top: 135.75%;
-	}
-
-	.roadmap-image {
-		@apply h-0 w-full bg-contain;
-		background-image: var(--tall);
-		padding-top: 98.04%;
-	}
-
-	@media (min-width: 768px) {
-		.vanishing-point {
-			background-image: var(--standard);
-			padding-top: 81.53%;
-		}
-
-		.roadmap-image {
-			background-image: var(--standard);
-			padding-top: 63.96%;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		.vanishing-point {
-			background-image: var(--wide);
-			padding-top: 67.86%;
 		}
 	}
 </style>

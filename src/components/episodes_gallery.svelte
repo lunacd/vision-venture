@@ -4,7 +4,6 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import { beforeUpdate, onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 
 	import ForwardCaret from '../images/forward-caret.svg';
@@ -16,7 +15,7 @@
 
 	// Scroll
 	let scrollPosition = 0;
-	let maxScroll = 0;
+	let maxScroll;
 	let translate = spring(0);
 	let translateFinal = 0;
 

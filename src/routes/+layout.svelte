@@ -6,6 +6,8 @@
 <script lang="ts">
 	import '../app.css';
 	import Logo from '../images/usc-shield-name-white.png?webp';
+
+	export const prerender = true;
 </script>
 
 <div class="h-[60px] bg-black">

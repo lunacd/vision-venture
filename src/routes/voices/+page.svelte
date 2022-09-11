@@ -4,31 +4,31 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import Container from '../components/container.svelte';
-	import StudentsGallery from '../components/students_gallery.svelte';
-	import { Person } from '../utils/person';
-	import { Takeaway } from '../utils/takeaway';
-	import TitleSection from '../components/title_section.svelte';
+	import Container from '../../components/container.svelte';
+	import StudentsGallery from '../../components/students_gallery.svelte';
+	import { Person } from '../../utils/person';
+	import { Takeaway } from '../../utils/takeaway';
+	import TitleSection from '../../components/title_section.svelte';
 
-	import Roopal_Kondepudi from '../images/profiles/Roopal_Kondepudi.png?webp';
-	import Isabel_Anderson from '../images/profiles/Isabel_Anderson.png?webp';
-	import Chris_Tronolone from '../images/profiles/Chris_Tronolone.png?webp';
-	import TakeawayTimeline from '../components/takeaway_timeline.svelte';
+	import RoopalKondepudi from '../../images/profiles/Roopal_Kondepudi.png?webp';
+	import IsabelAnderson from '../../images/profiles/Isabel_Anderson.png?webp';
+	import ChrisTronolone from '../../images/profiles/Chris_Tronolone.png?webp';
+	import TakeawayTimeline from '../../components/takeaway_timeline.svelte';
 
 	let participants = [
 		new Person(
 			'Chris Tronolone',
-			Chris_Tronolone,
+			ChrisTronolone,
 			'Chris is a Mechanical Engineering major, graduating in 2023. He is part of the Sidney Harman Academy for Polymathic Study at USC. His main hobbies are bread-making and drumming.'
 		),
 		new Person(
 			'Isabel Anderson',
-			Isabel_Anderson,
+			IsabelAnderson,
 			'Isabel is an Industrial and Systems Engineering major and will be graduating in 2023. She is passionate about philanthropy, enjoys spending time with family and friends, and loves traveling to new places and trying new foods.'
 		),
 		new Person(
 			'Roopal Kondepudi',
-			Roopal_Kondepudi,
+			RoopalKondepudi,
 			"Roopal graduated in 2021 with a BS in Computer Engineering and Computer Science. She continued her studies through USC's Progressive Degree Program, and will graduate with an MS in Computer Science in 2022. She enjoys bouldering and embroidery."
 		)
 	];
@@ -79,9 +79,9 @@
 			height="315"
 			src={takeaways[activeIndex].link}
 			title="YouTube video player"
-			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen
+			style="border: 0"
 		/>
 	</div>
 </Container>

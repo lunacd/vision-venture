@@ -4,31 +4,31 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import RoadmapSection from '../components/roadmap_section.svelte';
-	import Container from '../components/container.svelte';
-	import YoutubePlayer from '../components/youtube_player.svelte';
-	import { Episode } from '../utils/episode';
-	import TitleSection from '../components/title_section.svelte';
+	import RoadmapSection from '../../components/roadmap_section.svelte';
+	import Container from '../../components/container.svelte';
+	import YoutubePlayer from '../../components/youtube_player.svelte';
+	import { Episode } from '../../utils/episode';
+	import TitleSection from '../../components/title_section.svelte';
 
-	import GraduatingImage from '../images/graduating.svg';
-	import WelcomeToWork from '../images/welcome-to-work.svg';
-	import BeyondCubicle from '../images/beyond-cubicle.svg';
-	import BiggerPicture from '../images/bigger-picture.svg';
+	import GraduatingImage from '../../images/graduating.svg';
+	import WelcomeToWork from '../../images/welcome-to-work.svg';
+	import BeyondCubicle from '../../images/beyond-cubicle.svg';
+	import BiggerPicture from '../../images/bigger-picture.svg';
 
 	// Episode thumbnails
 	// Season 1
-	import S1E1 from '../images/thumbnails/s01e01.png?webp';
-	import S1E2 from '../images/thumbnails/s01e02.png?webp';
-	import S1E3 from '../images/thumbnails/s01e03.png?webp';
-	import S1E4 from '../images/thumbnails/s01e04.png?webp';
-	import S1E5 from '../images/thumbnails/s01e05.png?webp';
-	import S1E6 from '../images/thumbnails/s01e06.png?webp';
-	import S1E7 from '../images/thumbnails/s01e07.png?webp';
-	import S1E8 from '../images/thumbnails/s01e08.png?webp';
-	import S1E9 from '../images/thumbnails/s01e09.png?webp';
-	import S1E10 from '../images/thumbnails/s01e10.png?webp';
-	import S1E11 from '../images/thumbnails/s01e11.png?webp';
-	import S1E12 from '../images/thumbnails/s01e12.png?webp';
+	import S1E1 from '../../images/thumbnails/s01e01.png?webp';
+	import S1E2 from '../../images/thumbnails/s01e02.png?webp';
+	import S1E3 from '../../images/thumbnails/s01e03.png?webp';
+	import S1E4 from '../../images/thumbnails/s01e04.png?webp';
+	import S1E5 from '../../images/thumbnails/s01e05.png?webp';
+	import S1E6 from '../../images/thumbnails/s01e06.png?webp';
+	import S1E7 from '../../images/thumbnails/s01e07.png?webp';
+	import S1E8 from '../../images/thumbnails/s01e08.png?webp';
+	import S1E9 from '../../images/thumbnails/s01e09.png?webp';
+	import S1E10 from '../../images/thumbnails/s01e10.png?webp';
+	import S1E11 from '../../images/thumbnails/s01e11.png?webp';
+	import S1E12 from '../../images/thumbnails/s01e12.png?webp';
 
 	let seasons = [
 		// Season 1
