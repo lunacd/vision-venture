@@ -12,21 +12,19 @@
 	let currentIndex = 0;
 </script>
 
-<div class="relative hidden h-full w-full overflow-hidden md:flex">
-	<div class="mx-4 grid w-full grid-cols-3 justify-between lg:grid-cols-4 2xl:grid-cols-5">
-		{#each people as person, i}
-			<img
-				src={person.image}
-				alt={person.name}
-				class="person_image"
-				class:gray={i !== currentIndex}
-				on:mouseenter={() => {
-					currentIndex = i;
-					currentBio = person.bio;
-				}}
-			/>
-		{/each}
-	</div>
+<div class="mx-4 grid w-full grid-cols-2 justify-between md:grid-cols-3 lg:grid-cols-4">
+	{#each people as person, i}
+		<img
+			src={person.image}
+			alt={person.name}
+			class="person_image"
+			class:gray={i !== currentIndex}
+			on:mouseenter={() => {
+				currentIndex = i;
+				currentBio = person.bio;
+			}}
+		/>
+	{/each}
 </div>
 <div class="bio">
 	{currentBio}
@@ -34,7 +32,7 @@
 
 <style lang="postcss">
 	.person_image {
-		@apply m-3 h-52 w-52 rounded-full;
+		@apply w-full rounded-full p-6;
 	}
 
 	.bio {
