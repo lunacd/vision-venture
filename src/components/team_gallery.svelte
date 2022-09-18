@@ -10,9 +10,14 @@
 
 	let currentBio = people[0].bio;
 	let currentIndex = 0;
+
+	function selectBio(index: number) {
+		currentIndex = index;
+		currentBio = people[index].bio;
+	}
 </script>
 
-<div class="mx-4 grid w-full grid-cols-2 justify-between md:grid-cols-3 lg:grid-cols-4">
+<div class="mx-4 flex w-full flex-wrap justify-around">
 	{#each people as person, i}
 		<img
 			src={person.image}
@@ -20,8 +25,10 @@
 			class="person_image"
 			class:gray={i !== currentIndex}
 			on:mouseenter={() => {
-				currentIndex = i;
-				currentBio = person.bio;
+				selectBio(i);
+			}}
+			on:click={() => {
+				selectBio(i);
 			}}
 		/>
 	{/each}
@@ -32,7 +39,7 @@
 
 <style lang="postcss">
 	.person_image {
-		@apply w-full rounded-full p-6;
+		@apply w-1/2 rounded-full p-3 sm:p-6 md:w-52 lg:w-72;
 	}
 
 	.bio {

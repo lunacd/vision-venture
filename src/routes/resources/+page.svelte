@@ -8,9 +8,9 @@
 	import TitleSection from '../../components/title_section.svelte';
 	import { Book } from '../../utils/book';
 
-	import BigMagic from '../../images/books/Big_Magic.jpg?webp';
-	import DesigningYourLife from '../../images/books/Designing_Your_Life.jpg?webp';
-	import TheInfiniteGame from '../../images/books/The_Infinite_Game.jpg?webp';
+	import BigMagic from '../../images/books/Big_Magic.jpg?webp&aspect=0.7&w=600';
+	import DesigningYourLife from '../../images/books/Designing_Your_Life.jpg?webp&aspect=0.7&w=600';
+	import TheInfiniteGame from '../../images/books/The_Infinite_Game.jpg?webp&aspect=0.7&w=600';
 </script>
 
 <svelte:head>

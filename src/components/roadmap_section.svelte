@@ -79,7 +79,6 @@
 	.subtitle {
 		@apply font-serif;
 		font-size: 1.25rem;
-		margin-top: 10px;
 	}
 
 	.videos {

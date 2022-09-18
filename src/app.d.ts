@@ -29,3 +29,13 @@ declare module '*.jpg?webp&w=200' {
 	const src: string;
 	export default src;
 }
+
+declare module '*.jpg?webp&aspect=0.7&w=600' {
+	const src: string;
+	export default src;
+}
+
+declare module '*.png?webp&aspect=0.7&w=600' {
+	const src: string;
+	export default src;
+}
