@@ -1,3 +1,8 @@
+<!-- 
+	A season selector for Vision Venture.
+
+	Created by Haowen Liu in 2022.
+ -->
 <script lang="ts">
 	export let numberOfSeasons: number, selectSeason: (season: number) => void;
 

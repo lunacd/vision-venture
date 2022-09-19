@@ -6,6 +6,7 @@
 <script lang="ts">
 	import Container from '../components/container.svelte';
 
+	import HamburgerRed from '../images/hamburger-red.svg';
 	import Hamburger from '../images/hamburger.svg';
 	import LogoWhite from '../images/vision-venture-white.svg';
 	import Logo from '../images/vision-venture.svg';
@@ -13,7 +14,6 @@
 	export let page: string;
 
 	let show = false;
-	let hide = true;
 </script>
 
 <div class="absolute top-0 left-0 right-0 z-content">
@@ -23,33 +23,26 @@
 				<img
 					src={Logo}
 					alt="Vision Venture logo"
-					class="mx-3 h-16 w-16"
+					class="mx-3 h-12 md:h-16 w-16"
 					class:hidden={page !== 'about'}
 				/>
 				<img
 					src={LogoWhite}
 					alt="Vision Venture logo"
-					class="mx-3 h-16 w-16"
+					class="mx-3 h-12 md:h-16 w-16"
 					class:hidden={page === 'about'}
 				/>
 			</a>
 			<div class="links-container" class:links-show={show}>
 				<img
-					src={Hamburger}
+					src={page === 'about' ? Hamburger : HamburgerRed}
 					alt="Hamburger menu"
 					id="hamburger"
 					on:click={() => {
 						show = !show;
-						if (hide) {
-							hide = false;
-						} else {
-							setTimeout(() => {
-								hide = true;
-							}, 600);
-						}
 					}}
 				/>
-				<div class="links-inner" class:links-hide={hide}>
+				<div class="links-inner">
 					<a
 						href="/"
 						class="link"
@@ -98,11 +91,7 @@
 
 <style lang="postcss">
 	.link {
-		@apply ml-6 py-2 text-xl text-white;
-	}
-
-	.link-black {
-		@apply text-black;
+		@apply my-1 ml-6 py-1 text-lg md:text-xl text-white md:my-0 md:py-2;
 	}
 
 	.links-container {
@@ -111,28 +100,28 @@
 	}
 
 	.links-inner {
-		@apply flex flex-col bg-black pt-6 pr-6;
+		@apply flex flex-col bg-black pt-6 pr-6 items-start;
 	}
 
 	.links-show {
 		@apply flex;
-		transform: translateX(2.25rem);
-	}
-
-	.links-hide {
-		@apply opacity-0;
+		transform: translateX(1.5rem);
 	}
 
 	.link-active {
 		@apply border-0 border-b-3 border-solid border-b-white;
 	}
 
+	.link-black {
+		@apply md:text-black;
+	}
+
 	.link-active.link-black {
-		@apply border-0 border-b-3 border-solid border-b-black;
+		@apply border-0 border-b-3 border-solid md:border-b-black;
 	}
 
 	#hamburger {
-		@apply mr-9 mt-8 h-6 cursor-pointer;
+		@apply mr-9 mt-8 h-5 cursor-pointer;
 	}
 
 	@media (min-width: 768px) {
@@ -152,10 +141,6 @@
 		.links-inner {
 			@apply flex-row bg-transparent;
 			padding: unset;
-		}
-
-		.links-hide {
-			opacity: unset;
 		}
 	}
 </style>
