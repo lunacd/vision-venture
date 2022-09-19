@@ -6,7 +6,7 @@
 <script lang="ts">
 	import Container from '../components/container.svelte';
 	import Header from '../components/header.svelte';
-	import SmallCard from '../components/small_card.svelte';
+	import Card from '../components/card.svelte';
 
 	export let name: string, title: string, tagline: string, description: string[];
 </script>
@@ -15,18 +15,12 @@
 <div class="mt-26" />
 <Container>
 	<div class="title">{title}</div>
-	<SmallCard title={tagline} paragraphs={description} />
+	<Card title={tagline} paragraphs={description} />
 </Container>
-<div id="padding-bottom" />
+<div class="mb-24" />
 
 <style lang="postcss">
-	#padding-bottom {
-		margin-top: 48px;
-	}
-
 	.title {
-		@apply font-sans;
-		font-size: 3.5rem;
-		text-align: center;
+		@apply font-sans text-center text-3xl md:text-5xl;
 	}
 </style>

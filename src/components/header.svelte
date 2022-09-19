@@ -18,18 +18,18 @@
 
 <div class="absolute top-0 left-0 right-0 z-content">
 	<Container>
-		<div class="relative mr-1 flex h-22 flex-row items-center">
+		<div class="relative flex h-22 flex-row items-center">
 			<a href="/">
 				<img
 					src={Logo}
 					alt="Vision Venture logo"
-					class="mx-3 h-12 md:h-16 w-16"
+					class="h-12 w-12 md:h-16 md:w-16"
 					class:hidden={page !== 'about'}
 				/>
 				<img
 					src={LogoWhite}
 					alt="Vision Venture logo"
-					class="mx-3 h-12 md:h-16 w-16"
+					class="h-12 w-12 md:h-16 md:w-16"
 					class:hidden={page === 'about'}
 				/>
 			</a>
@@ -91,16 +91,16 @@
 
 <style lang="postcss">
 	.link {
-		@apply my-1 ml-6 py-1 text-lg md:text-xl text-white md:my-0 md:py-2;
+		@apply my-1 ml-6 py-1 text-lg text-white md:my-0 md:py-2 md:text-xl;
 	}
 
 	.links-container {
 		@apply absolute right-0 top-0 flex h-screen transition-transform;
-		transform: translateX(calc(100% - 2.5rem));
+		transform: translateX(calc(100% - 2rem));
 	}
 
 	.links-inner {
-		@apply flex flex-col bg-black pt-6 pr-6 items-start;
+		@apply flex flex-col items-start bg-black pt-6 pr-6;
 	}
 
 	.links-show {
@@ -121,7 +121,7 @@
 	}
 
 	#hamburger {
-		@apply mr-9 mt-8 h-5 cursor-pointer;
+		@apply mr-6 mt-8 h-5 cursor-pointer;
 	}
 
 	@media (min-width: 768px) {
