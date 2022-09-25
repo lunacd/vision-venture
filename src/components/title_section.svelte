@@ -4,9 +4,9 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
+	import Card from '../components/card.svelte';
 	import Container from '../components/container.svelte';
 	import Header from '../components/header.svelte';
-	import Card from '../components/card.svelte';
 
 	export let name: string, title: string, tagline: string, description: string[];
 </script>
@@ -21,6 +21,6 @@
 
 <style lang="postcss">
 	.title {
-		@apply font-sans text-center text-3xl md:text-5xl;
+		@apply text-center font-sans text-3xl md:text-5xl;
 	}
 </style>
