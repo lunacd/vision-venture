@@ -17,7 +17,7 @@
 	<div class="title">{title}</div>
 	<Card title={tagline} paragraphs={description} />
 </Container>
-<div class="mb-24" />
+<div class="pt-12 md:pt-24" />
 
 <style lang="postcss">
 	.title {

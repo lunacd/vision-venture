@@ -11,7 +11,7 @@
 
 <div
 	class="youtube-container"
-	class:hide={link === undefined}
+	class:hidden={link === undefined}
 	on:click={() => {
 		link = undefined;
 	}}
@@ -39,33 +39,17 @@
 
 <style lang="postcss">
 	.youtube-container {
-		@apply z-overlay;
-		position: fixed;
-		width: 100%;
-		overflow-x: hidden;
-		top: 0;
-		bottom: 0;
+		@apply fixed top-0 bottom-0 z-overlay w-full overflow-x-hidden;
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 
 	.player {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%);
-	}
-
-	.hide {
-		display: none;
+		@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full;
 	}
 
 	.close {
-		@apply text-white;
-		position: absolute;
+		@apply absolute w-6 -translate-x-1/2 -translate-y-1/2 cursor-pointer text-white md:w-8;
 		left: 90%;
 		top: 10%;
-		transform: translateX(-50%) translateY(-50%);
-		cursor: pointer;
-		width: 32px;
 	}
 </style>

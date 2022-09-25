@@ -9,7 +9,7 @@
 	export let episodes: Episode[], play: (link: string) => void;
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="relative grid grid-cols-1 pb-4 md:grid-cols-2">
 	{#each episodes as episode}
 		<div class="image">
 			<img
@@ -25,7 +25,7 @@
 
 <style lang="postcss">
 	.image {
-		@apply w-full cursor-pointer px-8 pt-4 pb-8;
+		@apply w-full cursor-pointer px-4 py-3 md:px-8 md:pt-4 md:pb-8;
 		& img {
 			@apply rounded-2xl;
 			box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);

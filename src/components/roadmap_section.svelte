@@ -28,6 +28,7 @@
 			<div class="subtitle">{subtitle}</div>
 		</div>
 		<div class="videos">
+			<div class="border" />
 			<EpisodesGallery {episodes} {play} />
 		</div>
 	</div>
@@ -35,99 +36,83 @@
 
 <style lang="postcss">
 	.roadmap-section {
-		display: flex;
-		flex-direction: row;
+		@apply flex flex-row;
 	}
 
 	.image-and-line {
-		width: 96px;
-		position: relative;
-		flex-shrink: 0;
+		@apply relative w-12 flex-shrink-0 md:w-24;
 	}
 
 	.image {
-		@apply z-content;
-		position: absolute;
-		width: 100%;
-		top: 50%;
-		transform: translateY(-50%);
+		@apply absolute top-1/2 z-content w-full -translate-y-1/2;
 	}
 
 	.vertical-line {
 		@apply z-background border-0 border-l-3 border-b-3 border-solid border-dark-gray;
-		position: relative;
-		left: 50%;
-		width: 50%;
-		height: 100%;
+		@apply relative left-1/2 h-full w-1/2;
 	}
 
 	.content {
-		flex-grow: 1;
-		min-width: 0;
+		@apply min-w-0 flex-grow;
 	}
 
 	.titles {
-		padding: 0 24px 0 24px;
+		@apply px-2 md:px-6;
 	}
 
 	.title {
-		@apply font-sans;
-		font-size: 2rem;
-		margin-top: 12px;
+		@apply text-xl md:mt-3 md:text-4xl;
 	}
 
 	.subtitle {
-		@apply font-serif;
-		font-size: 1.25rem;
+		@apply mt-1 font-serif text-sm md:text-xl;
 	}
 
 	.videos {
-		@apply border-0 border-b-3 border-solid border-b-dark-gray;
-		margin-right: 48px;
+		@apply relative md:mr-12;
+
+		& .border {
+			@apply absolute top-0 left-0 right-6 h-full border-0 border-b-3 border-solid border-b-dark-gray;
+		}
 	}
 
 	/* First section */
 	.roadmap-section.first {
 		& .image {
-			top: 0;
-			transform: none;
+			@apply top-0 transform-none;
 		}
 	}
 
 	/* Odd sections are reversed */
 	.roadmap-section.reversed {
-		flex-direction: row-reverse;
+		@apply flex-row-reverse;
 
 		& .titles {
-			text-align: right;
+			@apply text-right;
 		}
 
 		& .vertical-line {
-			@apply border-l-0 border-r-3 border-solid border-r-dark-gray;
-			left: 0;
+			@apply left-0 border-l-0 border-r-3 border-solid border-r-dark-gray;
 		}
 
-		& .videos {
-			margin-right: 0;
-			margin-left: 48px;
+		& .videos .border {
+			@apply left-6 right-0;
 		}
 	}
 
 	.roadmap-section.last {
-		margin-bottom: 48px;
+		@apply mb-12;
 
 		& .image {
-			bottom: 0;
-			top: auto;
-			transform: none;
+			@apply bottom-0 top-auto transform-none;
 		}
 
 		& .vertical-line {
-			border-bottom: none;
+			@apply border-b-0;
 		}
 
-		& .videos {
-			border-bottom: none;
+		& .videos .border {
+			@apply border-b-0;
 		}
 	}
 </style>
