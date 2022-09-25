@@ -72,7 +72,8 @@
 		@apply relative md:mr-12;
 
 		& .border {
-			@apply absolute top-0 left-0 right-6 h-full border-0 border-b-3 border-solid border-b-dark-gray;
+			@apply absolute top-0 left-0 right-6 md:right-0;
+			@apply h-full border-0 border-b-3 border-solid border-b-dark-gray;
 		}
 	}
 
@@ -95,8 +96,12 @@
 			@apply left-0 border-l-0 border-r-3 border-solid border-r-dark-gray;
 		}
 
-		& .videos .border {
-			@apply left-6 right-0;
+		& .videos {
+			@apply md:mr-0 md:ml-12;
+
+			& .border {
+				@apply left-6 right-0 md:left-0;
+			}
 		}
 	}
 
