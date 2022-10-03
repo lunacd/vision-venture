@@ -6,3 +6,7 @@
 	@apply font-sans;
 	@apply bg-white;
 }
+
+* {
+	@apply box-border;
+}

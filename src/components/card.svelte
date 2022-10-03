@@ -27,6 +27,6 @@
 	}
 
 	.card-text {
-		@apply mt-3 font-serif text-lg leading-tight md:mt-4 md:text-xl;
+		@apply mt-3 font-serif leading-tight md:mt-4 md:text-xl;
 	}
 </style>

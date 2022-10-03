@@ -9,37 +9,43 @@
 	export let participants: Person[];
 </script>
 
-<div class="flex w-full flex-wrap justify-center">
+<div class="mb-12 flex w-full flex-col justify-center md:flex-row md:flex-wrap">
 	{#each participants as participant}
-		<div class="flip-box">
-			<div class="flip-box-inner">
-				<div class="flip-box-front">
-					<img src={participant.image} alt={participant.name} />
-				</div>
-				<div class="flip-box-back overflow-y-scroll">
-					<p>{participant.bio}</p>
+		<div class="mx-6 hidden flex-col md:flex">
+			<div class="flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<img src={participant.image} alt={participant.name} />
+					</div>
+					<div class="flip-box-back overflow-y-scroll">
+						<p>{participant.bio}</p>
+					</div>
 				</div>
 			</div>
+			<div class="mt-3 text-center text-xl font-bold uppercase">
+				{participant.name}
+			</div>
+		</div>
+		<div class="mb-6 grid grid-cols-2 items-center gap-2 md:hidden">
+			<div>
+				<img src={participant.image} alt={participant.name} class="rounded-xl" />
+				<div class="mt-3 text-center text-sm font-bold uppercase">
+					{participant.name}
+				</div>
+			</div>
+			<p class="font-serif text-sm">{participant.bio}</p>
 		</div>
 	{/each}
 </div>
 
 <style lang="postcss">
 	.flip-box {
-		width: 240px;
-		height: 240px;
-		perspective: 1000px;
-		margin: 12px 24px 36px 24px;
+		@apply relative aspect-square w-full md:w-60;
 	}
 
 	.flip-box-inner {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		transition: transform 0.6s;
+		@apply relative h-full w-full transform-gpu rounded-2xl text-center transition-transform duration-700;
 		transform-style: preserve-3d;
-		border-radius: 16px;
 		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 	}
 
@@ -49,32 +55,23 @@
 
 	.flip-box-front,
 	.flip-box-back {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		-webkit-backface-visibility: hidden;
+		@apply absolute h-full w-full;
 		backface-visibility: hidden;
 		transform-style: preserve-3d;
 	}
 
 	.flip-box-front {
 		& img {
-			border-radius: 16px;
-			width: 240px;
-			height: 240px;
+			@apply h-full w-full rounded-2xl;
 		}
 	}
 
 	.flip-box-back {
-		@apply font-serif;
+		@apply flex items-center font-serif leading-tight;
 		transform: rotateY(180deg);
-		display: flex;
-		align-items: center;
-		line-height: 1.25;
 
 		& p {
-			padding: 16px;
-			margin: 0;
+			@apply m-0 p-4;
 		}
 	}
 </style>

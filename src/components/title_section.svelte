@@ -14,13 +14,7 @@
 <Header page={name} />
 <div class="mt-26" />
 <Container>
-	<div class="title">{title}</div>
+	<div class="text-center font-sans text-3xl md:text-5xl">{title}</div>
 	<Card title={tagline} paragraphs={description} />
 </Container>
 <div class="pt-12 md:pt-24" />
-
-<style lang="postcss">
-	.title {
-		@apply text-center font-sans text-3xl md:text-5xl;
-	}
-</style>

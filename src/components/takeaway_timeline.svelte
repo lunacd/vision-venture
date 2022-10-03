@@ -9,7 +9,7 @@
 	export let takeaways: Takeaway[], activeIndex: number, onSelect: (newIndex: number) => void;
 </script>
 
-<div class="takeaway-container">
+<div class="flex justify-center font-sans">
 	<div class="episodes-container">
 		{#each takeaways as takeaway, index}
 			<div
@@ -33,43 +33,26 @@
 </div>
 
 <style lang="postcss">
-	.takeaway-container {
-		@apply font-sans;
-		display: flex;
-	}
-
 	.episodes-container {
-		margin-top: 48px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
+		@apply mt-8 flex flex-col items-end md:mt-12;
 	}
 
 	.episode-container {
-		display: table;
-		margin: 16px 0 16px 8px;
-		cursor: pointer;
+		@apply my-4 -mr-4 table cursor-pointer md:ml-2 lg:mr-0;
 
 		& .episode {
 			@apply border-[1.5px] border-solid border-cardinal text-cardinal;
+			@apply h-8 pl-2 align-middle text-sm md:text-base lg:text-lg;
 			display: table-cell;
-			padding-left: 8px;
 			border-radius: 10px 0 0 10px;
 			border-right: none;
-			height: 32px;
-			vertical-align: middle;
-			font-size: 20px;
 		}
 
 		& .episode-arrow-outer {
-			height: 32px;
-			width: 32px;
-			overflow: hidden;
+			@apply h-8 w-8 overflow-hidden;
 
 			& .episode-arrow {
-				@apply border-[1.5px] border-solid border-cardinal;
-				height: 32px;
-				width: 32px;
+				@apply h-8 w-8 border-[1.5px] border-solid border-cardinal;
 				border-radius: 50% 15% 50% 50%;
 				transform: rotate(45deg) translate(-11px, 11px);
 			}
@@ -101,19 +84,15 @@
 	}
 
 	.line-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		@apply flex flex-col items-center;
 	}
 
 	.circle {
 		@apply flex items-center justify-center bg-accent-orange text-white;
-		@apply h-[48px] w-[48px] rounded-full text-3xl;
+		@apply h-8 w-8 rounded-full text-xl md:h-12 md:w-12 md:text-3xl;
 	}
 
 	.line {
-		@apply border-l-3 border-solid border-l-black;
-		width: 0;
-		flex-grow: 1;
+		@apply w-0 flex-grow border-l-3 border-solid border-l-black;
 	}
 </style>

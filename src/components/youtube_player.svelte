@@ -44,7 +44,7 @@
 	}
 
 	.player {
-		@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full;
+		@apply absolute left-1/2 top-1/2 max-w-full -translate-x-1/2 -translate-y-1/2;
 	}
 
 	.close {

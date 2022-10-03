@@ -712,10 +712,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-static@npm:^1.0.0-next.43":
-  version: 1.0.0-next.43
-  resolution: "@sveltejs/adapter-static@npm:1.0.0-next.43"
-  checksum: 02c476914f379db328565957bc138ce3909ed9c72b4629ea5344cd23439ee8128bdf3da8971de6687eb779ba291637359cea537b023bd88180d2b4193558135e
+"@sveltejs/adapter-static@npm:^1.0.0-next.44":
+  version: 1.0.0-next.44
+  resolution: "@sveltejs/adapter-static@npm:1.0.0-next.44"
+  checksum: 270a938f51cdc0df479e7c4bce29e5b1741e4dd87440f3e9383cae3d783bc0eb0d37416183886e9c6673e0ce54946f29bab3f8bc9bf3271a1d6b539409245506
   languageName: node
   linkType: hard
 
@@ -729,9 +729,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:^1.0.0-next.505":
-  version: 1.0.0-next.505
-  resolution: "@sveltejs/kit@npm:1.0.0-next.505"
+"@sveltejs/kit@npm:^1.0.0-next.507":
+  version: 1.0.0-next.507
+  resolution: "@sveltejs/kit@npm:1.0.0-next.507"
   dependencies:
     "@sveltejs/vite-plugin-svelte": ^1.0.5
     "@types/cookie": ^0.5.1
@@ -751,7 +751,7 @@ __metadata:
     vite: ^3.1.0
   bin:
     svelte-kit: svelte-kit.js
-  checksum: aaeb139dd1ec147a9a646ceabb3ecbe7eb9fcaf2f20400ab35170ce772735139c9da8dabca4d2bfb9c70394c27c235ecf04301a7223a6a39f769c9895c2f12cf
+  checksum: 974d46ea801c38c52ecdd6558f42fe365fe768679f3f30f5927056d77776918957f1ac9dcaf9e5a83edc71d4e7985fe7d2fc0b3b46494241187684152970f54f
   languageName: node
   linkType: hard
 
@@ -3795,14 +3795,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.14, postcss@npm:^8.4.16":
-  version: 8.4.16
-  resolution: "postcss@npm:8.4.16"
+"postcss@npm:^8.4.14, postcss@npm:^8.4.16, postcss@npm:^8.4.17":
+  version: 8.4.17
+  resolution: "postcss@npm:8.4.17"
   dependencies:
     nanoid: ^3.3.4
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 10eee25efd77868036403858577da0cefaf2e0905feeaba5770d5438ccdddba3d01cba8063e96b8aac4c6daa0ed413dd5ae0554a433a3c4db38df1d134cffc1f
+  checksum: a6d9096dd711e17f7b1d18ff5dcb4fdedf3941d5a3dc8b0e4ea873b8f31972d57f73d6da9a8aed7ff389eb52190ed34f6a94f299a7f5ddc68b08a24a48f77eb9
   languageName: node
   linkType: hard
 
@@ -4723,8 +4723,8 @@ __metadata:
   dependencies:
     "@playwright/test": ^1.26.1
     "@sveltejs/adapter-auto": ^1.0.0-next.80
-    "@sveltejs/adapter-static": ^1.0.0-next.43
-    "@sveltejs/kit": ^1.0.0-next.505
+    "@sveltejs/adapter-static": ^1.0.0-next.44
+    "@sveltejs/kit": ^1.0.0-next.507
     "@trivago/prettier-plugin-sort-imports": ^3.3.0
     "@typescript-eslint/eslint-plugin": ^5.38.1
     "@typescript-eslint/parser": ^5.38.1
@@ -4732,7 +4732,7 @@ __metadata:
     eslint: ^8.24.0
     eslint-config-prettier: ^8.5.0
     eslint-plugin-svelte3: ^4.0.0
-    postcss: ^8.4.16
+    postcss: ^8.4.17
     postcss-preset-env: ^7.8.2
     prettier: ^2.7.1
     prettier-plugin-svelte: ^2.7.1

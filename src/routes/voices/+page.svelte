@@ -5,11 +5,13 @@
  -->
 <script lang="ts">
 	import Container from '../../components/container.svelte';
+	import MediaQuery from '../../components/media-query.svelte';
 	import StudentsGallery from '../../components/students_gallery.svelte';
 	import TakeawayTimeline from '../../components/takeaway_timeline.svelte';
 	import TitleSection from '../../components/title_section.svelte';
 	import { Person } from '../../utils/person';
 	import { Takeaway } from '../../utils/takeaway';
+	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
 
 	import ChrisTronolone from '../../images/profiles/Chris_Tronolone.png?webp';
 	import IsabelAnderson from '../../images/profiles/Isabel_Anderson.png?webp';
@@ -34,16 +36,13 @@
 	];
 
 	let takeaways = [
-		new Takeaway('https://www.youtube.com/embed/d7ZOLtFpqTE', 'There are no wrong moves'),
-		new Takeaway('https://www.youtube.com/embed/ni-BdN6L8ow', 'Find your values first'),
-		new Takeaway('https://www.youtube.com/embed/CPu68x4JJAE', 'Shit sandwich'),
-		new Takeaway('https://www.youtube.com/embed/aF48P7pswmo', "Employer's POV"),
-		new Takeaway(
-			'https://www.youtube.com/embed/JbMMFFj1-cM',
-			'Time management and work-life balance'
-		),
-		new Takeaway('https://www.youtube.com/embed/FdTk-g3_hYU', 'Fluid mindset'),
-		new Takeaway('https://www.youtube.com/embed/v2uJH6_4BFo', 'Confirming beliefs')
+		new Takeaway('d7ZOLtFpqTE', 'There are no wrong moves'),
+		new Takeaway('ni-BdN6L8ow', 'Find your values first'),
+		new Takeaway('CPu68x4JJAE', 'Shit sandwich'),
+		new Takeaway('aF48P7pswmo', "Employer's POV"),
+		new Takeaway('JbMMFFj1-cM', 'Time management and work-life balance'),
+		new Takeaway('FdTk-g3_hYU', 'Fluid mindset'),
+		new Takeaway('v2uJH6_4BFo', 'Confirming beliefs')
 	];
 
 	let activeIndex = 0;
@@ -53,45 +52,40 @@
 	<title>Student Voices | Viterbi Vision Venture</title>
 </svelte:head>
 
-<TitleSection
-	name="voices"
-	title="Student Voices"
-	tagline="Hear from our students."
-	description={[
-		"Student interviewers completed a set of readings and discussed them in workshops together before conducting their interviews with alumni. Hear what they learned throughout the process in the videos below. Each season will include new student interviewers, so contact us if you're interested in participating."
-	]}
-/>
+<MediaQuery query="(min-width: 768px)" let:matches={largeDevice}>
+	<TitleSection
+		name="voices"
+		title="Student Voices"
+		tagline="Hear from our students."
+		description={[
+			"Student interviewers completed a set of readings and discussed them in workshops together before conducting their interviews with alumni. Hear what they learned throughout the process in the videos below. Each season will include new student interviewers, so contact us if you're interested in participating."
+		]}
+	/>
 
-<Container>
-	<StudentsGallery {participants} />
-	<div class="text-3xl text-cardinal">Student Debriefs</div>
-	<div class="text-xl text-dark-gray">Click on the pins to watch!</div>
-	<div class="video-container">
-		<TakeawayTimeline
-			{takeaways}
-			{activeIndex}
-			onSelect={(newIndex) => {
-				activeIndex = newIndex;
-			}}
-		/>
-		<iframe
-			width="560"
-			height="315"
-			src={takeaways[activeIndex].link}
-			title="YouTube video player"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-			style="border: 0"
-		/>
-	</div>
-</Container>
-
-<style lang="postcss">
-	.video-container {
-		display: flex;
-		margin-top: 16px;
-		margin-bottom: 48px;
-		justify-content: space-around;
-		align-items: center;
-	}
-</style>
+	<Container>
+		<StudentsGallery {participants} />
+		<div class="text-xl text-cardinal md:text-3xl">Student Debriefs</div>
+		<div class="text-sm text-dark-gray md:text-xl">Click on the pins to watch!</div>
+		<div class="mt-4 mb-12 flex flex-col items-center justify-around md:flex-row">
+			<TakeawayTimeline
+				{takeaways}
+				{activeIndex}
+				onSelect={(newIndex) => {
+					activeIndex = newIndex;
+					if (!largeDevice) {
+						window.open(getPlayLink(takeaways[activeIndex].link));
+					}
+				}}
+			/>
+			<iframe
+				class="hidden w-[400px] md:block lg:w-[560px]"
+				height="315"
+				src={getEmbedLink(takeaways[activeIndex].link)}
+				title="YouTube video player"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+				style="border: 0"
+			/>
+		</div>
+	</Container>
+</MediaQuery>
