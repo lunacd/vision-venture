@@ -14,8 +14,8 @@
 <Container>
 	<div class="mb-24 flex flex-wrap justify-around">
 		{#each books as book}
-			<div class="flex w-72 flex-col">
-				<a href={book.link} class="m-3" target="_blank">
+			<div class="flex w-1/2 flex-col p-3 md:w-52 lg:w-72">
+				<a href={book.link} target="_blank">
 					<img src={book.image} alt={book.title} class="book" />
 				</a>
 				<a class="book-title" href={book.link} target="_blank">{book.title}</a>
@@ -31,7 +31,7 @@
 
 	.book-title {
 		@apply rounded border-2 border-solid border-cardinal font-sans text-cardinal;
-		@apply mx-3 cursor-pointer p-1 text-center uppercase;
+		@apply mt-3 cursor-pointer p-1 text-center text-sm uppercase md:text-base;
 
 		&:hover {
 			@apply bg-cardinal text-white;

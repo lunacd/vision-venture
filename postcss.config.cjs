@@ -4,7 +4,7 @@ const presetEnv = require('postcss-preset-env');
 
 module.exports = {
 	plugins: [
-		tailwindcss({}),
+		tailwindcss(),
 		autoprefixer({}),
 		presetEnv({
 			features: {

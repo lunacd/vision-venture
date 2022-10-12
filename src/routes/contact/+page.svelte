@@ -25,15 +25,19 @@
 />
 
 <Container>
-	<div class="relative mt-16 h-96">
-		<div class="relative z-content ml-16 flex items-center space-x-8">
-			<img src={At} alt="at sign" class="h-24 w-24" />
-			<a class="text-3xl" href="mailto:VisionVenture@usc.edu"> VisionVenture@usc.edu </a>
+	<div class="relative h-96 md:mt-16">
+		<div
+			class="relative z-content flex items-center justify-center md:ml-16 md:justify-start md:space-x-8"
+		>
+			<img src={At} alt="at sign" class="hidden h-16 w-16 md:block lg:h-24 lg:w-24" />
+			<a class="text-2xl lg:text-3xl" href="mailto:VisionVenture@usc.edu">
+				VisionVenture@usc.edu
+			</a>
 		</div>
 		<img
 			src={ContactUs}
 			alt="Contact us illustration"
-			class="absolute right-0 bottom-0 z-background h-full"
+			class="absolute right-0 bottom-0 z-background hidden h-full md:block"
 		/>
 	</div>
 </Container>
