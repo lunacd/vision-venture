@@ -146,6 +146,19 @@
 			)
 		]}
 	/>
+
+	<div class="thanks">
+		Financial support was provided for this work by the Kern Family Foundation through the Coalition
+		for Life-Transformative Education (CLTE). This website solely reflects the opinions and
+		conclusions of its authors and not the Kern Family Foundation, the CLTE, or the individuals
+		associated with these organizations.
+	</div>
+	<div class="thanks">
+		Matching funds were provided for this work by the Dean’s Office at the Viterbi School of
+		Engineering, University of Southern California. This website solely reflects the opinions and
+		conclusions of its authors and not the Viterbi School of Engineering, the University of Southern
+		California, or the individuals associated with these organizations.
+	</div>
 </Container>
 
 <style lang="postcss">
@@ -160,5 +173,9 @@
 		& div {
 			@apply w-full text-center;
 		}
+	}
+
+	.thanks {
+		@apply mb-4 text-sm italic;
 	}
 </style>
