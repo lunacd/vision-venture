@@ -7,34 +7,28 @@
 	import X from '../images/x.svg';
 
 	export let link: string;
+
+	function close() {
+		link = undefined;
+	}
 </script>
 
 <div
 	class="youtube-container"
 	class:hidden={link === undefined}
-	on:click={() => {
-		link = undefined;
-	}}
+	on:click={close}
+	on:keypress={close}
 >
-	<!--suppress HtmlDeprecatedAttribute -->
 	<iframe
-		class="player"
+		class="player border-0"
 		width="560"
 		height="315"
 		src={link}
 		title="YouTube video player"
-		frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen
 	/>
-	<img
-		class="close"
-		on:click={() => {
-			link = undefined;
-		}}
-		src={X}
-		alt="Close button"
-	/>
+	<img class="close" on:click={close} on:keypress={close} src={X} alt="Close button" />
 </div>
 
 <style lang="postcss">

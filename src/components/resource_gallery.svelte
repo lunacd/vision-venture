@@ -15,10 +15,10 @@
 	<div class="mb-24 flex flex-wrap justify-around">
 		{#each books as book}
 			<div class="flex w-1/2 flex-col p-3 md:w-52 lg:w-72">
-				<a href={book.link} target="_blank">
+				<a href={book.link} target="_blank" rel="noreferrer">
 					<img src={book.image} alt={book.title} class="book" />
 				</a>
-				<a class="book-title" href={book.link} target="_blank">{book.title}</a>
+				<a class="book-title" href={book.link} target="_blank" rel="noreferrer">{book.title}</a>
 			</div>
 		{/each}
 	</div>

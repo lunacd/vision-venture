@@ -63,7 +63,7 @@
 	let currentSeason = seasons[seasons.length - 1];
 	let link: string = undefined;
 
-	function setLink(newLink: string, largeDevice) {
+	function setLink(newLink: string, largeDevice: boolean) {
 		if (largeDevice) {
 			link = undefined;
 			link = getEmbedLink(newLink);
@@ -94,7 +94,7 @@
 			description="Graduating"
 			subtitle="Leaving the educational nest."
 			episodes={currentSeason[0]}
-            play={(link) => {
+			play={(link) => {
 				setLink(link, largeDevice);
 			}}
 			index={0}
@@ -105,7 +105,7 @@
 			description="Welcome to working world"
 			subtitle="-and adulthood."
 			episodes={currentSeason[1]}
-            play={(link) => {
+			play={(link) => {
 				setLink(link, largeDevice);
 			}}
 			index={1}
@@ -116,7 +116,7 @@
 			description="Beyond the cubicle"
 			subtitle="There is more to work than just tasks and deadlines."
 			episodes={currentSeason[2]}
-            play={(link) => {
+			play={(link) => {
 				setLink(link, largeDevice);
 			}}
 			index={2}

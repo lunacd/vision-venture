@@ -18,6 +18,9 @@
 				on:click={() => {
 					onSelect(index);
 				}}
+				on:keypress={() => {
+					onSelect(index);
+				}}
 			>
 				<span class="episode">{takeaway.title}</span>
 				<div class="episode-arrow-outer">
@@ -27,7 +30,9 @@
 		{/each}
 	</div>
 	<div class="line-container">
-		<div class="circle"><div>1</div></div>
+		<div class="circle">
+			<div>1</div>
+		</div>
 		<div class="line" />
 	</div>
 </div>

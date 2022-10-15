@@ -14,6 +14,10 @@
 	export let page: string;
 
 	let show = false;
+
+	function toggleShow() {
+		show = !show;
+	}
 </script>
 
 <div class="absolute top-0 left-0 right-0 z-content">
@@ -38,9 +42,8 @@
 					src={page === 'about' ? Hamburger : HamburgerRed}
 					alt="Hamburger menu"
 					id="hamburger"
-					on:click={() => {
-						show = !show;
-					}}
+					on:click={toggleShow}
+					on:keypress={toggleShow}
 				/>
 				<div class="links-inner">
 					<a

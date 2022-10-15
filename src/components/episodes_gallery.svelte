@@ -18,6 +18,9 @@
 				on:click={() => {
 					play(episode.youtubeLink);
 				}}
+				on:keypress={() => {
+					play(episode.youtubeLink);
+				}}
 			/>
 		</div>
 	{/each}

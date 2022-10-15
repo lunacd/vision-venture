@@ -31,6 +31,9 @@
 			on:click={() => {
 				selectBio(i);
 			}}
+			on:keypress={() => {
+				selectBio(i);
+			}}
 		/>
 	{/each}
 </div>
