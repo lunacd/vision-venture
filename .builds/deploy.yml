@@ -13,5 +13,6 @@ tasks:
       cd vision-venture
       set +x
       source ~/.vercel_token
-      yarn dlx -q vercel -t $VERCEL_TOKEN -c --prod
+      VERCEL_ORG_ID=team_cX2DGRRDIeD5jk2kEnkGcygj VERCEL_PROJECT_ID=prj_AjN8RwA3ehlNIhvxl9n45YQiBj3p \
+        yarn dlx -q vercel -t $VERCEL_TOKEN --yes --prod
       set -x
