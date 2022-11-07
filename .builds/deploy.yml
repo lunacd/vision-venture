@@ -1,4 +1,4 @@
-image: rockylinux/8
+image: rockylinux/9
 secrets:
   - 2a951cc8-a728-4dfc-947f-63fdb66e8fee
 triggers:
@@ -7,7 +7,7 @@ triggers:
     to: Haowen Liu <lhw@lunacd.com>
 tasks:
   - setup: |
-      sudo dnf module install nodejs:16 -y
+      sudo dnf install -y nodejs
       sudo npm i -g corepack
   - deploy: |
       cd vision-venture

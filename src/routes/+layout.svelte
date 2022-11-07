@@ -7,8 +7,8 @@
 	import '../app.css';
 	import Container from '../components/container.svelte';
 
-	import Logo from '../images/usc-shield-name-white.png?webp';
-	import Viterbi from '../images/viterbi.jpg?webp';
+	import Logo from '../images/usc-shield-name-white.png?webp&w=198';
+	import Viterbi from '../images/viterbi.jpg?webp&w=171';
 
 	export const prerender = true;
 </script>
