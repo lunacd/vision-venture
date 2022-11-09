@@ -27,13 +27,13 @@
 				<img
 					src={Logo}
 					alt="Vision Venture logo"
-					class="h-12 w-12 md:h-16 md:w-16"
+					class="logo"
 					class:hidden={page !== 'about'}
 				/>
 				<img
 					src={LogoWhite}
 					alt="Vision Venture logo"
-					class="h-12 w-12 md:h-16 md:w-16"
+					class="logo"
 					class:hidden={page === 'about'}
 				/>
 			</a>
@@ -93,6 +93,10 @@
 </div>
 
 <style lang="postcss">
+	.logo {
+		@apply h-12 w-[9.375rem] md:h-16 md:w-[12.5rem];
+	}
+
 	.link {
 		@apply my-1 ml-6 py-1 text-lg text-white md:my-0 md:py-2 md:text-xl;
 	}
