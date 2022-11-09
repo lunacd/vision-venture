@@ -94,7 +94,7 @@
 
 <style lang="postcss">
 	.logo {
-		@apply h-12 w-[9.375rem] md:h-16 md:w-[12.5rem];
+		@apply h-12 md:h-16;
 	}
 
 	.link {
