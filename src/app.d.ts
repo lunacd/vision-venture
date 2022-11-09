@@ -20,6 +20,16 @@ declare module '*.jpg?webp' {
 	export default src;
 }
 
+declare module '*.jpg?webp&w=171' {
+	const src: string;
+	export default src;
+}
+
+declare module '*.png?webp&w=198' {
+	const src: string;
+	export default src;
+}
+
 declare module '*.png?webp&w=200' {
 	const src: string;
 	export default src;

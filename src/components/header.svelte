@@ -24,12 +24,7 @@
 	<Container>
 		<div class="relative flex h-22 flex-row items-center">
 			<a href="/">
-				<img
-					src={Logo}
-					alt="Vision Venture logo"
-					class="logo"
-					class:hidden={page !== 'about'}
-				/>
+				<img src={Logo} alt="Vision Venture logo" class="logo" class:hidden={page !== 'about'} />
 				<img
 					src={LogoWhite}
 					alt="Vision Venture logo"
