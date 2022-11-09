@@ -98,7 +98,7 @@
 	}
 
 	.link {
-		@apply my-1 ml-6 py-1 text-lg text-white md:my-0 md:py-2 md:text-xl;
+		@apply my-1 ml-6 py-1 text-lg text-white md:my-0 md:py-2 lg:text-xl;
 	}
 
 	.links-container {
