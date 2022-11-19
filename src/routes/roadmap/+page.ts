@@ -1,7 +1,8 @@
 import { roadmapEpisodesBySeason } from '../../data/roadmap';
+import type { Episode } from '../../utils/episode';
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = ({ url }) => {
+export const load: PageLoad<Episode[][]> = ({ url }) => {
 	if (url.searchParams.has('s')) {
 		const season = parseInt(url.searchParams.get('s'));
 		console.log(season);

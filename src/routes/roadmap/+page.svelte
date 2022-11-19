@@ -44,7 +44,6 @@
 			'Let recent alumni answer your questions about life after graduation and help you envision potential paths for your future.'
 		]}
 	/>
-	<div />
 	<Container paddingClass="px-4 md:px-8">
 		<RoadmapSection
 			image={GraduatingImage}
