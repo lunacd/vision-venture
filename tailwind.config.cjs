@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
@@ -34,6 +34,12 @@ module.exports = {
 			margin: {
 				26: '6.5rem',
 				'1/10': '10%'
+			},
+			inset: {
+				unset: 'unset'
+			},
+			spacing: {
+				unset: 'unset'
 			}
 		}
 	},
