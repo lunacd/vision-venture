@@ -8,6 +8,14 @@ const fuse = new Fuse<Episode>(roadmapEpisodeList, {
 	keys: ['description']
 });
 
-export const load: PageLoad<Fuse.FuseResult<Episode>[]> = ({ params }) => {
-	return fuse.search(params.slug);
+interface SearchResult {
+	keyword: string;
+	result: Fuse.FuseResult<Episode>[];
+}
+
+export const load: PageLoad<SearchResult> = ({ params }) => {
+	return {
+		keyword: params.slug,
+		result: fuse.search(params.slug)
+	};
 };

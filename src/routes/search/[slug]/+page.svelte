@@ -31,18 +31,23 @@
 		]}
 	/>
 	<Container paddingClass="px-4 md:px-8">
-		<EpisodeGallery
-			episodes={Object.values(data).map((item) => item.item)}
-			play={(newLink) => {
-				console.log('Trigger play');
-				if (largeDevice) {
-					link = getEmbedLink(newLink);
-				} else {
-					link = undefined;
-					window.open(getPlayLink(newLink));
-				}
-			}}
-		/>
+		<div class="mb-8 text-2xl font-bold sm:text-3xl md:text-4xl">
+			Results for &#147{data.keyword}&#148
+		</div>
+		<div class="px-8">
+			<EpisodeGallery
+				episodes={Object.values(data.result).map((item) => item.item)}
+				play={(newLink) => {
+					console.log('Trigger play');
+					if (largeDevice) {
+						link = getEmbedLink(newLink);
+					} else {
+						link = undefined;
+						window.open(getPlayLink(newLink));
+					}
+				}}
+			/>
+		</div>
 	</Container>
 	<YoutubePlayer
 		{link}
