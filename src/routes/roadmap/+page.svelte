@@ -91,5 +91,10 @@
 			last={true}
 		/>
 	</Container>
-	<YoutubePlayer {link} />
+	<YoutubePlayer
+		{link}
+		close={() => {
+			link = undefined;
+		}}
+	/>
 </MediaQuery>

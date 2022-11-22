@@ -6,11 +6,7 @@
 <script lang="ts">
 	import X from '../images/x.svg';
 
-	export let link: string;
-
-	function close() {
-		link = undefined;
-	}
+	export let link: string, close: () => void;
 </script>
 
 <div
