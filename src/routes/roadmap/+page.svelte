@@ -7,6 +7,7 @@
 	import Container from '../../components/container.svelte';
 	import MediaQuery from '../../components/media-query.svelte';
 	import RoadmapSection from '../../components/roadmap_section.svelte';
+	import SearchAndSeason from '../../components/search_and_season.svelte';
 	import TitleSection from '../../components/title_section.svelte';
 	import YoutubePlayer from '../../components/youtube_player.svelte';
 	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
@@ -45,6 +46,7 @@
 		]}
 	/>
 	<Container paddingClass="px-4 md:px-8">
+		<SearchAndSeason currentSearch="" />
 		<RoadmapSection
 			image={GraduatingImage}
 			title="You're graduating! ...Now what?"

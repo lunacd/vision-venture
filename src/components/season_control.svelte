@@ -4,28 +4,37 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	export let numberOfSeasons: number, selectSeason: (season: number) => void;
+	import AngleIcon from '../images/angle.svg';
 
-	let season = numberOfSeasons - 1;
+	export let numberOfSeasons: number;
+
+	let currentSeason = numberOfSeasons - 1;
+
+	console.log(numberOfSeasons);
 </script>
 
 <div class="season-container">
-	{#each Array(numberOfSeasons) as _}
-		<button
-			class="season-button"
-			on:click={() => {
-				selectSeason(season);
-			}}
-		/>
-	{/each}
+	<div class="dropdown">
+		<div>SEASON {currentSeason + 1}</div>
+		<img src={AngleIcon} alt="Dropdown icon" class="w-4" />
+		<div class="dropdown-content">
+			{#each Array(numberOfSeasons) as _, i}
+				<a href={`/roadmap?season=${i + 1}`}>SEASON {i + 1}</a>
+			{/each}
+		</div>
+	</div>
 </div>
 
 <style lang="postcss">
-	.season-container {
-		display: flex;
+	.dropdown {
+		@apply relative flex h-8 flex-row gap-2 rounded bg-accent-green py-1 px-2 text-white shadow-md;
 	}
 
-	.season-button {
-		border-radius: 6px;
+	.dropdown-content {
+		@apply absolute top-full hidden;
+	}
+
+	.dropdown:hover .dropdown-content {
+		@apply block;
 	}
 </style>

@@ -4,13 +4,14 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import Container from '../../../components/container.svelte';
-	import EpisodeGallery from '../../../components/episodes_gallery.svelte';
-	import MediaQuery from '../../../components/media-query.svelte';
-	import TitleSection from '../../../components/title_section.svelte';
-	import YoutubePlayer from '../../../components/youtube_player.svelte';
-	import { getEmbedLink, getPlayLink } from '../../../utils/youtube';
-	import type { PageData } from './$types';
+	import Container from '../../components/container.svelte';
+	import EpisodeGallery from '../../components/episodes_gallery.svelte';
+	import MediaQuery from '../../components/media-query.svelte';
+	import SearchAndSeason from '../../components/search_and_season.svelte';
+	import TitleSection from '../../components/title_section.svelte';
+	import YoutubePlayer from '../../components/youtube_player.svelte';
+	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
+	import type { PageData } from './[slug]/$types';
 
 	export let data: PageData;
 
@@ -31,6 +32,7 @@
 		]}
 	/>
 	<Container paddingClass="px-4 md:px-8">
+		<SearchAndSeason currentSearch={data.keyword} />
 		<div class="mb-8 text-2xl font-bold sm:text-3xl md:text-4xl">
 			Results for &#147{data.keyword}&#148
 		</div>
