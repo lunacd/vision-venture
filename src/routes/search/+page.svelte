@@ -33,8 +33,14 @@
 	/>
 	<Container paddingClass="px-4 md:px-8">
 		<SearchAndSeason currentSearch={data.keyword} />
-		<div class="mb-8 text-2xl font-bold sm:text-3xl md:text-4xl">
+		<div class="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
 			Results for &#147{data.keyword}&#148
+		</div>
+		<div class="mb-8">
+			<a href="/roadmap">
+				<span class="font-bold">&lsaquo;</span>
+				<span class="underline">Back to Roadmap</span>
+			</a>
 		</div>
 		<div class="px-8">
 			<EpisodeGallery
@@ -49,7 +55,7 @@
 				}}
 			/>
 			{#if data.result.length === 0}
-				<div class="text-center mb-24">No videos found! Try another search term.</div>
+				<div class="mb-24 text-center">No videos found! Try another search term.</div>
 			{/if}
 		</div>
 	</Container>

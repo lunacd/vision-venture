@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="mb-12 mr-8 flex h-8 flex-grow flex-row items-center gap-2 rounded border-2 border-accent-green px-2 shadow-md"
+	class="mr-8 flex h-8 flex-grow flex-row items-center gap-2 rounded border-2 border-accent-green px-2 shadow-md"
 >
 	<img src={SearchIcon} alt="Search Icon" class="h-5" />
 	<form method="get" action="/search#search" class="flex-grow">
