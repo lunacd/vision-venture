@@ -40,7 +40,6 @@
 			<EpisodeGallery
 				episodes={Object.values(data.result).map((item) => item.item)}
 				play={(newLink) => {
-					console.log('Trigger play');
 					if (largeDevice) {
 						link = getEmbedLink(newLink);
 					} else {
@@ -49,6 +48,9 @@
 					}
 				}}
 			/>
+			{#if data.result.length === 0}
+				<div class="text-center mb-24">No videos found! Try another search term.</div>
+			{/if}
 		</div>
 	</Container>
 	<YoutubePlayer

@@ -9,8 +9,6 @@
 	export let numberOfSeasons: number;
 
 	let currentSeason = numberOfSeasons - 1;
-
-	console.log(numberOfSeasons);
 </script>
 
 <div class="season-container">
