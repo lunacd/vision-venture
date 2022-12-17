@@ -11,7 +11,7 @@
 	import TitleSection from '../../components/title_section.svelte';
 	import YoutubePlayer from '../../components/youtube_player.svelte';
 	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
-	import type { PageData } from './[slug]/$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 

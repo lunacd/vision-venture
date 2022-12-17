@@ -91,7 +91,7 @@ export const load: PageLoad<SearchResult> = ({ url }) => {
 		const keyword = url.searchParams.get('keyword');
 		const lowercase = keyword.toLowerCase();
 		for (const word of censorWords) {
-			if (keyword.includes(word)) {
+			if (lowercase.includes(word)) {
 				return {
 					keyword: keyword,
 					result: []
