@@ -14,7 +14,7 @@
 <div class="season-container">
 	<div class="dropdown">
 		<div>SEASON {currentSeason + 1}</div>
-		<img src={AngleIcon} alt="Dropdown icon" class="w-4" />
+		<img src={AngleIcon} alt="Dropdown icon" class="w-3 md:w-4" />
 		<div class="dropdown-content">
 			{#each Array(numberOfSeasons) as _, i}
 				<a href={`/roadmap?season=${i + 1}`}>SEASON {i + 1}</a>
@@ -25,7 +25,7 @@
 
 <style lang="postcss">
 	.dropdown {
-		@apply relative flex h-8 flex-row gap-2 rounded bg-accent-green py-1 px-2 text-white shadow-md;
+		@apply relative flex h-7 md:h-8 flex-row gap-2 rounded bg-accent-green py-1 px-2 text-white shadow-md text-sm md:text-base;
 	}
 
 	.dropdown-content {

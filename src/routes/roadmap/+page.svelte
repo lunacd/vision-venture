@@ -52,7 +52,7 @@
 			title="You're graduating! ...Now what?"
 			description="Graduating"
 			subtitle="Leaving the educational nest."
-			episodes={data[0]}
+			episodes={data.episodes[0]}
 			play={(link) => {
 				setLink(link, largeDevice);
 			}}
@@ -63,7 +63,7 @@
 			title="Welcome to the working world!"
 			description="Welcome to working world"
 			subtitle="-and adulthood."
-			episodes={data[1]}
+			episodes={data.episodes[1]}
 			play={(link) => {
 				setLink(link, largeDevice);
 			}}
@@ -74,7 +74,7 @@
 			title="Working beyond the cubicle"
 			description="Beyond the cubicle"
 			subtitle="There is more to work than just tasks and deadlines."
-			episodes={data[2]}
+			episodes={data.episodes[2]}
 			play={(link) => {
 				setLink(link, largeDevice);
 			}}
@@ -85,7 +85,7 @@
 			title="The bigger picture"
 			description="The bigger picture"
 			subtitle="Remembering that you have a life outside of work."
-			episodes={data[3]}
+			episodes={data.episodes[3]}
 			play={(link) => {
 				setLink(link, largeDevice);
 			}}
