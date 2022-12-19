@@ -18,9 +18,9 @@
 	import HaowenLiu from '../images/team/Haowen_Liu.jpg?webp&w=200';
 	import HarlyRamsey from '../images/team/Harly_Ramsey.png?webp';
 	import SelinOner from '../images/team/Selin_Oner.png?webp&w=200';
-	import VanishingTall from '../images/vanishing-tall.svg';
-	import VanishingWide from '../images/vanishing-wide.svg';
-	import Vanishing from '../images/vanishing.svg';
+	import VanishingTall from '../images/vanishing-tall.png?webp';
+	import VanishingWide from '../images/vanishing-wide.png?webp';
+	import Vanishing from '../images/vanishing.png?webp';
 </script>
 
 <svelte:head>
