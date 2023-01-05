@@ -13,13 +13,13 @@
 	{#each episodes as episode}
 		<div class="image">
 			<img
-				src={episode.image}
-				alt={episode.description}
+				src={episode.thumbnail}
+				alt={episode.title}
 				on:click={() => {
-					play(episode.youtubeLink);
+					play(episode.youtubeID);
 				}}
 				on:keypress={() => {
-					play(episode.youtubeLink);
+					play(episode.youtubeID);
 				}}
 			/>
 		</div>

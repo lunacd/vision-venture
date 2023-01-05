@@ -13,11 +13,6 @@
 	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
 	import type { PageData } from './$types';
 
-	import BeyondCubicle from '../../images/beyond-cubicle.svg';
-	import BiggerPicture from '../../images/bigger-picture.svg';
-	import GraduatingImage from '../../images/graduating.svg';
-	import WelcomeToWork from '../../images/welcome-to-work.svg';
-
 	export let data: PageData;
 
 	let link: string = undefined;
@@ -47,51 +42,19 @@
 	/>
 	<Container paddingClass="px-4 md:px-8">
 		<SearchAndSeason currentSearch="" />
-		<RoadmapSection
-			image={GraduatingImage}
-			title="You're graduating! ...Now what?"
-			description="Graduating"
-			subtitle="Leaving the educational nest."
-			episodes={data.episodes[0]}
-			play={(link) => {
-				setLink(link, largeDevice);
-			}}
-			index={0}
-		/>
-		<RoadmapSection
-			image={WelcomeToWork}
-			title="Welcome to the working world!"
-			description="Welcome to working world"
-			subtitle="-and adulthood."
-			episodes={data.episodes[1]}
-			play={(link) => {
-				setLink(link, largeDevice);
-			}}
-			index={1}
-		/>
-		<RoadmapSection
-			image={BeyondCubicle}
-			title="Working beyond the cubicle"
-			description="Beyond the cubicle"
-			subtitle="There is more to work than just tasks and deadlines."
-			episodes={data.episodes[2]}
-			play={(link) => {
-				setLink(link, largeDevice);
-			}}
-			index={2}
-		/>
-		<RoadmapSection
-			image={BiggerPicture}
-			title="The bigger picture"
-			description="The bigger picture"
-			subtitle="Remembering that you have a life outside of work."
-			episodes={data.episodes[3]}
-			play={(link) => {
-				setLink(link, largeDevice);
-			}}
-			index={3}
-			last={true}
-		/>
+		{#each data.sections as section, index}
+			<RoadmapSection
+				image={section.icon}
+				title={section.title}
+				subtitle={section.subtitle}
+				episodes={data.episodes.slice(section.startEpisode - 1, section.endEpisode)}
+				play={(link) => {
+					setLink(link, largeDevice);
+				}}
+				{index}
+				last={index === data.sections.length - 1}
+			/>
+		{/each}
 	</Container>
 	<YoutubePlayer
 		{link}

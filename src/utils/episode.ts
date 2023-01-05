@@ -3,14 +3,17 @@
  *
  * Created by Haowen Liu in 2022.
  */
-export class Episode {
-	description: string;
-	image: string;
-	youtubeLink: string;
 
-	constructor(description: string, image: string, youtubeLink: string) {
-		this.description = description;
-		this.image = image;
-		this.youtubeLink = youtubeLink;
+export class Episode {
+	title: string;
+	thumbnail: string;
+	youtubeID: string;
+	tags: string[];
+
+	constructor(title: string, thumbnail: string, youtubeID: string, tags: string[]) {
+		this.title = title;
+		this.thumbnail = thumbnail;
+		this.youtubeID = youtubeID;
+		this.tags = tags;
 	}
 }

@@ -3,6 +3,7 @@
  *
  * Created by Haowen Liu in 2022.
  */
+
 export class Person {
 	name: string;
 	image: string;

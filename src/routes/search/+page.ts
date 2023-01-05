@@ -1,13 +1,11 @@
 import { error } from '@sveltejs/kit';
 import Fuse from 'fuse.js';
 
-import { roadmapEpisodeList } from '../../data/roadmap';
 import type { Episode } from '../../utils/episode';
+import { loadAllEpisodes } from '../../utils/sanity';
 import type { PageLoad } from './$types';
 
-const fuse = new Fuse<Episode>(roadmapEpisodeList, {
-	keys: ['description']
-});
+let fuse = undefined;
 
 // This list credit to https://github.com/KanchiMoe/Bad-words/blob/master/Lists/google-base.txt
 const censorWords = [
@@ -86,7 +84,13 @@ interface SearchResult {
 	result: Fuse.FuseResult<Episode>[];
 }
 
-export const load: PageLoad<SearchResult> = ({ url }) => {
+export const load: PageLoad<SearchResult> = async ({ url }) => {
+	if (fuse === undefined) {
+		const allEpisodes = await loadAllEpisodes();
+		fuse = new Fuse<Episode>(allEpisodes, {
+			keys: ['description', 'tags']
+		});
+	}
 	if (url.searchParams.has('keyword')) {
 		const keyword = url.searchParams.get('keyword');
 		const lowercase = keyword.toLowerCase();

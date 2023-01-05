@@ -25,7 +25,7 @@
 
 <style lang="postcss">
 	.dropdown {
-		@apply relative flex h-7 md:h-8 flex-row gap-2 rounded bg-accent-green py-1 px-2 text-white shadow-md text-sm md:text-base;
+		@apply relative flex h-7 flex-row gap-2 rounded bg-accent-green py-1 px-2 text-sm text-white shadow-md md:h-8 md:text-base;
 	}
 
 	.dropdown-content {

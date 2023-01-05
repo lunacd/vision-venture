@@ -8,7 +8,6 @@
 	import EpisodesGallery from './episodes_gallery.svelte';
 
 	export let image: string,
-		description: string,
 		title: string,
 		subtitle: string,
 		episodes: Episode[],
@@ -19,7 +18,7 @@
 
 <div class="roadmap-section" class:first={index === 0} class:reversed={index % 2 !== 0} class:last>
 	<div class="image-and-line">
-		<img src={image} alt={description} class="image" />
+		<img src={image} alt={title} class="image" />
 		<div class="vertical-line" />
 	</div>
 	<div class="content">

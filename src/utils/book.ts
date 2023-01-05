@@ -3,6 +3,7 @@
  *
  * Created by Haowen Liu in 2022.
  */
+
 export class Book {
 	title: string;
 	image: string;
