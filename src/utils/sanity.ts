@@ -6,6 +6,7 @@
 import sanityClient from '@sanity/client';
 
 import type { Episode } from './episode';
+import type { Person } from './person';
 import type { Section } from './section';
 
 const sanity = sanityClient({
@@ -43,6 +44,13 @@ export const loadSections: (season?: number) => Promise<Section[]> = async (seas
 	let seasonQuery = season == undefined ? ` in *[_id=="siteSettings"].numSeasons` : `==${season}`;
 	const data = await sanity.fetch(
 		`*[_type=="section"&&season${seasonQuery}]|order(startEpisode){title,subtitle,"icon":icon.asset->url,startEpisode,endEpisode}`
+	);
+	return data;
+};
+
+export const loadTeam: () => Promise<Person[]> = async () => {
+	const data = await sanity.fetch(
+		`*[_type=="team"]|order(order,name){name,"picture":picture.asset->url,bio}`
 	);
 	return data;
 };

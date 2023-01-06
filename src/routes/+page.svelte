@@ -7,20 +7,18 @@
 	import Container from '../components/container.svelte';
 	import Header from '../components/header.svelte';
 	import TeamGallery from '../components/team_gallery.svelte';
-	import { Person } from '../utils/person';
+	import type { PageData } from './$types';
 
 	import CLTE from '../images/clte.svg';
 	import HearFromStudents from '../images/hear-from-students.svg';
 	import Quote from '../images/quote.svg';
 	import RoadmapMobile from '../images/roadmap-mobile.svg';
 	import Roadmap from '../images/roadmap.svg';
-	import ElaineWong from '../images/team/Elaine_Wong.png?webp&w=200';
-	import HaowenLiu from '../images/team/Haowen_Liu.jpg?webp&w=200';
-	import HarlyRamsey from '../images/team/Harly_Ramsey.png?webp';
-	import SelinOner from '../images/team/Selin_Oner.png?webp&w=200';
 	import VanishingTall from '../images/vanishing-tall.png?webp';
 	import VanishingWide from '../images/vanishing-wide.png?webp';
 	import Vanishing from '../images/vanishing.png?webp';
+
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -123,30 +121,7 @@
 <!-- Team -->
 <Container>
 	<div class="title">Meet the Team!</div>
-	<TeamGallery
-		people={[
-			new Person(
-				'Harly Ramsey',
-				HarlyRamsey,
-				"Harly Ramsey is an Associate Professional of Technical Communication Practice in the Engineering in Society Program. She has a PhD in English, and her training in narrative theory, cultural studies, and rhetoric informs her teaching. As the founder of Vision Venture, she hopes to encourage students' exploration of their engineering identities and to empower them with a sense of personal agency and professional purpose. She enjoys playing tennis and tackling the New York Times daily spelling bee puzzle, but not at the same time."
-			),
-			new Person(
-				'Elaine Wong',
-				ElaineWong,
-				'Yee Lan Elaine Wong is a Master of Visual Anthropology student at the University of Southern California and is investigating emotions in the modern workplace through her thesis film. In her free time, she enjoys playing traditional mahjong, watching dystopian anime and religiously drinks a concerning amount of coffee to fuel her existence.'
-			),
-			new Person(
-				'Haowen Liu',
-				HaowenLiu,
-				'Haowen Liu is pursuing a Master of Science in Computer Science at University of Southern California. He wants to specialize in cybersecurity and high-performance computing. He is excited about Chinese opera, fountain pens, ping pong, and unfortunately, coding. He also plays League of Legends and watch a lot of Pokemon.'
-			),
-			new Person(
-				'Selin Oner',
-				SelinOner,
-				'Selin Oner is majoring in Cognitive Science and minoring in Business Administration at the University of Southern California with a passion for UI/UX design. She enjoys playing volleyball, reading mystery novels, and cooking Turkish dishes that remind her of home.'
-			)
-		]}
-	/>
+	<TeamGallery people={data.team} />
 
 	<div class="mb-4 flex flex-col items-center md:flex-row">
 		<img src={CLTE} alt="CLTE logo" class="w-64" />

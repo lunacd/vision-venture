@@ -21,7 +21,7 @@
 <div class="mx-4 flex w-full flex-wrap justify-around">
 	{#each people as person, i}
 		<img
-			src={person.image}
+			src={person.picture}
 			alt={person.name}
 			class="person_image"
 			class:gray={i !== currentIndex}

@@ -15,7 +15,7 @@
 			<div class="flip-box">
 				<div class="flip-box-inner">
 					<div class="flip-box-front">
-						<img src={participant.image} alt={participant.name} />
+						<img src={participant.picture} alt={participant.name} />
 					</div>
 					<div class="flip-box-back overflow-y-scroll">
 						<p>{participant.bio}</p>
@@ -28,7 +28,7 @@
 		</div>
 		<div class="mb-6 grid grid-cols-2 items-center gap-2 md:hidden">
 			<div>
-				<img src={participant.image} alt={participant.name} class="rounded-xl" />
+				<img src={participant.picture} alt={participant.name} class="rounded-xl" />
 				<div class="mt-3 text-center text-sm font-bold uppercase">
 					{participant.name}
 				</div>
