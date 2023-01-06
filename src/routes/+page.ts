@@ -7,7 +7,7 @@ interface IndexLoadData {
 }
 
 export const load: PageLoad<IndexLoadData> = async () => {
-	let teamData = await loadTeam();
+	const teamData = await loadTeam();
 	return {
 		team: teamData
 	};

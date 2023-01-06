@@ -3,12 +3,12 @@
  *
  * Created by Haowen Liu in 2022.
  */
-export class Takeaway {
-	link: string;
+export class Debrief {
+	youtubeID: string;
 	title: string;
 
-	constructor(link: string, title: string) {
-		this.link = link;
+	constructor(youtubeID: string, title: string) {
+		this.youtubeID = youtubeID;
 		this.title = title;
 	}
 }

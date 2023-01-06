@@ -4,14 +4,14 @@
     Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import type { Takeaway } from '../utils/takeaway';
+	import type { Debrief } from '../utils/debrief';
 
-	export let takeaways: Takeaway[], activeIndex: number, onSelect: (newIndex: number) => void;
+	export let debriefs: Debrief[], activeIndex: number, onSelect: (newIndex: number) => void;
 </script>
 
 <div class="flex justify-center font-sans">
 	<div class="episodes-container">
-		{#each takeaways as takeaway, index}
+		{#each debriefs as debrief, index}
 			<div
 				class="episode-container"
 				class:active={index === activeIndex}
@@ -22,7 +22,7 @@
 					onSelect(index);
 				}}
 			>
-				<span class="episode">{takeaway.title}</span>
+				<span class="episode">{debrief.title}</span>
 				<div class="episode-arrow-outer">
 					<div class="episode-arrow" />
 				</div>

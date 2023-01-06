@@ -10,15 +10,14 @@ interface RoadmapLoadResult {
 
 export const load: PageLoad<RoadmapLoadResult> = async ({ url }) => {
 	let season = undefined;
-	let numSeasons = await loadNumSeason();
+	const numSeasons = await loadNumSeason();
 	if (url.searchParams.has('s')) {
 		const seasonInput = parseInt(url.searchParams.get('s'));
 		if (!isNaN(seasonInput) && seasonInput > 0 && seasonInput <= numSeasons) {
 			season = seasonInput;
 		}
 	}
-	const all = Promise.all([loadEpisodes(season), loadSections(season)]);
-	const result = await all;
+	const result = await Promise.all([loadEpisodes(season), loadSections(season)]);
 
 	return { episodes: result[0], sections: result[1] };
 };

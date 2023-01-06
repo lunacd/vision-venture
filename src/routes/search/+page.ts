@@ -88,7 +88,7 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 	if (fuse === undefined) {
 		const allEpisodes = await loadAllEpisodes();
 		fuse = new Fuse<Episode>(allEpisodes, {
-			keys: ['description', 'tags']
+			keys: ['title', 'tags']
 		});
 	}
 	if (url.searchParams.has('keyword')) {

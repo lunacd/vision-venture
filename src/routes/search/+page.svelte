@@ -4,6 +4,8 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
+	import type { Episode } from 'src/utils/episode';
+
 	import Container from '../../components/container.svelte';
 	import EpisodeGallery from '../../components/episodes_gallery.svelte';
 	import MediaQuery from '../../components/media-query.svelte';
@@ -15,7 +17,10 @@
 
 	export let data: PageData;
 
+	let episodes: Episode[];
 	let link: string | undefined = undefined;
+
+	$: episodes = Object.values<{ item: Episode }>(data.result).map((item) => item.item);
 </script>
 
 <svelte:head>
@@ -44,7 +49,7 @@
 		</div>
 		<div class="px-8">
 			<EpisodeGallery
-				episodes={Object.values(data.result).map((item) => item.item)}
+				{episodes}
 				play={(newLink) => {
 					if (largeDevice) {
 						link = getEmbedLink(newLink);
