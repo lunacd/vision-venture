@@ -6,11 +6,9 @@
 <script lang="ts">
 	import ResourceGallery from '../../components/resource_gallery.svelte';
 	import TitleSection from '../../components/title_section.svelte';
-	import { Book } from '../../utils/book';
+	import type { PageData } from './$types';
 
-	import BigMagic from '../../images/books/Big_Magic.jpg?webp&aspect=0.7&w=600';
-	import DesigningYourLife from '../../images/books/Designing_Your_Life.jpg?webp&aspect=0.7&w=600';
-	import TheInfiniteGame from '../../images/books/The_Infinite_Game.jpg?webp&aspect=0.7&w=600';
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -25,13 +23,7 @@
 		"Below are some of the books that enriched the student interviewers' perspectives on life after graduation and helped them formulate their questions for the alumni. Check them out!"
 	]}
 />
-<ResourceGallery
-	books={[
-		new Book('Big Magic', BigMagic, 'https://www.elizabethgilbert.com/books/big-magic/'),
-		new Book('Designing Your Life', DesigningYourLife, 'https://designingyour.life/the-book/'),
-		new Book('The Infinite Game', TheInfiniteGame, 'https://simonsinek.com/the-infinite-game')
-	]}
-/>
+<ResourceGallery resources={data.resources} />
 <!-- <div class="link-container">
 	<a href="https://viterbicareers.usc.edu/" class="link" target="_blank"
 		>Check out the Viterbi Career Center!</a

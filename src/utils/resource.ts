@@ -4,14 +4,14 @@
  * Created by Haowen Liu in 2022.
  */
 
-export class Book {
+export class Resource {
 	title: string;
-	image: string;
+	cover: string;
 	link: string;
 
 	constructor(title: string, image: string, link: string) {
 		this.title = title;
-		this.image = image;
+		this.cover = image;
 		this.link = link;
 	}
 }

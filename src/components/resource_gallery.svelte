@@ -4,19 +4,18 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import type { Book } from 'src/utils/book';
-
+	import type { Resource } from '../utils/resource';
 	import Container from './container.svelte';
 
-	export let books: Book[];
+	export let resources: Resource[];
 </script>
 
 <Container>
 	<div class="mb-24 flex flex-wrap justify-around">
-		{#each books as book}
+		{#each resources as book}
 			<div class="flex w-1/2 flex-col p-3 md:w-52 lg:w-72">
 				<a href={book.link} target="_blank" rel="noreferrer">
-					<img src={book.image} alt={book.title} class="book" />
+					<img src={book.cover} alt={book.title} class="book" />
 				</a>
 				<a class="book-title" href={book.link} target="_blank" rel="noreferrer">{book.title}</a>
 			</div>

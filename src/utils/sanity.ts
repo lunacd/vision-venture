@@ -8,6 +8,7 @@ import sanityClient from '@sanity/client';
 import type { Debrief } from './debrief';
 import type { Episode } from './episode';
 import type { Person } from './person';
+import type { Resource } from './resource';
 import type { Section } from './section';
 
 const sanity = sanityClient({
@@ -72,6 +73,13 @@ export const loadDebriefs: (season?: number) => Promise<Debrief[]> = async (seas
 	const seasonQuery = getSeasonQuery(season);
 	const data = await sanity.fetch(
 		`*[_type=="debrief"&&season${seasonQuery}]|order(order){title,youtubeID}`
+	);
+	return data;
+};
+
+export const loadResouces: () => Promise<Resource[]> = async () => {
+	const data = await sanity.fetch(
+		`*[_type=="resource"]|order(title){title,"cover":cover.asset->url,link}`
 	);
 	return data;
 };
