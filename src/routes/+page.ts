@@ -1,14 +1,16 @@
 import type { Person } from '../utils/person';
-import { loadTeam } from '../utils/sanity';
+import { loadProjectDescription, loadTeam } from '../utils/sanity';
 import type { PageLoad } from './$types';
 
 interface IndexLoadData {
 	team: Person[];
+	projectDescription: string[];
 }
 
 export const load: PageLoad<IndexLoadData> = async () => {
-	const teamData = await loadTeam();
+	const data = await Promise.all([loadTeam(), loadProjectDescription()]);
 	return {
-		team: teamData
+		team: data[0],
+		projectDescription: data[1]
 	};
 };

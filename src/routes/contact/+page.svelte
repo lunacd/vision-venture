@@ -6,9 +6,12 @@
 <script lang="ts">
 	import Container from '../../components/container.svelte';
 	import TitleSection from '../../components/title_section.svelte';
+	import type { PageData } from './$types';
 
 	import At from '../../images/at.svg';
 	import ContactUs from '../../images/contact-us.svg';
+
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -18,10 +21,8 @@
 <TitleSection
 	name="contact"
 	title="Contact Us"
-	tagline="Get Involved."
-	description={[
-		'Interested in learning more about Vision Venture or participating in future seasons?  Email us!'
-	]}
+	tagline={data.blurb.title}
+	description={data.blurb.content}
 />
 
 <Container>

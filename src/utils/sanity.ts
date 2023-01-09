@@ -5,6 +5,7 @@
  */
 import sanityClient from '@sanity/client';
 
+import type { Blurb } from './blurb';
 import type { Debrief } from './debrief';
 import type { Episode } from './episode';
 import type { Person } from './person';
@@ -22,8 +23,22 @@ function getSeasonQuery(season?: number) {
 	return season == undefined ? ` in *[_id=="siteSettings"].numSeasons` : `==${season}`;
 }
 
-export const loadNumSeason = async () => {
-	const data = await sanity.fetch('*[_id=="siteSettings"].title');
+export const loadBlurb: (page: string) => Promise<Blurb> = async (page) => {
+	let data = await sanity.fetch(
+		`*[_id=="siteSettings"]{"title":${page}BlurbTitle,"content":${page}BlurbContent}`
+	);
+	data = data[0];
+	data.content = data.content.split('\n');
+	return data;
+};
+
+export const loadProjectDescription: () => Promise<string[]> = async () => {
+	const data = await sanity.fetch('*[_id=="siteSettings"].projectDescription');
+	return data[0].split('\n');
+};
+
+export const loadNumSeason: () => Promise<number> = async () => {
+	const data = await sanity.fetch('*[_id=="siteSettings"].numSeasons');
 	return data[0];
 };
 

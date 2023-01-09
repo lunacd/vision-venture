@@ -1,14 +1,17 @@
+import type { Blurb } from '../../utils/blurb';
 import type { Resource } from '../../utils/resource';
-import { loadResouces } from '../../utils/sanity';
+import { loadBlurb, loadResouces } from '../../utils/sanity';
 import type { PageLoad } from './$types';
 
 interface ResourcesLoadData {
 	resources: Resource[];
+	blurb: Blurb;
 }
 
 export const load: PageLoad<ResourcesLoadData> = async () => {
-	const resourcesData = await loadResouces();
+	const data = await Promise.all([loadResouces(), loadBlurb('resources')]);
 	return {
-		resources: resourcesData
+		resources: data[0],
+		blurb: data[1]
 	};
 };

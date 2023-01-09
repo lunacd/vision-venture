@@ -1,11 +1,13 @@
+import type { Blurb } from '../../utils/blurb';
 import type { Episode } from '../../utils/episode';
-import { loadEpisodes, loadNumSeason, loadSections } from '../../utils/sanity';
+import { loadBlurb, loadEpisodes, loadNumSeason, loadSections } from '../../utils/sanity';
 import type { Section } from '../../utils/section';
 import type { PageLoad } from './$types';
 
 interface RoadmapLoadResult {
 	episodes: Episode[];
 	sections: Section[];
+	blurb: Blurb;
 }
 
 export const load: PageLoad<RoadmapLoadResult> = async ({ url }) => {
@@ -17,7 +19,11 @@ export const load: PageLoad<RoadmapLoadResult> = async ({ url }) => {
 			season = seasonInput;
 		}
 	}
-	const result = await Promise.all([loadEpisodes(season), loadSections(season)]);
+	const result = await Promise.all([
+		loadEpisodes(season),
+		loadSections(season),
+		loadBlurb('roadmap')
+	]);
 
-	return { episodes: result[0], sections: result[1] };
+	return { episodes: result[0], sections: result[1], blurb: result[2] };
 };

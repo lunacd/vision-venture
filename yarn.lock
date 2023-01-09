@@ -776,15 +776,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.29.1":
-  version: 1.29.1
-  resolution: "@playwright/test@npm:1.29.1"
+"@playwright/test@npm:^1.29.2":
+  version: 1.29.2
+  resolution: "@playwright/test@npm:1.29.2"
   dependencies:
     "@types/node": "*"
-    playwright-core: 1.29.1
+    playwright-core: 1.29.2
   bin:
     playwright: cli.js
-  checksum: c4424ee09f6589a296a3a78402f8c9eac841f3e5f44d96e3a2ba07aaa00d53ee9c10cc96379b304743a9e70f231df0ded0ad2fc197f412ada67b4cf17ee24b0f
+  checksum: 614cd4ed3baa4e41a6c7865f3c49733caef2c9d5a1aae5832b3d145ffdb0be2dd9d30136c0cb8aed5f9d452782baf2f380e5b12092958bf9fa7578a6d5fa61bf
   languageName: node
   linkType: hard
 
@@ -811,15 +811,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sanity/client@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@sanity/client@npm:4.0.0"
+"@sanity/client@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@sanity/client@npm:4.0.1"
   dependencies:
     "@sanity/eventsource": ^4.0.0
     get-it: ^7.0.2
     make-error: ^1.3.6
-    rxjs: ^6.6.7
-  checksum: ba9e4bfa6d1aea6eaf64d4d42e41062b3f018c327153e17aef07b0d75c10fd84350b76a000b781eb31d3b6d611fabdb356067a62c4a91c59e4e8a587cde88938
+    rxjs: ^7.0.0
+  checksum: 6e5e8c266cf1cb48ede45f4555ea48a463489da7383350db992a0f3bc51a22799e26171225a668c87fa674a3adc9b8aa8d50c1afe6380d7fe4fb52779dbb327c
   languageName: node
   linkType: hard
 
@@ -840,30 +840,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-static@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@sveltejs/adapter-static@npm:1.0.0"
-  peerDependencies:
-    "@sveltejs/kit": ^1.0.0
-  checksum: 1b48a93189f5bd4470092f55026bd1c297cd7d3fef34304c159ac3b3e695a3bd1cb851c1b239f56041bc0b93afd63e450098e531afe369173ac0d9df6e9863a1
-  languageName: node
-  linkType: hard
-
-"@sveltejs/adapter-vercel@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@sveltejs/adapter-vercel@npm:1.0.0"
+"@sveltejs/adapter-vercel@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@sveltejs/adapter-vercel@npm:1.0.1"
   dependencies:
     "@vercel/nft": ^0.22.1
     esbuild: ^0.16.3
   peerDependencies:
     "@sveltejs/kit": ^1.0.0
-  checksum: 52d2f8103a0c7116c7f449ef5c8252bcade3adf0542897837dc33de1fa9a8f838acffb62a8b034008da8f651be0ec3f5c13eb08df8faebada76cbae3180ee395
+  checksum: 61ac52a1755a25829ca43d55cd92ef6ee994e987c58a1012f8c37d4bb7f9649fd27f2a3478a5ebeef249a8a569cd19a7114f34ac3f623f6bf8f40e71dc9e9f8f
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@sveltejs/kit@npm:1.0.2"
+"@sveltejs/kit@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@sveltejs/kit@npm:1.0.7"
   dependencies:
     "@sveltejs/vite-plugin-svelte": ^2.0.0
     "@types/cookie": ^0.5.1
@@ -883,7 +874,7 @@ __metadata:
     vite: ^4.0.0
   bin:
     svelte-kit: svelte-kit.js
-  checksum: d1fa063ad5bf2a14e2a4181adef1c0bd6ad2a90a652e539346e54008b1269553cf18d7b4dc41cf5401cbd959765218c209fb3b90d0164ab7952e4bbf3166a41f
+  checksum: 2177dc5ff282053061ffb365ad36e10bb8923782983989c3d5c428e24668e2e3c0ac51eab55e2e7b95651daf9d3e9d5b950f4a92f83c5ba65148d3faa4f2e8d1
   languageName: node
   linkType: hard
 
@@ -3548,12 +3539,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.29.1":
-  version: 1.29.1
-  resolution: "playwright-core@npm:1.29.1"
+"playwright-core@npm:1.29.2":
+  version: 1.29.2
+  resolution: "playwright-core@npm:1.29.2"
   bin:
     playwright: cli.js
-  checksum: e1c8423db4d28f44e5365a353f321b04a07709c8bf26d0c908f06d2c2669f715315170f84ca98a532951c2ac6324f5f48f651dca1abe43092c7637bdb4703303
+  checksum: 19e00e162a24eb99878408518930346c1d2c8ce83bb02993e3dd890c99df4530240cfebe4ec4e5aca01656462695b6328fb8f913cf2e229c2c73941623ac524e
   languageName: node
   linkType: hard
 
@@ -3979,14 +3970,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.18, postcss@npm:^8.4.20":
-  version: 8.4.20
-  resolution: "postcss@npm:8.4.20"
+"postcss@npm:^8.4.18, postcss@npm:^8.4.20, postcss@npm:^8.4.21":
+  version: 8.4.21
+  resolution: "postcss@npm:8.4.21"
   dependencies:
     nanoid: ^3.3.4
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 1a5609ea1c1b204f9c2974a0019ae9eef2d99bf645c2c9aac675166c4cb1005be7b5e2ba196160bc771f5d9ac896ed883f236f888c891e835e59d28fff6651aa
+  checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
   languageName: node
   linkType: hard
 
@@ -4038,12 +4029,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "prettier@npm:2.8.1"
+"prettier@npm:^2.8.2":
+  version: 2.8.2
+  resolution: "prettier@npm:2.8.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
+  checksum: 740c56c2128d587d656ea1dde9bc9c3503dfc94db4f3ac387259215eeb2e216680bdad9d18a0c9feecc6b42cfa188d6fa777df4c36c1d00cedd4199074fbfbd2
   languageName: node
   linkType: hard
 
@@ -4299,12 +4290,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.6.7":
-  version: 6.6.7
-  resolution: "rxjs@npm:6.6.7"
+"rxjs@npm:^7.0.0":
+  version: 7.8.0
+  resolution: "rxjs@npm:7.8.0"
   dependencies:
-    tslib: ^1.9.0
-  checksum: bc334edef1bb8bbf56590b0b25734ba0deaf8825b703256a93714308ea36dff8a11d25533671adf8e104e5e8f256aa6fdfe39b2e248cdbd7a5f90c260acbbd1b
+    tslib: ^2.1.0
+  checksum: 61b4d4fd323c1043d8d6ceb91f24183b28bcf5def4f01ca111511d5c6b66755bc5578587fe714ef5d67cf4c9f2e26f4490d4e1d8cabf9bd5967687835e9866a2
   languageName: node
   linkType: hard
 
@@ -4876,14 +4867,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.4.1":
+"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.1":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
@@ -5027,11 +5018,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vision-venture@workspace:."
   dependencies:
-    "@playwright/test": ^1.29.1
-    "@sanity/client": ^4.0.0
-    "@sveltejs/adapter-static": ^1.0.0
-    "@sveltejs/adapter-vercel": ^1.0.0
-    "@sveltejs/kit": ^1.0.2
+    "@playwright/test": ^1.29.2
+    "@sanity/client": ^4.0.1
+    "@sveltejs/adapter-vercel": ^1.0.1
+    "@sveltejs/kit": ^1.0.7
     "@trivago/prettier-plugin-sort-imports": ^4.0.0
     "@typescript-eslint/eslint-plugin": ^5.48.0
     "@typescript-eslint/parser": ^5.48.0
@@ -5041,9 +5031,9 @@ __metadata:
     eslint-plugin-svelte3: ^4.0.0
     fuse.js: ^6.6.2
     imagetools-core: ^3.2.3
-    postcss: ^8.4.20
+    postcss: ^8.4.21
     postcss-preset-env: ^7.8.3
-    prettier: ^2.8.1
+    prettier: ^2.8.2
     prettier-plugin-svelte: ^2.9.0
     prettier-plugin-tailwindcss: ^0.2.1
     svelte: ^3.55.0

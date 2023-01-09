@@ -18,10 +18,8 @@
 <TitleSection
 	name="resources"
 	title="Resources"
-	tagline="Discover more."
-	description={[
-		"Below are some of the books that enriched the student interviewers' perspectives on life after graduation and helped them formulate their questions for the alumni. Check them out!"
-	]}
+	tagline={data.blurb.title}
+	description={data.blurb.content}
 />
 <ResourceGallery resources={data.resources} />
 <!-- <div class="link-container">

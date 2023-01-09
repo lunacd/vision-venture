@@ -1,8 +1,9 @@
 import { error } from '@sveltejs/kit';
 import Fuse from 'fuse.js';
 
+import type { Blurb } from '../../utils/blurb';
 import type { Episode } from '../../utils/episode';
-import { loadAllEpisodes } from '../../utils/sanity';
+import { loadAllEpisodes, loadBlurb } from '../../utils/sanity';
 import type { PageLoad } from './$types';
 
 let fuse = undefined;
@@ -82,6 +83,7 @@ const censorWords = [
 interface SearchResult {
 	keyword: string;
 	result: Fuse.FuseResult<Episode>[];
+	blurb: Blurb;
 }
 
 export const load: PageLoad<SearchResult> = async ({ url }) => {
@@ -92,19 +94,22 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 		});
 	}
 	if (url.searchParams.has('keyword')) {
+		const blurb = await loadBlurb('roadmap');
 		const keyword = url.searchParams.get('keyword');
 		const lowercase = keyword.toLowerCase();
 		for (const word of censorWords) {
 			if (lowercase.includes(word)) {
 				return {
 					keyword: keyword,
-					result: []
+					result: [],
+					blurb: blurb
 				};
 			}
 		}
 		return {
 			keyword: keyword,
-			result: fuse.search(keyword)
+			result: fuse.search(keyword),
+			blurb: blurb
 		};
 	}
 	throw error(400, 'no search term provided');

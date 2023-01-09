@@ -25,10 +25,8 @@
 	<TitleSection
 		name="voices"
 		title="Student Voices"
-		tagline="Hear from our students."
-		description={[
-			"Student interviewers completed a set of readings and discussed them in workshops together before conducting their interviews with alumni. Hear what they learned throughout the process in the videos below. Each season will include new student interviewers, so contact us if you're interested in participating."
-		]}
+		tagline={data.blurb.title}
+		description={data.blurb.content}
 	/>
 
 	<Container>

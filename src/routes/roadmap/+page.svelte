@@ -35,10 +35,8 @@
 	<TitleSection
 		name="roadmap"
 		title="Vision Roadmap"
-		tagline="Start your journey."
-		description={[
-			'Let recent alumni answer your questions about life after graduation and help you envision potential paths for your future.'
-		]}
+		tagline={data.blurb.title}
+		description={data.blurb.content}
 	/>
 	<Container paddingClass="px-4 md:px-8">
 		<SearchAndSeason currentSearch="" />
