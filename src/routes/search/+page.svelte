@@ -4,14 +4,13 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import type { Episode } from 'src/utils/episode';
-
 	import Container from '../../components/container.svelte';
 	import EpisodeGallery from '../../components/episodes_gallery.svelte';
 	import MediaQuery from '../../components/media-query.svelte';
 	import SearchAndSeason from '../../components/search_and_season.svelte';
 	import TitleSection from '../../components/title_section.svelte';
 	import YoutubePlayer from '../../components/youtube_player.svelte';
+	import type { Episode } from '../../utils/episode';
 	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
 	import type { PageData } from './$types';
 
