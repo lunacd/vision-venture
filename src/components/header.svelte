@@ -98,7 +98,7 @@
 
 	.links-container {
 		@apply absolute top-0 flex h-screen w-max transition-transform;
-		left: calc(100% - 2.08rem);
+		left: calc(100% + 1.5rem);
 		@apply md:right-0 md:left-unset md:top-unset md:h-unset md:transform-none;
 	}
 
@@ -108,8 +108,7 @@
 	}
 
 	.links-show {
-		@apply flex;
-		transform: translateX(calc(-100% + 2.08rem + 1.5rem));
+		@apply -translate-x-full md:translate-x-0;
 	}
 
 	.link-active {
@@ -125,6 +124,6 @@
 	}
 
 	#hamburger {
-		@apply mr-6 mt-8 h-5 cursor-pointer md:hidden;
+		@apply absolute -left-6 mr-6 mt-8 h-5 -translate-x-full cursor-pointer md:hidden;
 	}
 </style>

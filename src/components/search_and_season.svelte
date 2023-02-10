@@ -8,6 +8,6 @@
 <div class="mx-4 mb-12 md:mx-1/10 md:mb-16" id="search">
 	<div class="flex flex-row gap-2 md:gap-4">
 		<SearchBar {currentSearch} />
-		<SeasonControl numberOfSeasons={1} />
+		<SeasonControl numberOfSeasons={2} />
 	</div>
 </div>

@@ -10,7 +10,7 @@
 
 	let currentSeason = numberOfSeasons - 1;
 
-	let open = true;
+	let open = false;
 </script>
 
 <div class="season-control" class:open>
