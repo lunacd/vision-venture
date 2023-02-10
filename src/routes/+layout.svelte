@@ -10,8 +10,6 @@
 	import Logo from '../images/usc-shield-name-white.png?webp&w=198';
 	import Shield from '../images/usc-shield-white.png?webp&w=62';
 	import Viterbi from '../images/viterbi.jpg?webp&w=200';
-
-	export const prerender = true;
 </script>
 
 <div class="h-[70px] bg-black">

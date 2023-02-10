@@ -7,6 +7,8 @@ interface IndexLoadData {
 	projectDescription: string[];
 }
 
+export const prerender = true;
+
 export const load: PageLoad<IndexLoadData> = async () => {
 	const data = await Promise.all([loadTeam(), loadProjectDescription()]);
 	return {
