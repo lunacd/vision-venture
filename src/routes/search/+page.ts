@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 
 import type { Blurb } from '../../utils/blurb';
 import type { Episode } from '../../utils/episode';
-import { loadAllEpisodes, loadBlurb } from '../../utils/sanity';
+import { loadAllEpisodes, loadBlurb, loadNumSeasons } from '../../utils/sanity';
 import type { PageLoad } from './$types';
 
 let fuse = undefined;
@@ -84,6 +84,7 @@ interface SearchResult {
 	keyword: string;
 	result: Fuse.FuseResult<Episode>[];
 	blurb: Blurb;
+	numSeasons: number;
 }
 
 export const load: PageLoad<SearchResult> = async ({ url }) => {
@@ -94,7 +95,7 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 		});
 	}
 	if (url.searchParams.has('keyword')) {
-		const blurb = await loadBlurb('roadmap');
+		const result = await Promise.all([loadNumSeasons(), loadBlurb('roadmap')]);
 		const keyword = url.searchParams.get('keyword');
 		const lowercase = keyword.toLowerCase();
 		for (const word of censorWords) {
@@ -102,14 +103,16 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 				return {
 					keyword: keyword,
 					result: [],
-					blurb: blurb
+					blurb: result[1],
+					numSeasons: result[0]
 				};
 			}
 		}
 		return {
 			keyword: keyword,
 			result: fuse.search(keyword),
-			blurb: blurb
+			blurb: result[1],
+			numSeasons: result[0]
 		};
 	}
 	throw error(400, 'no search term provided');

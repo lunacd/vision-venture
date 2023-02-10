@@ -39,7 +39,7 @@
 		description={data.blurb.content}
 	/>
 	<Container paddingClass="px-4 md:px-8">
-		<SearchAndSeason currentSearch="" />
+		<SearchAndSeason currentSearch="" numberOfSeasons={data.numSeasons} />
 		{#each data.sections as section, index}
 			<RoadmapSection
 				image={section.icon}

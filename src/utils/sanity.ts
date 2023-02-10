@@ -37,7 +37,7 @@ export const loadProjectDescription: () => Promise<string[]> = async () => {
 	return data[0].split('\n');
 };
 
-export const loadNumSeason: () => Promise<number> = async () => {
+export const loadNumSeasons: () => Promise<number> = async () => {
 	const data = await sanity.fetch('*[_id=="siteSettings"].numSeasons');
 	return data[0];
 };

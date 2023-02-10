@@ -34,7 +34,7 @@
 		description={data.blurb.content}
 	/>
 	<Container paddingClass="px-4 md:px-8">
-		<SearchAndSeason currentSearch={data.keyword} />
+		<SearchAndSeason currentSearch={data.keyword} numberOfSeasons={data.numSeasons} />
 		<div class="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
 			Results for &#147{data.keyword}&#148
 		</div>
