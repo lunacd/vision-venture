@@ -7,7 +7,7 @@
 	import Container from '../../components/container.svelte';
 	import EpisodeGallery from '../../components/episodes_gallery.svelte';
 	import MediaQuery from '../../components/media-query.svelte';
-	import SearchAndSeason from '../../components/search_and_season.svelte';
+	import SearchBar from '../../components/search_bar.svelte';
 	import TitleSection from '../../components/title_section.svelte';
 	import YoutubePlayer from '../../components/youtube_player.svelte';
 	import type { Episode } from '../../utils/episode';
@@ -34,7 +34,11 @@
 		description={data.blurb.content}
 	/>
 	<Container paddingClass="px-4 md:px-8">
-		<SearchAndSeason currentSearch={data.keyword} numberOfSeasons={data.numSeasons} />
+		<div class="mx-4 mb-12 md:mx-1/10 md:mb-16" id="search">
+			<div class="flex flex-row gap-2 md:gap-4">
+				<SearchBar currentSearch={data.keyword} />
+			</div>
+		</div>
 		<div class="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
 			Results for &#147{data.keyword}&#148
 		</div>

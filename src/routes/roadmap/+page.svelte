@@ -7,10 +7,11 @@
 	import Container from '../../components/container.svelte';
 	import MediaQuery from '../../components/media-query.svelte';
 	import RoadmapSection from '../../components/roadmap_section.svelte';
-	import SearchAndSeason from '../../components/search_and_season.svelte';
 	import TitleSection from '../../components/title_section.svelte';
 	import YoutubePlayer from '../../components/youtube_player.svelte';
 	import { getEmbedLink, getPlayLink } from '../../utils/youtube';
+	import SearchBar from '../../components/search_bar.svelte';
+	import SeasonControl from '../../components/season_control.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -39,7 +40,12 @@
 		description={data.blurb.content}
 	/>
 	<Container paddingClass="px-4 md:px-8">
-		<SearchAndSeason currentSearch="" numberOfSeasons={data.numSeasons} />
+		<div class="mx-4 mb-12 md:mx-1/10 md:mb-16" id="search">
+			<div class="flex flex-row gap-2 md:gap-4">
+				<SearchBar currentSearch="" />
+				<SeasonControl numberOfSeasons={data.numSeasons} currentSeason={(data.selectedSeason ?? data.numSeasons) - 1} />
+			</div>
+		</div>
 		{#each data.sections as section, index}
 			<RoadmapSection
 				image={section.icon}

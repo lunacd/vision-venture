@@ -6,9 +6,7 @@
 <script lang="ts">
 	import AngleIcon from '../images/angle.svg';
 
-	export let numberOfSeasons: number;
-
-	let currentSeason = numberOfSeasons - 1;
+	export let numberOfSeasons: number, currentSeason: number;
 
 	let open = false;
 </script>
@@ -41,6 +39,7 @@
 <style lang="postcss">
 	.season-control {
 		@apply relative cursor-pointer;
+		width: 6.5rem;
 
 		&.open {
 			& .dropdown {
@@ -62,7 +61,7 @@
 	}
 
 	.dropdown-icon {
-		@apply w-3 transition-transform md:w-4;
+		@apply w-3 transition-transform ml-auto md:w-4;
 	}
 
 	.dropdown-content {

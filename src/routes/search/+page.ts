@@ -84,7 +84,6 @@ interface SearchResult {
 	keyword: string;
 	result: Fuse.FuseResult<Episode>[];
 	blurb: Blurb;
-	numSeasons: number;
 }
 
 export const load: PageLoad<SearchResult> = async ({ url }) => {
@@ -95,7 +94,7 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 		});
 	}
 	if (url.searchParams.has('keyword')) {
-		const result = await Promise.all([loadNumSeasons(), loadBlurb('roadmap')]);
+		const result = await Promise.all([loadBlurb('roadmap')]);
 		const keyword = url.searchParams.get('keyword');
 		const lowercase = keyword.toLowerCase();
 		for (const word of censorWords) {
@@ -103,16 +102,14 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 				return {
 					keyword: keyword,
 					result: [],
-					blurb: result[1],
-					numSeasons: result[0]
+					blurb: result[0],
 				};
 			}
 		}
 		return {
 			keyword: keyword,
 			result: fuse.search(keyword),
-			blurb: result[1],
-			numSeasons: result[0]
+			blurb: result[0],
 		};
 	}
 	throw error(400, 'no search term provided');

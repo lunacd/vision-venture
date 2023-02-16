@@ -9,6 +9,7 @@ interface RoadmapLoadResult {
 	sections: Section[];
 	blurb: Blurb;
 	numSeasons: number;
+	selectedSeason?: number;
 }
 
 export const load: PageLoad<RoadmapLoadResult> = async ({ url }) => {
@@ -27,5 +28,5 @@ export const load: PageLoad<RoadmapLoadResult> = async ({ url }) => {
 		loadBlurb('roadmap')
 	]);
 
-	return { numSeasons: result[0], episodes: result[1], sections: result[2], blurb: result[3] };
+	return { numSeasons: result[0], episodes: result[1], sections: result[2], blurb: result[3], selectedSeason: season };
 };
