@@ -3,7 +3,7 @@
  *
  * Created by Haowen Liu in 2023.
  */
-import sanityClient from '@sanity/client';
+import { createClient } from '@sanity/client';
 
 import type { Blurb } from './blurb';
 import type { Debrief } from './debrief';
@@ -12,7 +12,7 @@ import type { Person } from './person';
 import type { Resource } from './resource';
 import type { Section } from './section';
 
-const sanity = sanityClient({
+const sanity = createClient({
 	projectId: 'xnlnwt2r',
 	dataset: 'production',
 	apiVersion: '2021-10-21',
