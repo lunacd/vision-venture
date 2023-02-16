@@ -14,8 +14,8 @@ interface RoadmapLoadResult {
 export const load: PageLoad<RoadmapLoadResult> = async ({ url }) => {
 	let season = undefined;
 	const numSeasons = await loadNumSeasons();
-	if (url.searchParams.has('s')) {
-		const seasonInput = parseInt(url.searchParams.get('s'));
+	if (url.searchParams.has('season')) {
+		const seasonInput = parseInt(url.searchParams.get('season'));
 		if (!isNaN(seasonInput) && seasonInput > 0 && seasonInput <= numSeasons) {
 			season = seasonInput;
 		}
