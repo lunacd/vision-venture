@@ -65,12 +65,12 @@
 
 		&.active {
 			& .episode {
-				@apply bg-cardinal text-white;
+				@apply md:bg-cardinal md:text-white;
 			}
 
 			& .episode-arrow-outer {
 				& .episode-arrow {
-					@apply bg-cardinal;
+					@apply md:bg-cardinal;
 				}
 			}
 		}

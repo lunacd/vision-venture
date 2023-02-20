@@ -61,7 +61,7 @@
 	}
 
 	.dropdown-icon {
-		@apply w-3 transition-transform ml-auto md:w-4;
+		@apply ml-auto w-3 transition-transform md:w-4;
 	}
 
 	.dropdown-content {
@@ -72,11 +72,11 @@
 		}
 
 		& a:hover {
-			@apply bg-accent-green text-white border-accent-green border-b-2;
+			@apply border-b-2 border-accent-green bg-accent-green text-white;
 		}
 
 		& a:last-child {
-			@apply border-b-0 rounded-b;
+			@apply rounded-b border-b-0;
 		}
 
 		& .border {

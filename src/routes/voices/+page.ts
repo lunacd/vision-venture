@@ -11,7 +11,7 @@ interface VoicesLoadData {
 }
 
 export const load: PageLoad<VoicesLoadData> = async () => {
-	const result = await Promise.all([loadParticipants(), loadDebriefs(), loadBlurb('voices')]);
+	const result = await Promise.all([loadParticipants(1), loadDebriefs(), loadBlurb('voices')]);
 
 	return {
 		participants: result[0],

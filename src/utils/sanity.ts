@@ -84,10 +84,9 @@ export const loadParticipants: (season?: number) => Promise<Person[]> = async (s
 };
 
 /* Requires season to be a valid season number or undefined */
-export const loadDebriefs: (season?: number) => Promise<Debrief[]> = async (season) => {
-	const seasonQuery = getSeasonQuery(season);
+export const loadDebriefs: () => Promise<Debrief[]> = async () => {
 	const data = await sanity.fetch(
-		`*[_type=="debrief"&&season${seasonQuery}]|order(order){title,youtubeID}`
+		`*[_type=="debrief"]|order(season desc,order asc){title,youtubeID}`
 	);
 	return data;
 };

@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 
 import type { Blurb } from '../../utils/blurb';
 import type { Episode } from '../../utils/episode';
-import { loadAllEpisodes, loadBlurb, loadNumSeasons } from '../../utils/sanity';
+import { loadAllEpisodes, loadBlurb } from '../../utils/sanity';
 import type { PageLoad } from './$types';
 
 let fuse = undefined;
@@ -102,14 +102,14 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 				return {
 					keyword: keyword,
 					result: [],
-					blurb: result[0],
+					blurb: result[0]
 				};
 			}
 		}
 		return {
 			keyword: keyword,
 			result: fuse.search(keyword),
-			blurb: result[0],
+			blurb: result[0]
 		};
 	}
 	throw error(400, 'no search term provided');

@@ -4,7 +4,7 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
-	import type { Person } from 'src/utils/person';
+	import type { Person } from '../utils/person';
 
 	export let participants: Person[];
 </script>
