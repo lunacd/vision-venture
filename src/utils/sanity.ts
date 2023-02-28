@@ -69,7 +69,7 @@ export const loadSections: (season?: number) => Promise<Section[]> = async (seas
 
 export const loadTeam: () => Promise<Person[]> = async () => {
 	const data = await sanity.fetch(
-		`*[_type=="team"]|order(order,name){name,"picture":picture.asset->url,bio}`
+		`*[_type=="team"]|order(order desc,name){name,"picture":picture.asset->url,bio}`
 	);
 	return data;
 };

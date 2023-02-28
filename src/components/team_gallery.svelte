@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="mx-4 flex w-full flex-wrap justify-around">
+<div class="mx-4 flex w-full flex-wrap justify-center">
 	{#each people as person, i}
 		<img
 			src={person.picture}
@@ -43,7 +43,7 @@
 
 <style lang="postcss">
 	.person_image {
-		@apply w-1/2 rounded-full p-3 sm:p-6 md:w-52 lg:w-72;
+		@apply aspect-square w-1/2 rounded-full p-3 sm:p-6 md:w-52 lg:w-72;
 	}
 
 	.bio {
