@@ -29,7 +29,7 @@
 
 <style lang="postcss">
 	.youtube-container {
-		@apply fixed top-0 bottom-0 z-overlay w-full overflow-x-hidden;
+		@apply fixed bottom-0 top-0 z-overlay w-full overflow-x-hidden;
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 

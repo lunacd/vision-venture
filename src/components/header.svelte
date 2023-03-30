@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="absolute top-0 left-0 right-0 z-content">
+<div class="absolute left-0 right-0 top-0 z-content">
 	<Container>
 		<div class="relative flex h-22 flex-row items-center">
 			<a href="/">
@@ -99,11 +99,11 @@
 	.links-container {
 		@apply absolute top-0 flex h-screen w-max transition-transform;
 		left: calc(100% + 1.5rem);
-		@apply md:right-0 md:left-unset md:top-unset md:h-unset md:transform-none;
+		@apply md:left-unset md:right-0 md:top-unset md:h-unset md:transform-none;
 	}
 
 	.links-inner {
-		@apply flex flex-col items-start bg-black pt-6 pr-6;
+		@apply flex flex-col items-start bg-black pr-6 pt-6;
 		@apply md:flex-row md:bg-transparent md:p-unset;
 	}
 

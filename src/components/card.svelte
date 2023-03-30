@@ -18,7 +18,7 @@
 
 <style lang="postcss">
 	.small-card {
-		@apply my-6 mx-4 rounded-xl p-4 md:mx-1/10 md:p-8 xl:p-12;
+		@apply mx-4 my-6 rounded-xl p-4 md:mx-1/10 md:p-8 xl:p-12;
 		box-shadow: 0 10px 50px 0 #503c2d40;
 	}
 

@@ -38,7 +38,7 @@
 		<img
 			src={ContactUs}
 			alt="Contact us illustration"
-			class="absolute right-0 bottom-0 z-background hidden h-full md:block"
+			class="absolute bottom-0 right-0 z-background hidden h-full md:block"
 		/>
 	</div>
 </Container>

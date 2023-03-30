@@ -41,7 +41,7 @@
 <Container>
 	<!-- Quote -->
 	<div class="mb-24 flex justify-center">
-		<div class="flex max-w-3xl flex-col space-y-4 text-lg md:flex-row md:space-y-0 md:space-x-6">
+		<div class="flex max-w-3xl flex-col space-y-4 text-lg md:flex-row md:space-x-6 md:space-y-0">
 			<img src={Quote} alt="quotation mark" class="h-12 w-12 self-start md:h-20 md:w-20" />
 			<div class="flex flex-col items-center text-center text-xl">
 				<div>
@@ -80,7 +80,7 @@
 		</a>
 	</div>
 	<div class="flex justify-center">
-		<a class="button mt-6 mb-12 md:!hidden" href="/roadmap">
+		<a class="button mb-12 mt-6 md:!hidden" href="/roadmap">
 			<div>Check out Vision Roadmap</div>
 		</a>
 	</div>
@@ -90,7 +90,7 @@
 <div class="title mx-8 md:hidden">Hear from our Students!</div>
 <Container paddingClass="px-0">
 	<div class="relative">
-		<div class="absolute top-1/2 left-1/4 flex -translate-x-1/2 -translate-y-1/2 flex-col">
+		<div class="absolute left-1/4 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col">
 			<div class="title hidden md:block">Hear from our Students!</div>
 			<a class="button mt-4" href="/voices" id="voices-button">
 				<div>More Student Voices</div>
@@ -124,7 +124,7 @@
 
 <style lang="postcss">
 	.title {
-		@apply mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl;
+		@apply mb-4 mt-8 text-2xl font-bold sm:text-3xl md:text-4xl;
 	}
 
 	.button {

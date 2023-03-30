@@ -57,7 +57,7 @@
 	}
 
 	.dropdown {
-		@apply relative flex h-7 flex-row gap-2 rounded bg-accent-green py-1 px-2 text-sm text-white shadow-md md:h-8 md:text-base;
+		@apply relative flex h-7 flex-row gap-2 rounded bg-accent-green px-2 py-1 text-sm text-white shadow-md md:h-8 md:text-base;
 	}
 
 	.dropdown-icon {
@@ -65,7 +65,7 @@
 	}
 
 	.dropdown-content {
-		@apply absolute top-full left-0 right-0 flex w-full origin-top scale-y-0 flex-col rounded bg-white shadow-md transition-transform;
+		@apply absolute left-0 right-0 top-full flex w-full origin-top scale-y-0 flex-col rounded bg-white shadow-md transition-transform;
 
 		& a {
 			@apply relative w-full px-2;
@@ -80,7 +80,7 @@
 		}
 
 		& .border {
-			@apply absolute -top-2 left-0 right-0 bottom-0 rounded border-2 border-accent-green;
+			@apply absolute -top-2 bottom-0 left-0 right-0 rounded border-2 border-accent-green;
 		}
 	}
 </style>

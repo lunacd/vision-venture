@@ -34,7 +34,7 @@
 		<div class="text-xl text-cardinal md:text-3xl">Student Debriefs</div>
 		<div class="text-sm text-dark-gray md:text-xl">Click on the pins to watch!</div>
 		{#if data.debriefs.length > 0}
-			<div class="mt-4 mb-12 flex flex-col items-center justify-around md:flex-row">
+			<div class="mb-12 mt-4 flex flex-col items-center justify-around md:flex-row">
 				<TakeawayTimeline
 					debriefs={data.debriefs}
 					onSelect={(newSIndex, newEIndex) => {

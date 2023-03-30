@@ -47,7 +47,7 @@
 	}
 
 	.vertical-line {
-		@apply z-background border-0 border-l-3 border-b-3 border-solid border-dark-gray;
+		@apply z-background border-0 border-b-3 border-l-3 border-solid border-dark-gray;
 		@apply relative left-1/2 h-full w-1/2;
 	}
 
@@ -71,7 +71,7 @@
 		@apply relative md:mr-12;
 
 		& .border {
-			@apply absolute top-0 left-0 right-6 md:right-0;
+			@apply absolute left-0 right-6 top-0 md:right-0;
 			@apply h-full border-0 border-b-3 border-solid border-b-dark-gray;
 		}
 	}
@@ -96,7 +96,7 @@
 		}
 
 		& .videos {
-			@apply md:mr-0 md:ml-12;
+			@apply md:ml-12 md:mr-0;
 
 			& .border {
 				@apply left-6 right-0 md:left-0;

@@ -88,12 +88,12 @@ export const loadDebriefs: () => Promise<Debrief[][]> = async () => {
 	const data = await sanity.fetch(
 		`*[_type=="debrief"]|order(season asc,order asc){title,youtubeID,season}`
 	);
-	let result: Debrief[][] = [];
+	const result: Debrief[][] = [];
 	for (let i = 0; i < data.length; i++) {
-		while (result.length <= data[i].season) {
+		while (result.length < data[i].season) {
 			result.push([]);
 		}
-		result[data[i].season].push(data[i]);
+		result[data[i].season - 1].push(data[i]);
 	}
 	result.reverse();
 	return result;

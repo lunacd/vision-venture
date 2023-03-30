@@ -18,34 +18,36 @@
 	}
 </script>
 
-<div class="flex justify-center font-sans">
-	<div class="episodes-container">
-		{#each debriefs as season, sIndex}
-			{#each season as debrief, eIndex}
-				<div
-					class="episode-container"
-					class:active={sIndex === activeSIndex && eIndex == activeEIndex}
-					on:click={() => {
-						selectItem(sIndex, eIndex);
-					}}
-					on:keypress={() => {
-						selectItem(sIndex, eIndex);
-					}}
-				>
-					<span class="episode">{debrief.title}</span>
-					<div class="episode-arrow-outer">
-						<div class="episode-arrow" />
+<div class="flex flex-col items-end">
+	{#each debriefs as season, sIndex}
+		<div class="flex justify-center font-sans">
+			<div class="episodes-container">
+				{#each season as debrief, eIndex}
+					<div
+						class="episode-container"
+						class:active={sIndex === activeSIndex && eIndex == activeEIndex}
+						on:click={() => {
+							selectItem(sIndex, eIndex);
+						}}
+						on:keypress={() => {
+							selectItem(sIndex, eIndex);
+						}}
+					>
+						<span class="episode">{debrief.title}</span>
+						<div class="episode-arrow-outer">
+							<div class="episode-arrow" />
+						</div>
 					</div>
+				{/each}
+			</div>
+			<div class="line-container">
+				<div class="circle">
+					<div>{debriefs.length - sIndex}</div>
 				</div>
-			{/each}
-		{/each}
-	</div>
-	<div class="line-container">
-		<div class="circle">
-			<div>1</div>
+				<div class="line" />
+			</div>
 		</div>
-		<div class="line" />
-	</div>
+	{/each}
 </div>
 
 <style lang="postcss">

@@ -28,7 +28,7 @@
 
 <style lang="postcss">
 	.image {
-		@apply w-full cursor-pointer px-4 py-3 md:px-8 md:pt-4 md:pb-8;
+		@apply w-full cursor-pointer px-4 py-3 md:px-8 md:pb-8 md:pt-4;
 		& img {
 			@apply rounded-2xl;
 			box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
