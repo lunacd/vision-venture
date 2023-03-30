@@ -14,7 +14,7 @@
 
 	export let data: PageData;
 
-	let activeIndex = 0;
+	let youtubeID: string = data.debriefs[0][0].youtubeID;
 </script>
 
 <svelte:head>
@@ -37,18 +37,17 @@
 			<div class="mt-4 mb-12 flex flex-col items-center justify-around md:flex-row">
 				<TakeawayTimeline
 					debriefs={data.debriefs}
-					{activeIndex}
-					onSelect={(newIndex) => {
-						activeIndex = newIndex;
+					onSelect={(newSIndex, newEIndex) => {
+						youtubeID = data.debriefs[newSIndex][newEIndex].youtubeID;
 						if (!largeDevice) {
-							window.open(getPlayLink(data.debriefs[activeIndex].youtubeID));
+							window.open(getPlayLink(youtubeID));
 						}
 					}}
 				/>
 				<iframe
 					class="hidden w-[400px] md:block lg:w-[560px]"
 					height="315"
-					src={getEmbedLink(data.debriefs[activeIndex].youtubeID)}
+					src={getEmbedLink(youtubeID)}
 					title="YouTube video player"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen

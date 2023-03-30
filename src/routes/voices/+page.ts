@@ -6,7 +6,7 @@ import type { PageLoad } from './$types';
 
 interface VoicesLoadData {
 	participants: Person[];
-	debriefs: Debrief[];
+	debriefs: Debrief[][];
 	blurb: Blurb;
 }
 

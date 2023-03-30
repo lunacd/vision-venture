@@ -6,9 +6,11 @@
 export class Debrief {
 	youtubeID: string;
 	title: string;
+	season: number;
 
-	constructor(youtubeID: string, title: string) {
+	constructor(youtubeID: string, title: string, season: number) {
 		this.youtubeID = youtubeID;
 		this.title = title;
+		this.season = season;
 	}
 }

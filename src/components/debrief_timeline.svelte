@@ -6,27 +6,38 @@
 <script lang="ts">
 	import type { Debrief } from '../utils/debrief';
 
-	export let debriefs: Debrief[], activeIndex: number, onSelect: (newIndex: number) => void;
+	export let debriefs: Debrief[][], onSelect: (seasonIndex: number, episodeIndex: number) => void;
+
+	let activeSIndex = 0;
+	let activeEIndex = 0;
+
+	function selectItem(sIndex: number, eIndex: number) {
+		activeSIndex = sIndex;
+		activeEIndex = eIndex;
+		onSelect(sIndex, eIndex);
+	}
 </script>
 
 <div class="flex justify-center font-sans">
 	<div class="episodes-container">
-		{#each debriefs as debrief, index}
-			<div
-				class="episode-container"
-				class:active={index === activeIndex}
-				on:click={() => {
-					onSelect(index);
-				}}
-				on:keypress={() => {
-					onSelect(index);
-				}}
-			>
-				<span class="episode">{debrief.title}</span>
-				<div class="episode-arrow-outer">
-					<div class="episode-arrow" />
+		{#each debriefs as season, sIndex}
+			{#each season as debrief, eIndex}
+				<div
+					class="episode-container"
+					class:active={sIndex === activeSIndex && eIndex == activeEIndex}
+					on:click={() => {
+						selectItem(sIndex, eIndex);
+					}}
+					on:keypress={() => {
+						selectItem(sIndex, eIndex);
+					}}
+				>
+					<span class="episode">{debrief.title}</span>
+					<div class="episode-arrow-outer">
+						<div class="episode-arrow" />
+					</div>
 				</div>
-			</div>
+			{/each}
 		{/each}
 	</div>
 	<div class="line-container">
@@ -47,7 +58,7 @@
 
 		& .episode {
 			@apply border-[1.5px] border-solid border-cardinal text-cardinal;
-			@apply h-8 pl-2 align-middle text-sm md:text-base lg:text-lg;
+			@apply h-8 pl-3 align-middle text-sm md:text-base lg:text-lg;
 			display: table-cell;
 			border-radius: 10px 0 0 10px;
 			border-right: none;
