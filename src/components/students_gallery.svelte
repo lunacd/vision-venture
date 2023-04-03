@@ -5,37 +5,49 @@
  -->
 <script lang="ts">
 	import type { Person } from '../utils/person';
+	import SeasonControl from './season_control.svelte';
 
-	export let participants: Person[];
+	export let participants: Person[][];
+
+	let currentSeason = participants.length - 1;
 </script>
 
-<div class="mb-12 flex w-full flex-col justify-center md:flex-row md:flex-wrap">
-	{#each participants as participant}
-		<div class="mx-6 hidden flex-col md:flex">
-			<div class="flip-box">
-				<div class="flip-box-inner">
-					<div class="flip-box-front">
-						<img src={participant.picture} alt={participant.name} />
-					</div>
-					<div class="flip-box-back overflow-y-scroll">
-						<p>{participant.bio}</p>
+<div>
+	<SeasonControl
+		numberOfSeasons={participants.length}
+		{currentSeason}
+		selectAction={(season) => {
+			currentSeason = season;
+		}}
+	/>
+	<div class="mb-12 flex w-full flex-col justify-center md:flex-row md:flex-wrap">
+		{#each participants[currentSeason] as participant}
+			<div class="mx-6 hidden flex-col md:flex">
+				<div class="flip-box">
+					<div class="flip-box-inner">
+						<div class="flip-box-front">
+							<img src={participant.picture} alt={participant.name} />
+						</div>
+						<div class="flip-box-back overflow-y-scroll">
+							<p>{participant.bio}</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="mt-3 text-center text-xl font-bold uppercase">
-				{participant.name}
-			</div>
-		</div>
-		<div class="mb-6 grid grid-cols-2 items-center gap-2 md:hidden">
-			<div>
-				<img src={participant.picture} alt={participant.name} class="rounded-xl" />
-				<div class="mt-3 text-center text-sm font-bold uppercase">
+				<div class="mt-3 text-center text-xl font-bold uppercase">
 					{participant.name}
 				</div>
 			</div>
-			<p class="font-serif text-sm">{participant.bio}</p>
-		</div>
-	{/each}
+			<div class="mb-6 grid grid-cols-2 items-center gap-2 md:hidden">
+				<div>
+					<img src={participant.picture} alt={participant.name} class="rounded-xl" />
+					<div class="mt-3 text-center text-sm font-bold uppercase">
+						{participant.name}
+					</div>
+				</div>
+				<p class="font-serif text-sm">{participant.bio}</p>
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style lang="postcss">

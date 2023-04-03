@@ -46,6 +46,9 @@
 				<SeasonControl
 					numberOfSeasons={data.numSeasons}
 					currentSeason={(data.selectedSeason ?? data.numSeasons) - 1}
+					selectAction={(season) => {
+						window.location.href = `/roadmap?season=${season + 1}`;
+					}}
 				/>
 			</div>
 		</div>

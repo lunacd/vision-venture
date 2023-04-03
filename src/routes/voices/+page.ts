@@ -5,13 +5,13 @@ import { loadBlurb, loadDebriefs, loadParticipants } from '../../utils/sanity';
 import type { PageLoad } from './$types';
 
 interface VoicesLoadData {
-	participants: Person[];
+	participants: Person[][];
 	debriefs: Debrief[][];
 	blurb: Blurb;
 }
 
 export const load: PageLoad<VoicesLoadData> = async () => {
-	const result = await Promise.all([loadParticipants(1), loadDebriefs(), loadBlurb('voices')]);
+	const result = await Promise.all([loadParticipants(), loadDebriefs(), loadBlurb('voices')]);
 
 	return {
 		participants: result[0],

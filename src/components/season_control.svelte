@@ -6,7 +6,7 @@
 <script lang="ts">
 	import AngleIcon from '../images/angle.svg';
 
-	export let numberOfSeasons: number, currentSeason: number;
+	export let numberOfSeasons: number, currentSeason: number, selectAction: (season: number) => void;
 
 	let open = false;
 </script>
@@ -29,7 +29,13 @@
 			<div class="border" />
 			{#each Array(numberOfSeasons) as _, i}
 				{#if i !== currentSeason}
-					<a href={`/roadmap?season=${i + 1}`} class="h-7 text-accent-green">SEASON {i + 1}</a>
+					<button
+						class="h-7 text-left text-accent-green"
+						on:click={() => {
+							open = !open;
+							selectAction(i);
+						}}>SEASON {i + 1}</button
+					>
 				{/if}
 			{/each}
 		</div>
@@ -67,15 +73,15 @@
 	.dropdown-content {
 		@apply absolute left-0 right-0 top-full flex w-full origin-top scale-y-0 flex-col rounded bg-white shadow-md transition-transform;
 
-		& a {
+		& button {
 			@apply relative w-full px-2;
 		}
 
-		& a:hover {
+		& button:hover {
 			@apply border-b-2 border-accent-green bg-accent-green text-white;
 		}
 
-		& a:last-child {
+		& button:last-child {
 			@apply rounded-b border-b-0;
 		}
 

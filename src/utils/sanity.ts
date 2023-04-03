@@ -74,13 +74,18 @@ export const loadTeam: () => Promise<Person[]> = async () => {
 	return data;
 };
 
-/* Requires season to be a valid season number or undefined */
-export const loadParticipants: (season?: number) => Promise<Person[]> = async (season) => {
-	const seasonQuery = getSeasonQuery(season);
+export const loadParticipants: () => Promise<Person[][]> = async () => {
 	const data = await sanity.fetch(
-		`*[_type=="participant"&&season${seasonQuery}]|order(name){name,"picture":picture.asset->url,bio}`
+		`*[_type=="participant"]|order(season desc,name){name,"picture":picture.asset->url,bio,season}`
 	);
-	return data;
+	const result: Person[][] = [];
+	for (let i = 0; i < data.length; i++) {
+		while (result.length < data[i].season) {
+			result.push([]);
+		}
+		result[data[i].season - 1].push(data[i]);
+	}
+	return result;
 };
 
 /* Requires season to be a valid season number or undefined */
