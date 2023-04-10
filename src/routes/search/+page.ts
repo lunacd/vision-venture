@@ -9,7 +9,7 @@ import type { PageLoad } from './$types';
 let fuse = undefined;
 
 // This list credit to https://github.com/KanchiMoe/Bad-words/blob/master/Lists/google-base.txt
-const censorWords = [
+const censorWords = new Set([
 	'anal',
 	'anus',
 	'arse',
@@ -78,7 +78,7 @@ const censorWords = [
 	'tits',
 	'viagra',
 	'whore'
-];
+]);
 
 interface SearchResult {
 	keyword: string;
@@ -97,20 +97,19 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 		const result = await Promise.all([loadBlurb('roadmap')]);
 		const keyword = url.searchParams.get('keyword');
 		const lowercase = keyword.toLowerCase();
-		for (const word of censorWords) {
-			if (lowercase.includes(word)) {
-				return {
-					keyword: keyword,
-					result: [],
-					blurb: result[0]
-				};
-			}
-		}
-		return {
-			keyword: keyword,
-			result: fuse.search(keyword),
-			blurb: result[0]
-		};
+		if (censorWords.has(lowercase)) {
+			return {
+				keyword: keyword,
+				result: [],
+				blurb: result[0]
+			};
+		} else {
+			return {
+				keyword: keyword,
+				result: fuse.search(keyword),
+				blurb: result[0]
+			};
+		}		
 	}
 	throw error(400, 'no search term provided');
 };
