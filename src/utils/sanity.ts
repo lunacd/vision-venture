@@ -16,7 +16,7 @@ const sanity = createClient({
 	projectId: 'xnlnwt2r',
 	dataset: 'production',
 	apiVersion: '2021-10-21',
-	useCdn: false
+	useCdn: true
 });
 
 function getSeasonQuery(season?: number) {
