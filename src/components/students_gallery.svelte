@@ -20,7 +20,7 @@
 			currentSeason = season;
 		}}
 	/>
-	<div class="mt-8 mb-12 flex w-full flex-col justify-center md:flex-row md:flex-wrap">
+	<div class="mb-12 mt-8 flex w-full flex-col justify-center md:flex-row md:flex-wrap">
 		{#each participants[currentSeason] as participant}
 			<div class="mx-6 hidden flex-col md:flex">
 				<div class="flip-box">

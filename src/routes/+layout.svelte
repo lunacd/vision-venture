@@ -4,12 +4,17 @@
 	Created by Haowen Liu in 2022.
  -->
 <script lang="ts">
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
 	import '../app.css';
 	import Container from '../components/container.svelte';
 
 	import Logo from '../images/usc-shield-name-white.png?webp&w=198';
 	import Shield from '../images/usc-shield-white.png?webp&w=62';
 	import Viterbi from '../images/viterbi.jpg?webp&w=200';
+
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <div class="h-[70px] bg-black">

@@ -109,7 +109,7 @@ export const load: PageLoad<SearchResult> = async ({ url }) => {
 				result: fuse.search(keyword),
 				blurb: result[0]
 			};
-		}		
+		}
 	}
 	throw error(400, 'no search term provided');
 };
