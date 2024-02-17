@@ -7,6 +7,7 @@ triggers:
     to: Haowen Liu <lhw@lunacd.com>
 tasks:
   - setup: |
+      sudo dnf module enable -y nodejs:20
       sudo dnf install -y nodejs
       sudo npm i -g corepack
   - deploy: |
