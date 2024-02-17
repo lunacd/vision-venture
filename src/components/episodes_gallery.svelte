@@ -12,16 +12,13 @@
 <div class="relative grid grid-cols-1 pb-4 md:grid-cols-2">
 	{#each episodes as episode}
 		<div class="image">
-			<img
-				src={episode.thumbnail}
-				alt={episode.title}
+			<button
 				on:click={() => {
 					play(episode.youtubeID);
 				}}
-				on:keypress={() => {
-					play(episode.youtubeID);
-				}}
-			/>
+			>
+				<img src={episode.thumbnail} alt={episode.title} />
+			</button>
 		</div>
 	{/each}
 </div>

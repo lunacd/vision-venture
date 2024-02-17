@@ -20,21 +20,17 @@
 
 <div class="mx-4 flex w-full flex-wrap justify-center">
 	{#each people as person, i}
-		<img
-			src={person.picture}
-			alt={person.name}
+		<button
 			class="person_image"
-			class:gray={i !== currentIndex}
-			on:mouseenter={() => {
-				selectBio(i);
-			}}
 			on:click={() => {
 				selectBio(i);
 			}}
-			on:keypress={() => {
+			on:mouseenter={() => {
 				selectBio(i);
 			}}
-		/>
+		>
+			<img src={person.picture} alt={person.name} class:gray={i !== currentIndex} />
+		</button>
 	{/each}
 </div>
 <div class="bio">
@@ -43,7 +39,11 @@
 
 <style lang="postcss">
 	.person_image {
-		@apply aspect-square w-1/2 rounded-full p-3 sm:p-6 md:w-52 lg:w-72;
+		@apply aspect-square cursor-default overflow-hidden w-1/2 p-3 sm:p-6 md:w-52 lg:w-72;
+
+		& img {
+			@apply rounded-full h-full w-full;
+		}
 	}
 
 	.bio {

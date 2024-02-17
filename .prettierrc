@@ -1,4 +1,5 @@
 {
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
 	"useTabs": true,
 	"singleQuote": true,
 	"trailingComma": "none",

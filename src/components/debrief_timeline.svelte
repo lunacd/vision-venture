@@ -23,21 +23,18 @@
 		<div class="flex justify-center font-sans">
 			<div class="episodes-container">
 				{#each season as debrief, eIndex}
-					<div
+					<button
 						class="episode-container"
-						class:active={sIndex === activeSIndex && eIndex == activeEIndex}
 						on:click={() => {
 							selectItem(sIndex, eIndex);
 						}}
-						on:keypress={() => {
-							selectItem(sIndex, eIndex);
-						}}
+						class:active={sIndex === activeSIndex && eIndex == activeEIndex}
 					>
-						<span class="episode">{debrief.title}</span>
+						<div class="episode"><span>{debrief.title}</span></div>
 						<div class="episode-arrow-outer">
 							<div class="episode-arrow" />
 						</div>
-					</div>
+					</button>
 				{/each}
 			</div>
 			<div class="line-container">
@@ -56,14 +53,18 @@
 	}
 
 	.episode-container {
-		@apply my-4 -mr-4 table cursor-pointer md:ml-2 lg:mr-0;
+		@apply my-4 -mr-4 flex cursor-pointer md:ml-2 lg:mr-0 leading-6;
 
-		& .episode {
+		& > .episode {
 			@apply border-[1.5px] border-solid border-cardinal text-cardinal;
-			@apply h-8 pl-3 align-middle text-sm md:text-base lg:text-lg;
-			display: table-cell;
+			@apply h-full pl-3 text-sm md:text-base lg:text-lg;
+			@apply flex items-center;
 			border-radius: 10px 0 0 10px;
 			border-right: none;
+
+			& > span {
+				@apply h-min;
+			}
 		}
 
 		& .episode-arrow-outer {

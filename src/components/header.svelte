@@ -33,13 +33,9 @@
 				/>
 			</a>
 			<div class="links-container" class:links-show={show}>
-				<img
-					src={page === 'about' ? Hamburger : HamburgerRed}
-					alt="Hamburger menu"
-					id="hamburger"
-					on:click={toggleShow}
-					on:keypress={toggleShow}
-				/>
+				<button on:click={toggleShow} id="hamburger">
+					<img src={page === 'about' ? Hamburger : HamburgerRed} alt="Hamburger menu" />
+				</button>
 				<div class="links-inner">
 					<a
 						href="/"

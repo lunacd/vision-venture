@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import Fuse from 'fuse.js';
+import Fuse, { type FuseResult } from 'fuse.js';
 
 import type { Blurb } from '../../utils/blurb';
 import type { Episode } from '../../utils/episode';
@@ -82,7 +82,7 @@ const censorWords = new Set([
 
 interface SearchResult {
 	keyword: string;
-	result: Fuse.FuseResult<Episode>[];
+	result: FuseResult<Episode>[];
 	blurb: Blurb;
 }
 

@@ -12,18 +12,15 @@
 </script>
 
 <div class="season-control" class:open>
-	<div
+	<button
 		class="dropdown"
 		on:click={() => {
-			open = !open;
-		}}
-		on:keypress={() => {
 			open = !open;
 		}}
 	>
 		<div>SEASON {currentSeason + 1}</div>
 		<img src={AngleIcon} alt="Dropdown icon" class="dropdown-icon" />
-	</div>
+	</button>
 	{#if numberOfSeasons > 1}
 		<div class="dropdown-content">
 			<div class="border" />

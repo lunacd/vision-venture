@@ -9,12 +9,7 @@
 	export let link: string, close: () => void;
 </script>
 
-<div
-	class="youtube-container"
-	class:hidden={link === undefined}
-	on:click={close}
-	on:keypress={close}
->
+<div class="youtube-container" class:hidden={link === undefined} on:click={close} role="none">
 	<iframe
 		class="player border-0"
 		width="560"
@@ -24,7 +19,7 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen
 	/>
-	<img class="close" on:click={close} on:keypress={close} src={X} alt="Close button" />
+	<button class="close" on:click={close}><img src={X} alt="Close button" /></button>
 </div>
 
 <style lang="postcss">

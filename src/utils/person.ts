@@ -14,5 +14,6 @@ export class Person {
 		this.name = name;
 		this.picture = picture;
 		this.bio = bio;
+		this.season = season;
 	}
 }
