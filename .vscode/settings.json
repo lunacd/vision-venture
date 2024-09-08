@@ -1,9 +1,0 @@
-{
-	"cSpell.words": ["tailwindcss"],
-	"yaml.schemas": {
-		"https://json.schemastore.org/sourcehut-build-0.65.0.json": [
-			"file:///c%3A/Users/haowenl/sr.ht/vision-venture/.builds/deploy.yml",
-			"file:///c%3A/Users/haowenl/sr.ht/vision-venture/.builds/mirror.yml"
-		]
-	}
-}
